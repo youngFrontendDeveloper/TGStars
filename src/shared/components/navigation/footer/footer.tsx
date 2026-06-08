@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FooterArrow from "@/public/assets/icons/footer-arrow.svg";
+import Logo from "../../ui/logo/logo";
 
 export const Footer = () => {
 	return (
@@ -11,12 +12,13 @@ export const Footer = () => {
 			}}
 		>
 			<div className="flex items-center justify-center lg:justify-start">
-				<Image
+				<Logo width={162.77} height={30} />
+				{/* <Image
 					src="/assets/icons/logo.svg"
 					alt="TGStars"
 					width={150}
 					height={28}
-				/>
+				/> */}
 			</div>
 			<div className="flex w-full max-w-[670px] flex-col items-center justify-center gap-5 py-1.5 lg:flex-row lg:justify-end lg:py-1">
 				<Link

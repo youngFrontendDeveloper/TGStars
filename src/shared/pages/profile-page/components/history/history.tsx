@@ -63,7 +63,7 @@ export const History = () => {
 
 	const pagedOrders = useMemo(() => {
 		const start = (page - 1) * itemsPerPage;
-		return orders.slice(start, start + itemsPerPage);
+		return orders?.slice(start, start + itemsPerPage);
 	}, [orders, page]);
 
 	return (
