@@ -53,7 +53,7 @@ export const History = () => {
 
 	const itemsPerPage = 8;
 	const [page, setPage] = useState(1);
-	const totalPages = Math.max(1, Math.ceil(orders.length / itemsPerPage));
+	const totalPages = Math.max(1, Math.ceil(orders?.length / itemsPerPage));
 
 	useEffect(() => {
 		if (page > totalPages) {
@@ -72,14 +72,14 @@ export const History = () => {
 				История заказов
 			</h2>
 			<div className="w-full rounded-2xl bg-white px-4 py-6 sm:p-0">
-				{orders.length === 0 ? (
+				{orders?.length === 0 ? (
 					<p className="font-mts-text flex flex-col text-sm/[22px] font-normal text-[#95A0A7] sm:p-4 sm:text-base/[22px]">
 						Тут пока ничего нет
 					</p>
 				) : (
 					<>
 						<div className="flex flex-col gap-7">
-							{pagedOrders.map((el, i) => (
+							{pagedOrders?.map((el, i) => (
 								<div
 									key={`${el.id}-${el.created_at}-${i}`}
 									className={`flex w-full items-start justify-between border-b border-[#EAEEF0] pb-4 sm:hidden ${

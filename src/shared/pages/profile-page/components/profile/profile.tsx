@@ -12,6 +12,12 @@ import People from "@/public/assets/icons/people.svg";
 import TgStar from "@/public/assets/icons/tg-star.svg";
 import defaultUser from "@/public/assets/images/user.png";
 
+type ToastProps = {
+	title: string;
+	description: string;
+	id: string;
+	type?: "success" | "error" | "warning" | "info";
+};
 // const resolveAvatarUrl = (url?: string | null): string | null => {
 // 	if (!url) return null;
 // 	if (url.startsWith("data:")) return url;
@@ -95,15 +101,20 @@ export const Profile = () => {
 		console.log("response");
 
 		if ((refState?.referral_balance || 0) < (refState?.min_withdraw || 0)) {
-			toaster.current.error({
+			toaster?.current.error({
 				title: "Ошибка",
 				description: `Можно вывести минимум ${refState?.min_withdraw} звезд`,
 			});
 			return;
 		}
 
-		const res = await fetch("https://tg-stars.ru/api/referral/withdraw");
+		// const res = await fetch("https://tg-stars.ru/api/referral/withdraw");
+		const res = await fetch("https://tg-stars.ru/api/referral/withdraw", {
+			method: "POST",
+		});
 		const data = await res.json();
+
+		console.log(data);
 
 		if (data.success) {
 			const newRefferalBalance =
@@ -221,7 +232,7 @@ export const Profile = () => {
 								Вывести
 							</Button>
 							<Toaster toaster={toaster.current}>
-								{(toast) => (
+								{(toast: ToastProps) => (
 									<Toast.Root
 										key={toast.id}
 										className="flex w-[300px] flex-col gap-3 rounded-2xl border border-[#F2F4F4] bg-white p-4"
