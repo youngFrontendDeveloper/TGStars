@@ -12,14 +12,21 @@ import People from "@/public/assets/icons/people.svg";
 import TgStar from "@/public/assets/icons/tg-star.svg";
 import defaultUser from "@/public/assets/images/user.png";
 
-const resolveAvatarUrl = (url?: string | null): string | null => {
-	if (!url) return null;
+// const resolveAvatarUrl = (url?: string | null): string | null => {
+// 	if (!url) return null;
+// 	if (url.startsWith("data:")) return url;
+// 	if (url.startsWith("http")) return url;
+// 	if (url.startsWith("/")) return `https://tg-stars.ru${url}`;
+// 	return null;
+// };
+
+const resolveAvatarUrl = (url?: string | null): string | undefined => {
+	if (!url) return undefined;
 	if (url.startsWith("data:")) return url;
 	if (url.startsWith("http")) return url;
 	if (url.startsWith("/")) return `https://tg-stars.ru${url}`;
-	return null;
+	return undefined;
 };
-
 export const Profile = () => {
 	const { user } = useUser();
 	const levels = [

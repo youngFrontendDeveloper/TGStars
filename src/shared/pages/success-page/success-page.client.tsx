@@ -324,7 +324,7 @@ export const SuccessPageClient = () => {
 		}
 	})();
 
-	const avatarSrc = localOrder?.recipient_avatar_url || null;
+	const avatarSrc = localOrder?.recipient_avatar_url || undefined;
 const [avatarError, setAvatarError] = useState(false);
 
 	// Если нет данных вообще — показываем заглушку
