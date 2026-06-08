@@ -1,0 +1,107 @@
+@font-face {
+	font-family: "MTSWide";
+	src:
+		url("/fonts/MTSWide-Bold.woff") format("woff"),
+		url("/fonts/MTSWide-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MTSWide";
+	src:
+		url("/fonts/MTSWide-Medium.woff") format("woff"),
+		url("/fonts/MTSWide-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MTSText";
+	src:
+		url("/fonts/MTSText-Medium.woff") format("woff"),
+		url("/fonts/MTSText-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MTSText";
+	src:
+		url("/fonts/MTSText-Regular.woff") format("woff"),
+		url("/fonts/MTSText-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MTSExtended";
+	src:
+		url("/fonts/MTSExtended-Bold.woff") format("woff"),
+		url("/fonts/MTSExtended-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "MTSExtended";
+	src:
+		url("/fonts/MTSExtended-Medium.woff") format("woff"),
+		url("/fonts/MTSExtended-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-mts-wide {
+	font-family: "MTSWide", sans-serif;
+}
+
+.font-mts-text {
+	font-family: "MTSText", sans-serif;
+}
+
+.font-mts-extended {
+	font-family: "MTSExtended", sans-serif;
+}
+
+.docs-header {
+	font-family: "MTSWide", sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+	font-weight: 500;
+}
+
+.docs-text {
+	font-family: "MTSText", sans-serif;
+	color: #95a0a7;
+	font-size: 14px;
+	line-height: 22.8px;
+	font-weight: 400;
+}
+
+.table-header {
+	font-family: "MTSText", sans-serif;
+	color: #95a0a7;
+	font-weight: 500;
+	text-align: center;
+	font-size: 16px;
+	line-height: 22px;
+	padding: 14px 0;
+}
+
+.table-text {
+	font-family: "MTSText", sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	text-align: center;
+	color: #000000;
+	padding: 11px 0;
+}

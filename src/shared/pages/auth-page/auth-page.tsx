@@ -1,0 +1,27 @@
+import { definePage } from "@/features/next/define-page";
+
+import { AuthForm } from "../../../features/auth";
+
+export const AuthPage = definePage({
+	name: "AuthPage",
+	async render() {
+		return (
+			<section className="w-full">
+				<h1 className="sr-only">Страница входа в профиль TGStars</h1>
+				<div className="container items-center pt-36">
+					<div className="relative z-0 flex items-center justify-center">
+						<AuthForm />
+						<div className="-z-10 hidden h-[70%] w-full grid-cols-6 opacity-70 blur-[50px] md:absolute md:grid">
+							<div className="mt-10 h-full w-full bg-[#3BC7FF]"></div>
+							<div className="h-full w-full bg-[#B34BFF]"></div>
+							<div className="h-full w-full bg-[#3E5BFF]"></div>
+							<div className="h-full w-full bg-[#FF7A35]"></div>
+							<div className="h-full w-full bg-[#FF4D7E]"></div>
+							<div className="-mt-10 h-full w-full bg-[#9A4BFF]"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		);
+	},
+});

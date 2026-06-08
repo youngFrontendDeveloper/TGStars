@@ -1,0 +1,18 @@
+{
+	"extends": "@tsconfig/next/tsconfig.json",
+	"compilerOptions": {
+		"target": "ESNext",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/public/*": ["./public/*"]
+		}
+	},
+	"include": [
+		"global.d.ts",
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts"
+	]
+}

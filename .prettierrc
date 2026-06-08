@@ -1,0 +1,22 @@
+{
+	"semi": true,
+	"useTabs": true,
+	"plugins": [
+		"@ianvs/prettier-plugin-sort-imports",
+		"prettier-plugin-pkg",
+		"prettier-plugin-tailwindcss"
+	],
+	"importOrder": [
+		"<BUILT_IN_MODULES>",
+		"",
+		"<THIRD_PARTY_MODULES>",
+		"",
+		"^@/(?!public/).*$",
+		"",
+		"^@/public/.*$",
+		"",
+		"^(?!.*[.]s?css$)[./].*$",
+		"",
+		".s?css$"
+	]
+}

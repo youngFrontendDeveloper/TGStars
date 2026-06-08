@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+public/
+
+# Next.js
+.next
+next-env.d.ts
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env*.local
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+*.zip
+*.rar
+
+package-lock.json

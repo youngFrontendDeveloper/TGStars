@@ -1,0 +1,1 @@
+export { SuccessPage as default } from "@/shared/pages/success-page";
