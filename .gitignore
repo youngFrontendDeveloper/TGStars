@@ -1,6 +1,5 @@
 # Dependencies
 node_modules
-public/
 
 # Next.js
 .next
