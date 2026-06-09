@@ -5,35 +5,56 @@ import { useAuth } from "@/shared/layouts/auth-provider/auth-provider";
 
 import { getMenuItems } from "../../../constants/menu-items";
 
-export const Menu = ({ className }: { className?: string }) => {
+const getIconClassName = (isActive: boolean, index: number): string => {
+	if (isActive && index === 0) {
+		console.log("isActive && index === 0");
+		return "text-[#FFCF09]";
+	} else if (isActive && index !== 0) {
+		console.log("isActive && index !== 0");
+		return "text-white";
+	} else if (!isActive && index === 0) {
+		console.log("!isActive && index === 0");
+		return "group-hover:text-[#FFCF09]";
+	} else {
+		return "group-hover:text-white";
+	}
+};
+
+interface MenuProps {
+	className?: string;
+	setIsMenuOpen: (isOpen: boolean) => void;
+}
+
+export const Menu = ({ className, setIsMenuOpen }: MenuProps) => {
 	const { user } = useAuth();
 	const pathname = usePathname();
 
 	return (
-		<ul className={`flex ${className}`}>
+		<ul
+			className={`flex w-full max-w-[400px] flex-col gap-[16px] rounded-bl-[20px] rounded-br-[20px] bg-[#E1E8F0] p-[24px] shadow-[0px_4px_10px_0px_#0000001A] lg:w-auto lg:flex-row lg:gap-0 lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none ${className}`}
+		>
 			{getMenuItems(user).map((item, index) => {
 				const Icon = item.icon; // присваиваем компонент переменной
 				const isActive = pathname === item.path;
 
 				return (
-					<li key={item.name} className="text-[#374151] hover:text-white">
+					<li
+						onClick={() => setIsMenuOpen(false)}
+						key={item.name}
+						className="w-full min-w-fit max-w-[250px] text-[#374151] hover:text-white"
+					>
 						<Link
 							href={item.path}
-							className={`group flex items-center gap-[8px] rounded-[38px] px-[16px] py-[10px] text-[14px] hover:bg-[#2563EB] ${
+							className={`group flex items-center gap-[7px] rounded-[38px] p-[16px] text-[14px] hover:bg-[#2563EB] lg:px-[16px] lg:py-[10px] ${
 								isActive ? "bg-[#2563EB] text-white" : "bg-[transparent]"
 							}`}
 						>
-							<Icon
-								className={`h-fill w-fill text-[inherit] transition-colors duration-300 ${
-									index === 0
-										? "group-hover:text-[#FFCF09]"
-										: "group-hover:text-white"
-								} 
-								${
-									index === 0 && isActive ? "text-[#FFCF09]" : "text-white"
-								}`}
-							/>
-							<span className="font-mts-wide font-semibold text-[inherit] group-hover:text-white">
+							<span className={`${getIconClassName(isActive, index)}`}>
+								<Icon
+									className={`h-fill w-fill text-[inherit] transition-colors duration-300`}
+								/>
+							</span>
+							<span className="font-mts-wide font-semibold text-[inherit] transition-colors duration-300 group-hover:text-white">
 								{item.name}
 							</span>
 						</Link>
