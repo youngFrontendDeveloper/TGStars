@@ -1,27 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import {getMenuItems} from "../../../constants/menu-items";
 
 import { useAuth } from "@/shared/layouts/auth-provider/auth-provider";
-
-import CloseMenu from "@/public/assets/icons/closeMenu.svg";
-import MenuIcon from "@/public/assets/icons/menu.svg";
-import NewStar from "@/public/assets/icons/new-star.svg";
-import Present from "@/public/assets/icons/present.svg";
-import Profile from "@/public/assets/icons/profile.svg";
-import Star from "@/public/assets/icons/star.svg";
-import Tg from "@/public/assets/icons/tg.svg";
 
 import { Button } from "../../ui/button";
 import Logo from "../../ui/logo/logo";
 import { Menu } from "../menu/menu";
 
 export const Header = () => {
-	const { user, logout } = useAuth();	
+	const { user, logout } = useAuth();
 	const pathname = usePathname();
 	const [menu, setMenu] = useState(false);
 	const handleLogout = async () => {
@@ -32,145 +22,28 @@ export const Header = () => {
 		<header
 			className={`sticky top-0 z-10 w-full ${menu && "h-screen bg-[#0000001A] sm:bg-none"} sm:h-auto`}
 		>
-			<div className="flex w-full items-center bg-[#E1E8F0] px-6 py-6 md:bg-[#EAEEF0] md:shadow-[0px_10px_15px_0px_#0000001A] md:backdrop-blur-[78.7px] lg:px-[50px] lg:py-[14px]">
-				<Logo width={162.77} height={30} className="shrink-0" />
+			<div className="flex w-full items-center justify-between bg-[#E1E8F0] px-6 py-6 md:bg-[#EAEEF0] md:shadow-[0px_10px_15px_0px_#0000001A] md:backdrop-blur-[78.7px] lg:px-[50px] lg:py-[14px]">
+				<Logo
+					width={162.77}
+					height={30}
+					className="order-2 shrink-0 sm:order-1"
+				/>
 
-				<Menu />
+				<Menu className="order-1 sm:order-2" />
 
 				{user ? (
-					<Button onClick={handleLogout} />
+					<Button onClick={handleLogout} className="order-3 ml-[75px]">
+						Выйти
+					</Button>
 				) : (
 					<Link
 						href={"/auth"}
-						className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
+						className={`font-mts-wide order-3 ml-[75px] items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
 					>
 						Войти
 					</Link>
 				)}
-
-				{/* <div className="hidden flex-1 justify-center lg:flex">
-					<div className="flex h-11 w-full max-w-[670px] rounded-[14px] p-0.5">
-						{links.map((el, i) => {
-							const isActive = pathname === el.path;
-							let Icon = el.icon;
-							let iconClassName = "inactive-icon";
-
-							if (el.path === "/") {
-								if (isActive) {
-									Icon = NewStar;
-									iconClassName = "";
-								} else {
-									Icon = Star;
-									iconClassName = "inactive-icon";
-								}
-							} else if (isActive) {
-								iconClassName = "header-active-icon";
-							}
-
-							return (
-								<Link
-									href={el.path}
-									key={i}
-									className={`font-mts-text flex items-center gap-2 rounded-[38px] p-0.5 px-4 py-2.5 text-sm/[100%] font-medium text-[#374151] ${pathname === el.path && "bg-[#2563EB] text-white"}`}
-								>
-									<Icon className={iconClassName} />
-									{el.name}
-								</Link>
-							);
-						})}
-					</div>
-				</div>
-				<div
-					className="hidden shrink-0 lg:flex"
-					style={{ width: "150px", justifyContent: "flex-end" }}
-				>
-					{user ? (
-						<Link
-							href={"/auth"}
-							className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
-						>
-							Выйти
-						</Link>
-					) : (
-						<Button onClick={handleLogout}>
-							<LoginIcon />
-							Выйти
-						</Button>					
-						<Link href={"/auth"}>
-							<Button>
-								<LoginIcon />
-								Войти
-							</Button>
-						</Link>
-					)}
-				</div>
-				<button
-					onClick={() => setMenu(!menu)}
-					className="ml-auto block lg:hidden"
-				>
-					{menu ? <CloseMenu /> : <MenuIcon />}
-				</button>
 			</div>
-			{menu && (
-				<div className="-mt-0.5 block sm:hidden">
-					<div className="flex h-max flex-col gap-6 rounded-b-3xl bg-[#E1E8F0] px-6 pb-6 shadow-[0px_4px_10px_0px_#0000001A]">
-						<div className="flex w-full flex-col gap-4">
-							{links.map((el, i) => {
-								const isActive = pathname === el.path;
-								let Icon = el.icon;
-								let iconClassName = "inactive-icon";
-
-								if (el.path === "/") {
-									if (isActive) {
-										Icon = Star;
-										iconClassName = "active-icon-gold";
-									} else {
-										Icon = Star;
-										iconClassName = "inactive-icon";
-									}
-								} else if (isActive) {
-									iconClassName = "active-icon";
-								}
-
-								return (
-									<Link
-										href={el.path}
-										key={i}
-										onClick={() => setMenu(false)}
-										className={`font-mts-text flex items-center gap-2 rounded-[14px] p-4 text-sm/[100%] font-medium text-[#808080] ${pathname === el.path && "bg-white text-black"}`}
-									>
-										<Icon className={iconClassName} />
-										{el.name}
-									</Link>
-								);
-							})}
-						</div>
-						{user ? (
-							<Link
-								href={"/auth"}
-								className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
-							>
-								Выйти
-							</Link>
-						) : (
-							<Button className="w-full justify-center" onClick={handleLogout}>
-								<Image src={loginMobile} alt="logout" width={24} height={24} />
-								Выйти
-							</Button>
-							
-							<Link href={"/auth"} className="w-full">
-								<Button
-									className="w-full justify-center"
-									onClick={() => setMenu(false)}
-								>
-									<Image src={loginMobile} alt="login" width={24} height={24} />
-									Войти
-								</Button>
-							</Link>
-						)}
-					</div> */}
-				</div>
-			{/* )} */}
 		</header>
 	);
 };
