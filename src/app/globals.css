@@ -9,6 +9,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+body{
+	overflow-y: scroll;
+}
+
+
 .button-gradient {
 	position: relative;
 	overflow: hidden;
@@ -66,7 +71,8 @@ html {
 }
 
 .inactive-icon path {
-	fill: #374151;
+	fill: #808080;
+	/* fill: #374151; */
 }
 
 .active-icon-gold path {

@@ -142,8 +142,8 @@ export const Profile = () => {
 			<h2 className="font-mts-extended text-xl/[22px] font-medium text-black">
 				Профиль
 			</h2>
-			<div className="flex w-full flex-col rounded-2xl bg-white shadow-[0px_0px_11px_0px_#00000005] sm:flex-row">
-				<div className="flex flex-col items-center justify-between gap-6 border-b border-[#F2F4F4] p-6 sm:w-[200px] sm:border-r sm:px-4 sm:py-6">
+			<div className="flex w-full flex-col gap-[2px] rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] overflow-hidden sm:flex-row">
+				<div className="flex flex-col items-center justify-between gap-6 border-b bg-[#F7F9FB] border-[#F2F4F4] p-6 sm:w-[200px] sm:border-r sm:px-4 sm:py-6">
 					<div className="flex flex-col items-center gap-4">
 						<div className="relative z-0 h-[78px] w-[78px] rounded-full">
 							<div
@@ -193,7 +193,7 @@ export const Profile = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-1 flex-col gap-4 p-6 sm:gap-8 sm:px-4 sm:py-6">
+				<div className="flex flex-1 flex-col gap-4 p-6 bg-[#F7F9FB] sm:gap-8 sm:px-4 sm:py-6">
 					<div className="flex flex-col gap-2">
 						<p className="font-mts-text text-sm/[100%] font-medium text-black">
 							Ваша реферальная ссылка:
@@ -228,7 +228,7 @@ export const Profile = () => {
 									{refState?.referral_balance || 0} <TgStar />
 								</p>
 							</div>
-							<Button className="justify-center" onClick={handleWithdraw}>
+							<Button className="w-[97px]" onClick={handleWithdraw}>
 								Вывести
 							</Button>
 							<Toaster toaster={toaster.current}>

@@ -125,8 +125,7 @@ export const BonusDiscovers = () => {
         </div>
         <div className="">
           <Link href={profileHref} className="w-full md:w-fit">
-            <Button className="w-full justify-center">
-              <LoginIcon />
+            <Button className="w-[85px] justify-center">             
               Войти
             </Button>
           </Link>

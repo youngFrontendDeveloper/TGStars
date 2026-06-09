@@ -55,13 +55,13 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="w-full justify-center px-6 sm:w-max"
+				className="w-full justify-center mb-[24px] lg:mb-[33px] px-6 sm:w-max"
 				onClick={handleSubmit}
 				disabled={!premiumState || !username}
 			>
 				Купить Premium
 			</Button>
-			<p className="font-mts-text text-base/[22px] text-center text-[#95A0A7]">
+			<p className="font-mts-text text-[14px] leading-[22.8px] text-center text-[#95A0A7] lg:text-[16px]">
 				Среднее время доставки Premium составляет 1 минуту. В случае неполадок
 				со стороны Telegram возможны задержки.<br/>
 				Внимание! У получателя не должно быть активной подписки Premium.

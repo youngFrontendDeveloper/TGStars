@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Button } from "@/shared/components/ui/button";
+import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
+
+import DiscountIcon from "@/public/assets/icons/discount.svg";
+import ErrorIcon from "@/public/assets/icons/error.svg";
+
 import { type StarPrice } from "../../types/buy-form.type";
 import { UsernameInput } from "../username-input";
 import { AmountInput } from "./amount-input";
 import { ButtonGroup } from "./button-group";
-import ErrorIcon from "@/public/assets/icons/error.svg";
-import DiscountIcon from "@/public/assets/icons/discount.svg";
-import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
 
 type Props = {
 	data: StarPrice[];
@@ -198,14 +201,16 @@ export const Stars = ({
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="w-full justify-center px-6 sm:w-max relative -top-[1px]"
+				className=" mb-[24px] w-[169px] px-6 sm:w-max lg:mb-[33px]"
+				// className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isValid}
 			>
-				Купить звезды
+				Купить Звёзды
 			</Button>
-			<p className="font-mts-text text-center text-xs/[22px] text-[#95A0A7] sm:text-base/[22px] relative -tracking-[.2px]">
-				Среднее время зачисления Звёзд составляет 1 минуту. В случае неполадок со стороны Telegram возможны задержки в зачислении.
+			<p className="font-mts-text relative text-center text-[14px] leading-[22.8px] -tracking-[.2px] text-[#95A0A7] lg:text-[16px]">
+				Среднее время зачисления Звёзд составляет 1 минуту. В случае неполадок
+				со стороны Telegram возможны задержки в зачислении.
 			</p>
 		</>
 	);

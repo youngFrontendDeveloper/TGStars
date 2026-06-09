@@ -4,7 +4,7 @@ import { memo, useEffect, useState } from "react";
 
 import { getBuyFormData } from "../api/api";
 import { type BuyFormData } from "../types/buy-form.type";
-import { TAB_ITEMS } from "./constants";
+import { getTabItems } from "./constants";
 import { Payment } from "./payment";
 import { Premium } from "./premium/premium";
 import { Stars } from "./stars/stars";
@@ -15,6 +15,7 @@ import { type SectionType } from "./types";
 export const BuyForm = memo(() => {
 	const [section, setSection] = useState<SectionType>("stars");
 	const [username, setUsername] = useState("");
+	const [isMobile, setIsMobile] = useState(false);
 	const [walletAddress, setWalletAddress] = useState("");
 	const [showPayment, setShowPayment] = useState(false);
 	const [selectedAmount, setSelectedAmount] = useState<
@@ -47,17 +48,17 @@ export const BuyForm = memo(() => {
 		const fetchData = async () => {
 			const stateData = await getBuyFormData();
 			setData(stateData);
-			console.log(stateData);
+			// console.log(stateData);
 		};
 		fetchData();
 	}, []);
 
 	return (
-		<div className="relative flex w-full flex-col gap-6 rounded-2xl bg-white p-6 shadow-[0px_0px_11px_0px_#00000005]  sm:gap-[37px] sm:px-10 sm:py-[30px] bg-[#F7F9FB] border-[1px] border-[#fff]">
+		<div className="relative flex w-full flex-col rounded-[16px] border-[1px] border-[#fff] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] sm:gap-[37px] sm:px-10 sm:py-[30px]">
 			{!showPayment && (
 				<>
 					<TabSwitcher
-						items={TAB_ITEMS}
+						items={getTabItems(isMobile)}
 						activeTab={section}
 						onTabChange={handleChangeSection}
 					/>

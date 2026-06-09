@@ -55,7 +55,7 @@ export const Header = () => {
 				) : (
 					<Link
 						href={"/auth"}
-						className={`font-mts-wide order-3 ml-0 items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB] xl:ml-[75px]`}
+						className={`font-mts-wide order-3 ml-0 items-center rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB] xl:ml-[75px]`}
 					>
 						Войти
 					</Link>

@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/shared/components/ui/button";
 import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
+
 import ErrorIcon from "@/public/assets/icons/error.svg";
 import TonIcon from "@/public/assets/icons/ton.svg";
 import UnvalidIcon from "@/public/assets/icons/unvalid.svg";
 import ValidIcon from "@/public/assets/icons/valid.svg";
 
 import { calculateTon, getTonSettings, type TonSettings } from "../../api/api";
-import { PRICE_BUTTONS } from "../constants";
 import { getDiscount } from "../../utils/get-discount";
+import { PRICE_BUTTONS } from "../constants";
 import { AmountInput } from "../stars/amount-input";
 
 const roundTo = (value: number, decimals: number) => {
@@ -34,7 +35,11 @@ const isValidTonAddress = (value: string) => {
 };
 
 type Props = {
-	onBuyClick: (amountRub: number, tonAmount: number, walletAddress: string) => void;
+	onBuyClick: (
+		amountRub: number,
+		tonAmount: number,
+		walletAddress: string,
+	) => void;
 };
 
 export const Ton = ({ onBuyClick }: Props) => {
@@ -50,7 +55,9 @@ export const Ton = ({ onBuyClick }: Props) => {
 	const ignoreNextReceiveChangeRef = useRef(false);
 
 	const { user, isAuthenticated } = useUser();
-	const discountPercent = isAuthenticated ? getDiscount(user?.total_spent || 0) : 0;
+	const discountPercent = isAuthenticated
+		? getDiscount(user?.total_spent || 0)
+		: 0;
 	const discountFactor = 1 - discountPercent / 100;
 	const hasDiscount = discountPercent > 0;
 
@@ -95,7 +102,8 @@ export const Ton = ({ onBuyClick }: Props) => {
 			setReceiveAmount("");
 			return;
 		}
-		const baseAmount = discountFactor > 0 ? payValue / discountFactor : payValue;
+		const baseAmount =
+			discountFactor > 0 ? payValue / discountFactor : payValue;
 		calcRequestId.current += 1;
 		const requestId = calcRequestId.current;
 		setIsCalculating(true);
@@ -116,12 +124,14 @@ export const Ton = ({ onBuyClick }: Props) => {
 									ton_rate_rub: data.ton_rate_rub,
 									ton_min_purchase_rub:
 										prev.ton_min_purchase_ton * data.ton_rate_rub,
-							  }
+								}
 							: prev,
 					);
 				}
 			} else {
-				setError((data as { error?: string })?.error || "Не удалось рассчитать сумму");
+				setError(
+					(data as { error?: string })?.error || "Не удалось рассчитать сумму",
+				);
 			}
 		} catch {
 			if (requestId === calcRequestId.current) {
@@ -177,7 +187,8 @@ export const Ton = ({ onBuyClick }: Props) => {
 		}
 		const payValue = Number(payAmount);
 		const ton = Number(receiveAmount);
-		const baseAmount = discountFactor > 0 ? payValue / discountFactor : payValue;
+		const baseAmount =
+			discountFactor > 0 ? payValue / discountFactor : payValue;
 
 		if (settings && !settings.ton_enabled) {
 			setError(TON_DISABLED_ERROR);
@@ -291,14 +302,14 @@ export const Ton = ({ onBuyClick }: Props) => {
 			)}
 
 			<Button
-				className="w-full justify-center px-6 sm:w-max relative -top-[1px]"
+				className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isFormReady || isCalculating}
 			>
 				Купить TON
 			</Button>
 
-			<p className="font-mts-text text-center text-xs/[22px] text-[#95A0A7] sm:text-base/[22px] relative -top-[3px]">
+			<p className="font-mts-text relative -top-[3px] text-center text-[14px] leading-[22.8px] text-[#95A0A7] lg:text-[16px]">
 				Среднее время перевода TON составляет 1 минуту. В случае неполадок со
 				стороны TON Network возможны задержки перевода.
 			</p>

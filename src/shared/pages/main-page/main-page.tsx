@@ -23,8 +23,7 @@ export const MainPage = definePage({
 							<div className="h-full w-full bg-[#FF4D7E]"></div>
 							<div className="-mt-10 h-full w-full bg-[#9A4BFF]"></div>
 						</div>
-					</section>
-					{/* <Promo /> */}
+					</section>					
 					
 					<Bonus />    {/* Реферальная программа    */} 
 					<BonusDiscovers />   {/* Бонусная программа  */} 

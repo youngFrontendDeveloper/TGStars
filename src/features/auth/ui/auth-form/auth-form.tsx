@@ -1,11 +1,15 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
 import { Button } from "@/shared/components/ui/button";
 import { useAuth } from "@/shared/layouts/auth-provider/auth-provider";
+
 import TgIcon from "@/public/assets/icons/tg.svg";
+
 import { checkAuth, getAuthLink, getProfile } from "../../api/api";
 
 export const AuthForm = () => {
@@ -24,11 +28,11 @@ export const AuthForm = () => {
 						clearInterval(intervalId);
 						setPolling(false);
 						setLoading(false);
-						
+
 						// Очищаем реферальный код после успешной авторизации
-						localStorage.removeItem('pending_referral_code');
-						console.log('✅ Реферальный код очищен после авторизации');
-						
+						localStorage.removeItem("pending_referral_code");
+						console.log("✅ Реферальный код очищен после авторизации");
+
 						const userData = await getProfile();
 						setAuthData(userData.user);
 						setOrderData(userData.orders);
@@ -82,12 +86,12 @@ export const AuthForm = () => {
 				src="/assets/icons/logo-bigger-v2.svg"
 				alt="TGStars"
 				width={207}
-				height={38}				
+				height={38}
 			/>
 			<Button
 				onClick={handleAuth}
 				disabled={loading || polling}
-				className="h-11 w-full justify-center px-6 "
+				className="w-[251px]"
 			>
 				<TgIcon className="white-icon" />
 				{loading || polling
@@ -95,7 +99,7 @@ export const AuthForm = () => {
 					: "Войти через Telegram"}
 			</Button>
 			<p className="font-mts-text text-sm/[22px] text-[#95A0A7]">
-				Нажимая кнопку &quot;Войти через Telegram&quot;, вы соглашаетесь с  
+				Нажимая кнопку &quot;Войти через Telegram&quot;, вы соглашаетесь с
 				<Link
 					href={"/public-offer"}
 					className="!underline"
@@ -104,7 +108,7 @@ export const AuthForm = () => {
 				>
 					публичной офертой
 				</Link>
-				, 
+				,
 				<Link
 					href={"/privacy-policy"}
 					className="!underline"

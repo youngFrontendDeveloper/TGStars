@@ -5,7 +5,7 @@ import bannerImage from "@/public/assets/images/develop.png";
 
 export const DevelopBanner = () => {
 	return (
-		<section className="flex w-full flex-col gap-6 rounded-2xl bg-white p-6 shadow-[0px_0px_11px_0px_#00000005] sm:flex-row sm:gap-8 sm:px-10 sm:py-20">
+		<section className="flex w-full flex-col gap-6 rounded-2xl bg-[#F7F9FB] p-6 shadow-[0px_0px_11px_0px_#00000005] sm:flex-row sm:gap-8 sm:px-10 sm:py-20">
 			<Image
 				src={bannerImage}
 				alt="banner image"
@@ -17,10 +17,7 @@ export const DevelopBanner = () => {
 			<div className="flex flex-col gap-5">
 				<h1 className="font-mts-extended text-xl/[22px] font-medium text-black">
 					Раздел в разработке
-				</h1>
-				{/* <p className="font-mts-extended text-xl/[22px] font-medium text-black">
-					Раздел в разработке
-				</p> */}
+				</h1>			
 				<p className="font-mts-text text-base/[22px] font-medium text-[#95A0A7]">
 					Извините за строительный шум — утка уже всё чинит. Скоро здесь будет
 					что‑то классное.

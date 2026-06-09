@@ -8,7 +8,7 @@ export const ProfilePage = definePage({
 	name: "ProfilePage",
 	render() {
 		return (
-			<section>
+			<section className="m-auto">
 				<h1 className="sr-only">Страница профиля пользователя</h1>
 				<div className="container">
 					<Profile />
