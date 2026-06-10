@@ -19,13 +19,13 @@ export const TabSwitcher = ({
 }: TabSwitcherProps) => {
 	return (
 		<>
-			<div className="mx-auto mb-[24px] hidden h-[48] w-max rounded-[68px] bg-[#EAEEF0] p-1 sm:flex">
+			<div className="mx-auto mb-[24px] hidden h-full w-fit rounded-[68px] bg-[#EAEEF0] p-[4px] md:flex">
 				{items.map((item) => (
 					<button
 						key={item.id}
 						onClick={() => onTabChange(item.id)}
 						className={clsx(
-							"font-mts-wide flex items-center gap-[8px] h-full rounded-[68px] px-[14px] text-[14px] font-semibold text-[#808080] transition-colors",
+							"font-mts-wide flex h-full items-center gap-[8px] rounded-[68px] px-[14px] py-[10px] text-[14px] font-semibold text-[#808080] transition-colors",
 							activeTab === item.id && "bg-white text-black",
 						)}
 					>
@@ -97,9 +97,9 @@ const MobileTabSwitcher = ({
 	}, [emblaApi, activeTab, items]);
 
 	return (
-		<div className="relative mx-auto mb-[24px] w-full max-w-[90vw] sm:hidden">
+		<div className="relative mx-auto mb-[24px] h-[48px] w-full max-w-[90vw] md:hidden">
 			<div
-				className="overflow-hidden rounded-[68px] bg-[#EAEEF0] p-[3.5px]"
+				className="overflow-hidden rounded-[68px] bg-[#EAEEF0] p-[4px]"
 				ref={emblaRef}
 			>
 				<div className="flex">
@@ -111,7 +111,7 @@ const MobileTabSwitcher = ({
 							<button
 								onClick={() => onTabChange(item.id)}
 								className={clsx(
-									"font-mts-text flex items-center justify-center gap-2 whitespace-nowrap rounded-[68px] px-4 py-[12.5px] text-sm/[100%] font-medium text-[#808080] transition-colors",
+									"font-mts-wide flex items-center justify-center gap-[8px] whitespace-nowrap rounded-[68px] px-[14px] py-[10px] text-[14px]/[100%] font-semibold text-[#808080] transition-colors",
 									activeTab === item.id && "bg-white text-black",
 								)}
 								style={{ minWidth: "fit-content" }}

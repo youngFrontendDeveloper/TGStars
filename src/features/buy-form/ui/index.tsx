@@ -2,6 +2,8 @@
 
 import { memo, useEffect, useState } from "react";
 
+import { useIsMobile } from "@/hooks/use-is-mobile";
+
 import { getBuyFormData } from "../api/api";
 import { type BuyFormData } from "../types/buy-form.type";
 import { getTabItems } from "./constants";
@@ -15,12 +17,13 @@ import { type SectionType } from "./types";
 export const BuyForm = memo(() => {
 	const [section, setSection] = useState<SectionType>("stars");
 	const [username, setUsername] = useState("");
-	const [isMobile, setIsMobile] = useState(false);
+	// const [isMobile, setIsMobile] = useState(true);
 	const [walletAddress, setWalletAddress] = useState("");
 	const [showPayment, setShowPayment] = useState(false);
 	const [selectedAmount, setSelectedAmount] = useState<
 		{ amount: number; value: number } | undefined
 	>(undefined);
+	const isMobile = useIsMobile();
 
 	const [data, setData] = useState<BuyFormData>({
 		discount_percent: 0,
