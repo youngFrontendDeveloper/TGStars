@@ -208,7 +208,7 @@ export const Profile = () => {
 							<div className="relative">
 								<button
 									onClick={copyToClipboard}
-									className="h-5 w-5 cursor-pointer transition-opacity hover:opacity-80"
+									className="cursor-pointer transition-opacity hover:opacity-80"
 									title="Копировать ссылку"
 								>
 									<Copy />
@@ -228,7 +228,7 @@ export const Profile = () => {
 									{refState?.referral_balance || 0} <TgStar />
 								</p>
 							</div>
-							<Button className="w-[97px]" onClick={handleWithdraw}>
+							<Button maxWidth="97px" onClick={handleWithdraw}>
 								Вывести
 							</Button>
 							<Toaster toaster={toaster.current}>

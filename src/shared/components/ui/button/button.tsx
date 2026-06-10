@@ -1,14 +1,20 @@
 import { type ButtonHTMLAttributes } from "react";
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  maxWidth?: string;
+}
+
 export const Button = ({
 	children,
 	className,
+	maxWidth = "auto",
 	...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) => {
+}:ButtonProps) => {
 	return (
 		<button
 			{...props}
-			className={`font-mts-wide h-[44px] relative flex cursor-pointer items-center justify-center gap-[6px] overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-[16px] font-medium leading-[22.8px] text-white hover:bg-gradient-to-r hover:from-[#2563EB] hover:to-[#2563EB] hover:text-white ${className}`}
+			className={`font-mts-wide w-full h-[44px] relative flex cursor-pointer items-center justify-center gap-[6px] overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-[16px] font-medium leading-[22.8px] text-white hover:bg-gradient-to-r hover:from-[#2563EB] hover:to-[#2563EB] hover:text-white ${className}`}
+			style={{ maxWidth, ...props.style }}
 		>
 			{children}
 		</button>

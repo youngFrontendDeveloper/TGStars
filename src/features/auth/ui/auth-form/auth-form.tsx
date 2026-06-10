@@ -91,7 +91,7 @@ export const AuthForm = () => {
 			<Button
 				onClick={handleAuth}
 				disabled={loading || polling}
-				className="w-[251px]"
+				maxWidth="251px"			
 			>
 				<TgIcon className="white-icon" />
 				{loading || polling
