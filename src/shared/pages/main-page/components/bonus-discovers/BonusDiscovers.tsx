@@ -115,17 +115,17 @@ export const BonusDiscovers = () => {
 		<section className="relative -top-[4px]" id="bonus">
 			<h2 className="sr-only">Бонусная программа при покупке звезд Телеграм</h2>
 			<div className="font-mts-text mb-[20px] flex items-center gap-2 text-sm font-medium text-[#000000]">
-				<PresentIcon className="h-4 w-4" />
-				<span className="font-mts-wide text-[16px] font-[500] leading-[23px]">
+				<PresentIcon className="h-[16px] w-[16px]" />
+				<span className="font-mts-wide text-[16px] font-semibold leading-[23px]">
 					Бонусная программа
 				</span>
 			</div>
-			<div className="shadow-cus mb-5 box-border flex flex-col justify-between gap-5 rounded-[16px] border-[1px] border-[#FFFFFF] bg-[#F7F9FB] p-[24px] md:flex-row md:px-[15px] md:py-[25px]">
+			<div className="shadow-cus mb-[20px] box-border flex flex-col justify-between gap-5 rounded-[16px] border-[1px] border-[#FFFFFF] bg-[#F7F9FB] p-[24px] md:flex-row md:px-[15px] md:py-[25px]">
 				<div className="">
-					<p className="font-mts-wide text-center text-[16px] font-[500] leading-[24px] md:text-left">
+					<p className="font-mts-wide text-center text-[16px] font-semibold leading-[24px] md:text-left">
 						Авторизуйтесь и получите скидку прямо сейчас!
 					</p>
-					<p className="font-mts-text leading-1 text-center text-[14px] font-[500] text-[#95A0A7] md:text-left">
+					<p className="font-mts-text leading-1 text-center text-[14px] font-medium text-[#95A0A7] md:text-left">
 						Скидка автоматически применится к Вашим заказам.{" "}
 					</p>
 				</div>
@@ -135,15 +135,15 @@ export const BonusDiscovers = () => {
 					</Link>
 				</div>
 			</div>
-			<div className="flex flex-col gap-0 md:gap-[19px]">
+			<div className="flex flex-col gap-[2px] md:gap-y-[20px]">
 				{rows.map((row, rowIndex) => (
 					<div
 						key={`row-${rowIndex}`}
-						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] shadow-none md:shadow-[0px_12px_24px_-16px_#0000003D] ${getRowClassName(
+						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] bg-transparent shadow-none md:shadow-[0px_12px_24px_-16px_#0000003D] ${getRowClassName(
 							rowIndex,
 						)}`}
 					>
-						<div className="grid grid-cols-1 border-[1px] border-[#fff] md:grid-cols-3">
+						<div className="grid grid-cols-1 gap-[2px] md:grid-cols-3 md:gap-x-[2px]">
 							{row.map((discover, index) => {
 								const isLastItem = index === row.length - 1;
 								const isLastCol = (index + 1) % 3 === 0;
@@ -161,30 +161,30 @@ export const BonusDiscovers = () => {
 								return (
 									<div
 										key={discover.name}
-										className={`p-[24px] md:p-[15px] ${borderClassName}`}
+										className={`flex flex-col bg-white p-[24px] lg:px-[15px] lg:py-[25px] ${borderClassName}`}
 									>
-										<div className="flex flex-col md:gap-5">
-											<Image
-												src={discover.img}
-												alt={discover.name}
-												width={90}
-												height={110}
-												className="mt-[0] h-[110px] w-[90px] self-center object-cover md:mt-[10px]"
-											/>
-											<span
-												className={`font-mts-wide mts-font-wide mt-[20px] block w-full min-w-[140px] justify-center rounded-full px-4 py-1 text-center text-[16px] font-bold md:mt-[0] ${discover.pillClass}`}
-											>
-												{discover.name}
-											</span>
-											<div className="flex items-center gap-2">
-												<p className="font-mts-wide mt-[20px] text-[16px] font-[500] text-[#374151] md:mt-[0]">
-													Скидка {discover.discoverPercent}%
-												</p>
-											</div>
-											<p className="font-mts-text relative mt-[5px] text-sm leading-[22px] text-[#8A96A3] md:-top-[15px] md:mt-[0]">
-												{discover.discoverCondition}
-											</p>
-										</div>
+										{/* <div className="flex flex-col px-[15px] py-[25px]"> */}
+										<Image
+											src={discover.img}
+											alt={discover.name}
+											width={90}
+											height={110}
+											className="mb-[20px] h-[110px] w-[90px] self-center object-contain"
+										/>
+										<span
+											className={`font-mts-wide mb-[20px] block flex h-[35px] w-full min-w-[140px] items-center justify-center rounded-full text-center text-[16px]/[22.75px] font-bold ${discover.pillClass}`}
+										>
+											{discover.name}
+										</span>
+										{/* <div className="flex items-center gap-2"> */}
+										<p className="font-mts-wide mb-[4px] text-[16px]/[22.75px] font-semibold text-[#374151]">
+											Скидка {discover.discoverPercent}%
+										</p>
+										{/* </div> */}
+										<p className="font-mts-text relative text-[14px]/[22.8px] text-[#95A0A7]">
+											{discover.discoverCondition}
+										</p>
+										{/* </div> */}
 									</div>
 								);
 							})}
