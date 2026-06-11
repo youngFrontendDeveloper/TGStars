@@ -243,7 +243,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 
 	return (
 		<>
-			<div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+			<div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-4">
 				<AmountInput
 					label="Вы заплатите"
 					placeholder="1000"
@@ -302,7 +302,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 			)}
 
 			<Button
-				className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
+				className="relative -top-[1px] mb-[24px] w-full justify-center px-6 md:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isFormReady || isCalculating}
 			>

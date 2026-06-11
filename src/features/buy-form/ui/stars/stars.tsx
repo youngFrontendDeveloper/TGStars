@@ -154,7 +154,7 @@ export const Stars = ({
 
 	return (
 		<>
-			<div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+			<div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-4">
 				<AmountInput
 					label="Вы заплатите"
 					placeholder="100"

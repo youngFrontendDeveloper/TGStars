@@ -97,7 +97,7 @@ const MobileTabSwitcher = ({
 	}, [emblaApi, activeTab, items]);
 
 	return (
-		<div className="relative mx-auto mb-[24px] h-[48px] w-full max-w-[90vw] md:hidden">
+		<div className="relative mx-auto mb-[24px] h-[48px] w-full max-w-[278px] md:hidden">
 			<div
 				className="overflow-hidden rounded-[68px] bg-[#EAEEF0] p-[4px]"
 				ref={emblaRef}

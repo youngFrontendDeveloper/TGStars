@@ -138,7 +138,7 @@ export const Profile = () => {
 			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				Профиль
 			</h2>
-			<div className="mx-auto flex w-full max-w-[400px] flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:max-w-[670px] md:flex-row">
+			<div className="mx-auto flex w-full flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:max-w-[670px] md:flex-row">
 				<div className="width-full flex flex-col items-center justify-between gap-[17px] border-b border-[#F2F4F4] bg-[#F7F9FB] p-[24px] sm:border-r md:w-[200px] md:px-[15px] md:py-[25px] lg:gap-[24px]">
 					<div className="flex flex-col items-center gap-[15px]">
 						<div className="relative z-0 h-[78px] w-[78px] rounded-full">
