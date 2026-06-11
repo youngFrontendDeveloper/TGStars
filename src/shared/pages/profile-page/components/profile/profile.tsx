@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { createToaster, Toast, Toaster } from "@ark-ui/react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { getReferralsInfo } from "@/features/auth";
@@ -133,12 +134,12 @@ export const Profile = () => {
 	const showAvatar = resolvedAvatar && !avatarError;
 
 	return (
-		<section className="flex flex-col mb-[48px]  md:mb-[58px]">
+		<section className="mb-[48px] flex flex-col md:mb-[58px]">
 			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				Профиль
 			</h2>
-			<div className="flex w-full flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:flex-row">
-				<div className="flex flex-col items-center justify-between gap-[24px] border-b border-[#F2F4F4] bg-[#F7F9FB] p-[24px] sm:border-r  md:w-[200px] md:px-[15px] md:py-[25px]">
+			<div className="mx-auto flex w-full max-w-[400px] flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:max-w-[670px] md:flex-row">
+				<div className="width-full flex flex-col items-center justify-between gap-[17px] border-b border-[#F2F4F4] bg-[#F7F9FB] p-[24px] sm:border-r md:w-[200px] md:px-[15px] md:py-[25px] lg:gap-[24px]">
 					<div className="flex flex-col items-center gap-[15px]">
 						<div className="relative z-0 h-[78px] w-[78px] rounded-full">
 							<div
@@ -149,7 +150,7 @@ export const Profile = () => {
 								}}
 							/>
 							{showAvatar ? (
-								<img
+								<Image
 									src={resolvedAvatar}
 									alt={user?.first_name || ""}
 									width={78}
@@ -158,7 +159,7 @@ export const Profile = () => {
 									onError={() => setAvatarError(true)}
 								/>
 							) : (
-								<img
+								<Image
 									src={defaultUser.src}
 									alt={user?.first_name || ""}
 									width={78}
@@ -171,8 +172,8 @@ export const Profile = () => {
 							{user?.first_name}
 						</p>
 					</div>
-					<div className="flex w-[170px] flex-col gap-1 sm:w-full">
-						<div className="flex items-center justify-between">
+					<div className="flex flex-col gap-1 sm:w-full">
+						<div className="flex items-center justify-between md:order-[2]">
 							<p className="table-text">Уровень:</p>
 							<p
 								className={`font-mts-wide text-[15px] font-bold uppercase ${currentLevel.textClass}`}
@@ -182,22 +183,22 @@ export const Profile = () => {
 						</div>
 
 						<div className="flex items-center justify-between">
-							<p className="table-text py-0">Куплено:</p>
+							<p className="table-text">Куплено:</p>
 							<p className="table-text flex items-center gap-0.5 py-0">
 								{user?.total_stars || 0} <TgStar />
 							</p>
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px] sm:gap-8 md:px-4 md:py-6">
-					<div className="flex flex-col gap-2">
+				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px]">
+					<div className="flex flex-col gap-[8px]">
 						<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 							Ваша реферальная ссылка:
 						</p>
-						<div className="flex w-full items-center justify-between gap-2 rounded-xl bg-[#EAEEF0] px-4 sm:px-2">
-							<div className="flex h-[45px] w-[333px] flex-1 items-center gap-2">
-								<People className="w-[16px]" />
-								<p className="table-text w-full max-w-[333px] overflow-hidden text-ellipsis text-nowrap px-[16px] py-[11px]">
+						<div className="flex h-[45px] w-full items-center justify-between gap-[8px] rounded-[12px] bg-[#EAEEF0] px-[16px] py-[11px] lg:px-[8px]">
+							<div className="flex w-full max-w-[333px] flex-1 items-center gap-[8px]">
+								<People className="w-[16px] min-w-[16px]" />
+								<p className="table-text w-full overflow-hidden text-ellipsis text-nowrap text-black">
 									{refState?.referral_link}
 								</p>
 							</div>
@@ -207,7 +208,7 @@ export const Profile = () => {
 									className="cursor-pointer transition-opacity hover:opacity-80"
 									title="Копировать ссылку"
 								>
-									<Copy className="w-[20px]" />
+									<Copy className="w-[16px]" />
 								</button>
 
 								{copySuccess && (
@@ -217,12 +218,12 @@ export const Profile = () => {
 								)}
 							</div>
 						</div>
-						<div className="flex flex-col gap-[8px] sm:flex-row">
-							<div className="flex h-[45px] w-full justify-between rounded-xl bg-[#EAEEF0] px-2">
-								<p className="table-text bg-[#EAEEF0] px-[16px] py-[11px]">
+						<div className="flex flex-col gap-[8px] md:flex-row">
+							<div className="flex h-[45px] w-full justify-between rounded-[12px] bg-[#EAEEF0] px-[16px] py-[11px] lg:px-[8px]">
+								<p className="table-text bg-[#EAEEF0] text-black">
 									Реферальный баланс:
 								</p>
-								<p className="table-text flex items-center gap-0.5">
+								<p className="table-text flex items-center gap-[4px]">
 									{refState?.referral_balance || 0} <TgStar />
 								</p>
 							</div>
