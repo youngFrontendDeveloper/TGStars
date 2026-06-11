@@ -13,7 +13,6 @@ const getIconClassName = (isActive: boolean, index: number): string => {
 		console.log("isActive && index !== 0");
 		return "text-white";
 	} else if (!isActive && index === 0) {
-		console.log("!isActive && index === 0");
 		return "group-hover:text-[#FFCF09]";
 	} else {
 		return "group-hover:text-white";

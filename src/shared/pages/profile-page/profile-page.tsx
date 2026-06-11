@@ -12,8 +12,8 @@ export const ProfilePage = definePage({
 				<h1 className="sr-only">Страница профиля пользователя</h1>
 				<div className="container">
 					<Profile />
-					<section className="flex flex-col gap-5">
-						<h2 className="font-mts-extended text-xl/[22px] font-medium text-black">
+					<section className="mb-[48px] flex flex-col lg:mb-[58px]">
+						<h2 className="font-mts-extended text-[20px]/[22.8px] font-semibold text-black mb-[20px]">
 							Купить Звёзды
 						</h2>
 						<BuyForm />

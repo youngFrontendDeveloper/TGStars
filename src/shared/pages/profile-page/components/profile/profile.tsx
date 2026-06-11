@@ -4,12 +4,13 @@ import { createToaster, Toast, Toaster } from "@ark-ui/react";
 import { useEffect, useRef, useState } from "react";
 
 import { getReferralsInfo } from "@/features/auth";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { Button } from "@/shared/components/ui/button";
 import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
 
 import Copy from "@/public/assets/icons/copy.svg";
 import People from "@/public/assets/icons/people.svg";
-import TgStar from "@/public/assets/icons/tg-star.svg";
+import TgStar from "@/public/assets/icons/star-with-border.svg";
 import defaultUser from "@/public/assets/images/user.png";
 
 type ToastProps = {
@@ -18,13 +19,6 @@ type ToastProps = {
 	id: string;
 	type?: "success" | "error" | "warning" | "info";
 };
-// const resolveAvatarUrl = (url?: string | null): string | null => {
-// 	if (!url) return null;
-// 	if (url.startsWith("data:")) return url;
-// 	if (url.startsWith("http")) return url;
-// 	if (url.startsWith("/")) return `https://tg-stars.ru${url}`;
-// 	return null;
-// };
 
 const resolveAvatarUrl = (url?: string | null): string | undefined => {
 	if (!url) return undefined;
@@ -35,6 +29,7 @@ const resolveAvatarUrl = (url?: string | null): string | undefined => {
 };
 export const Profile = () => {
 	const { user } = useUser();
+	const isMobile = useIsMobile();
 	const levels = [
 		{ name: "Silver", percent: 1, textClass: "text-[#A8B4D4]" },
 		{ name: "Emerald", percent: 2, textClass: "text-[#2DDFCA]" },
@@ -114,7 +109,7 @@ export const Profile = () => {
 		});
 		const data = await res.json();
 
-		console.log(data);
+		// console.log(data);
 
 		if (data.success) {
 			const newRefferalBalance =
@@ -138,13 +133,13 @@ export const Profile = () => {
 	const showAvatar = resolvedAvatar && !avatarError;
 
 	return (
-		<section className="flex flex-col gap-5">
-			<h2 className="font-mts-extended text-xl/[22px] font-medium text-black">
+		<section className="flex flex-col mb-[48px]  md:mb-[58px]">
+			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				Профиль
 			</h2>
-			<div className="flex w-full flex-col gap-[2px] rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] overflow-hidden sm:flex-row">
-				<div className="flex flex-col items-center justify-between gap-6 border-b bg-[#F7F9FB] border-[#F2F4F4] p-6 sm:w-[200px] sm:border-r sm:px-4 sm:py-6">
-					<div className="flex flex-col items-center gap-4">
+			<div className="flex w-full flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:flex-row">
+				<div className="flex flex-col items-center justify-between gap-[24px] border-b border-[#F2F4F4] bg-[#F7F9FB] p-[24px] sm:border-r  md:w-[200px] md:px-[15px] md:py-[25px]">
+					<div className="flex flex-col items-center gap-[15px]">
 						<div className="relative z-0 h-[78px] w-[78px] rounded-full">
 							<div
 								className="absolute -z-10 h-full w-full rounded-full blur-sm"
@@ -172,36 +167,37 @@ export const Profile = () => {
 								/>
 							)}
 						</div>
-						<p className="font-mts-wide text-lg/[100%] font-bold text-[#95A0A7]">
+						<p className="font-mts-wide text-[18px]/[100%] font-bold text-[#95A0A7]">
 							{user?.first_name}
 						</p>
 					</div>
 					<div className="flex w-[170px] flex-col gap-1 sm:w-full">
+						<div className="flex items-center justify-between">
+							<p className="table-text">Уровень:</p>
+							<p
+								className={`font-mts-wide text-[15px] font-bold uppercase ${currentLevel.textClass}`}
+							>
+								{currentLevel.name}
+							</p>
+						</div>
+
 						<div className="flex items-center justify-between">
 							<p className="table-text py-0">Куплено:</p>
 							<p className="table-text flex items-center gap-0.5 py-0">
 								{user?.total_stars || 0} <TgStar />
 							</p>
 						</div>
-						<div className="flex items-center justify-between">
-							<p className="table-text py-0">Уровень:</p>
-							<p
-								className={`table-text font-mts-wide py-0 font-bold uppercase ${currentLevel.textClass}`}
-							>
-								{currentLevel.name}
-							</p>
-						</div>
 					</div>
 				</div>
-				<div className="flex flex-1 flex-col gap-4 p-6 bg-[#F7F9FB] sm:gap-8 sm:px-4 sm:py-6">
+				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px] sm:gap-8 md:px-4 md:py-6">
 					<div className="flex flex-col gap-2">
-						<p className="font-mts-text text-sm/[100%] font-medium text-black">
+						<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 							Ваша реферальная ссылка:
 						</p>
-						<div className="flex w-full items-center justify-between gap-2 rounded-xl bg-[#F2F4F5] px-4 sm:px-2">
-							<div className="flex w-[333px] flex-1 items-center gap-2">
-								<People />
-								<p className="table-text max-w-[333px] overflow-hidden text-ellipsis text-nowrap">
+						<div className="flex w-full items-center justify-between gap-2 rounded-xl bg-[#EAEEF0] px-4 sm:px-2">
+							<div className="flex h-[45px] w-[333px] flex-1 items-center gap-2">
+								<People className="w-[16px]" />
+								<p className="table-text w-full max-w-[333px] overflow-hidden text-ellipsis text-nowrap px-[16px] py-[11px]">
 									{refState?.referral_link}
 								</p>
 							</div>
@@ -211,7 +207,7 @@ export const Profile = () => {
 									className="cursor-pointer transition-opacity hover:opacity-80"
 									title="Копировать ссылку"
 								>
-									<Copy />
+									<Copy className="w-[20px]" />
 								</button>
 
 								{copySuccess && (
@@ -221,14 +217,19 @@ export const Profile = () => {
 								)}
 							</div>
 						</div>
-						<div className="flex flex-col gap-2 sm:flex-row">
-							<div className="flex w-full justify-between rounded-xl bg-[#F2F4F5] px-2">
-								<p className="table-text">Реферальный баланс:</p>
+						<div className="flex flex-col gap-[8px] sm:flex-row">
+							<div className="flex h-[45px] w-full justify-between rounded-xl bg-[#EAEEF0] px-2">
+								<p className="table-text bg-[#EAEEF0] px-[16px] py-[11px]">
+									Реферальный баланс:
+								</p>
 								<p className="table-text flex items-center gap-0.5">
 									{refState?.referral_balance || 0} <TgStar />
 								</p>
 							</div>
-							<Button maxWidth="97px" onClick={handleWithdraw}>
+							<Button
+								maxWidth={isMobile ? "100%" : "97px"}
+								onClick={handleWithdraw}
+							>
 								Вывести
 							</Button>
 							<Toaster toaster={toaster.current}>
@@ -247,11 +248,11 @@ export const Profile = () => {
 								)}
 							</Toaster>
 						</div>
-						<p className="font-mts-text flex flex-col text-sm/[22px] font-normal text-[#95A0A7] sm:text-base/[22px]">
+						<p className="font-mts-text flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
 							Приглашено друзей: {refState?.referrals_count}
 						</p>
 					</div>
-					<p className="font-mts-text flex flex-col text-sm/[22px] font-normal text-[#95A0A7] sm:text-base/[22px]">
+					<p className="font-mts-text flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
 						Присоединяйтесь к нашей реферальной программе — делитесь своей
 						уникальной ссылкой с друзьями и получайте 5% от их покупок в Звездах
 						на ваш реферальный баланс!

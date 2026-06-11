@@ -15,7 +15,7 @@ export const Bonus = () => {
 	return (
 		// Реферальная программа
 
-		<section className="box-border flex h-auto flex-col-reverse items-center justify-between gap-[40px] rounded-[16px] bg-gradient-to-b from-[#262C55] from-[16.45%] to-[#46386E] to-[82.49%] p-[24px] shadow-[0px_8px_10px_-6px_#0000000D] md:h-[278px] md:flex-row md:gap-0 md:p-10">
+		<section className="box-border flex h-auto flex-col-reverse items-center justify-between gap-[40px] rounded-[16px] bg-gradient-to-b from-[#262C55] from-[16.45%] to-[#46386E] to-[82.49%] p-[24px] shadow-[0px_8px_10px_-6px_#0000000D] md:h-[278px] md:flex-row md:gap-0 md:p-10 mb-[32px] lg:mb-[50px]">
 			<h2 className="sr-only">Реферальная программа в TGStars</h2>
 			<div className="">
 				<div className="w-full max-w-[280px]">

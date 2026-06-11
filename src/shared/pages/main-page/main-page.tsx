@@ -12,7 +12,7 @@ export const MainPage = definePage({
 			<>
 				<h1 className="sr-only">Купить звезды Телеграм, Премиум, TON</h1>
 				<div className="container">
-					<section className="relative z-0 flex items-center justify-center">
+					<section className="relative z-0 mb-[32px] flex items-center justify-center lg:mb-[50px]">
 						<BuyForm />
 						{/* Градиентный фон под формой    */}
 						<div className="-z-10 hidden h-[70%] w-full grid-cols-6 opacity-70 blur-[50px] md:absolute md:grid">
@@ -23,11 +23,10 @@ export const MainPage = definePage({
 							<div className="h-full w-full bg-[#FF4D7E]"></div>
 							<div className="-mt-10 h-full w-full bg-[#9A4BFF]"></div>
 						</div>
-					</section>					
-					
-					<Bonus />    {/* Реферальная программа    */} 
-					<BonusDiscovers />   {/* Бонусная программа  */} 
-					{/* Часто задаваемые вопросы  */} 
+					</section>
+					<Bonus /> {/* Реферальная программа    */}
+					<BonusDiscovers /> {/* Бонусная программа  */}
+					{/* Часто задаваемые вопросы  */}
 					<CustomAccordion
 						items={[
 							{

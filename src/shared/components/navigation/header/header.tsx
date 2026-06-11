@@ -20,9 +20,11 @@ export const Header = () => {
 		await logout();
 		setMenu(false);
 	};
+	// console.log(user);
+
 	return (
 		<header
-			className={`sticky top-0 z-10 h-[92px] w-full bg-[#E1E8F0] lg:h-[70px] lg:bg-[#EAEEF0] lg:shadow-[0px_10px_15px_0px_#0000001A]`}
+			className={`sticky top-0 z-10 h-[92px] w-full bg-[#E1E8F0] lg:mb-[70px] lg:h-[70px] lg:bg-[#EAEEF0] lg:shadow-[0px_10px_15px_0px_#0000001A]`}
 			// className={`sticky top-0 z-10 w-full ${menu && "h-screen bg-[#0000001A] sm:bg-none"} sm:h-auto`}
 		>
 			<div className="flex h-full w-full items-center justify-between p-[24px] lg:px-[50px] lg:py-[15px] lg:backdrop-blur-[78.7px]">

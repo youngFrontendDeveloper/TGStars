@@ -112,7 +112,7 @@ export const BonusDiscovers = () => {
 
 	return (
 		// Бонусная программа
-		<section className="relative -top-[4px]" id="bonus">
+		<section className="relative mb-[32px] lg:mb-[50px]" id="bonus">
 			<h2 className="sr-only">Бонусная программа при покупке звезд Телеграм</h2>
 			<div className="font-mts-text mb-[20px] flex items-center gap-2 text-sm font-medium text-[#000000]">
 				<PresentIcon className="h-[16px] w-[16px]" />

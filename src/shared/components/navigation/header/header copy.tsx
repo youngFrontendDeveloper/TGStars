@@ -53,7 +53,7 @@ export const Header = () => {
 				<Link href={"/"} className="shrink-0">
 					<Image
 						src="/assets/icons/logo.svg"
-						alt="TGStars"
+						alt="Логотип TGStars"
 						width={185}
 						height={30}
 						priority

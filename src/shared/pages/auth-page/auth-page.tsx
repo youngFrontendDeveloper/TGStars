@@ -8,8 +8,8 @@ export const AuthPage = definePage({
 		return (
 			<section className="w-full">
 				<h1 className="sr-only">Страница входа в профиль TGStars</h1>
-				<div className="container items-center pt-36">
-					<div className="relative z-0 flex items-center justify-center">
+				<div className="container h-full items-center">
+					<div className="relative z-0 flex h-full items-center justify-center">
 						<AuthForm />
 						<div className="-z-10 hidden h-[70%] w-full grid-cols-6 opacity-70 blur-[50px] md:absolute md:grid">
 							<div className="mt-10 h-full w-full bg-[#3BC7FF]"></div>

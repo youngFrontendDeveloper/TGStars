@@ -67,8 +67,8 @@ export const History = () => {
 	}, [orders, page]);
 
 	return (
-		<section className="flex flex-col gap-5">
-			<h2 className="font-mts-extended text-xl/[22px] font-medium text-black">
+		<section className="flex flex-col">
+			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				История заказов
 			</h2>
 			<div className="w-full rounded-2xl bg-white px-4 py-6 sm:p-0">
@@ -120,7 +120,7 @@ export const History = () => {
 								<p className="table-header">Получатель</p>
 								<p className="table-header">Статус</p>
 							</div>
-							{pagedOrders.map((el, i) => (
+							{pagedOrders?.map((el, i) => (
 								<div
 									className={`table items-center ${
 										i % 2 === 0 ? "bg-[#F2F4F5]" : "bg-transparent"
@@ -146,7 +146,7 @@ export const History = () => {
 							))}
 						</div>
 						{totalPages > 1 && (
-							<div className="xs:pl-0 xs:pr-0 flex items-center justify-center gap-4 border-t border-[#EAEEF0] pl-[13px] pr-[14px] pt-[17px] md:py-[8px]">
+							<div className="flex items-center justify-center gap-4 border-t border-[#EAEEF0] pl-[13px] pr-[14px] pt-[17px] xs:pl-0 xs:pr-0 md:py-[8px]">
 								<button
 									type="button"
 									onClick={() => setPage((prev) => Math.max(1, prev - 1))}

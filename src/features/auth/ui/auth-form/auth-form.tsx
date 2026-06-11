@@ -81,25 +81,25 @@ export const AuthForm = () => {
 		}
 	};
 	return (
-		<div className="flex w-full flex-col items-center gap-8 rounded-2xl bg-white px-10 py-[30px] shadow-[0px_0px_11px_0px_#00000005] sm:w-[350px]">
+		<div className="lg:p-x-[40px] flex w-full flex-col items-center gap-[24px] rounded-[16px] bg-white p-[24px] shadow-[0px_0px_11px_0px_#00000005] sm:w-[350px] lg:gap-[33px] lg:py-[30px]">
 			<Image
-				src="/assets/icons/logo-bigger-v2.svg"
-				alt="TGStars"
-				width={207}
-				height={38}
+				src="/assets/icons/logo.svg"
+				alt="Логотип TGStars"
+				width={217}
+				height={40}
 			/>
 			<Button
 				onClick={handleAuth}
 				disabled={loading || polling}
-				maxWidth="251px"			
+				maxWidth="251px"
 			>
 				<TgIcon className="white-icon" />
 				{loading || polling
 					? "Проверка авторизации..."
 					: "Войти через Telegram"}
 			</Button>
-			<p className="font-mts-text text-sm/[22px] text-[#95A0A7]">
-				Нажимая кнопку &quot;Войти через Telegram&quot;, вы соглашаетесь с
+			<p className="font-mts-text text-[14px]/[22.8px] text-[#95A0A7]">
+				Нажимая кнопку &quot;Войти через Telegram&quot;, вы соглашаетесь с&nbsp;
 				<Link
 					href={"/public-offer"}
 					className="!underline"
@@ -108,7 +108,7 @@ export const AuthForm = () => {
 				>
 					публичной офертой
 				</Link>
-				,
+				,&nbsp;
 				<Link
 					href={"/privacy-policy"}
 					className="!underline"
