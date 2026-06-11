@@ -1,9 +1,10 @@
 ﻿"use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState, useCallback } from "react";
-import TgIcon from '@/public/assets/icons/tg-icon.svg'
-import HeartIcon from '@/public/assets/icons/heart.svg'
+import { useCallback, useEffect, useMemo, useState } from "react";
+
+import HeartIcon from "@/public/assets/icons/heart.svg";
+import TgIcon from "@/public/assets/icons/tg-icon.svg";
 
 const STORAGE_KEY = "tg_success_order";
 
@@ -62,7 +63,7 @@ async function fetchWebOrderStatus(
 	try {
 		const res = await fetch(
 			`https://tg-stars.ru/api/web-order/status?order_id=${encodeURIComponent(orderId)}`,
-			{ cache: "no-cache" }
+			{ cache: "no-cache" },
 		);
 		if (!res.ok) return undefined;
 		const data = (await res.json()) as WebOrderStatusResponse;
@@ -105,9 +106,13 @@ const truncateAddress = (address: string): string => {
 };
 
 export const SuccessPageClient = () => {
-	const [localOrder, setLocalOrder] = useState<SuccessLocalData | undefined>(undefined);
+	const [localOrder, setLocalOrder] = useState<SuccessLocalData | undefined>(
+		undefined,
+	);
 	const [serverOrder, setServerOrder] = useState<
-		WebOrderStatusResponse["order"] | TonOrderStatusResponse["order"] | undefined
+		| WebOrderStatusResponse["order"]
+		| TonOrderStatusResponse["order"]
+		| undefined
 	>(undefined);
 
 	// 1. Читаем localStorage при монтировании
@@ -155,7 +160,8 @@ export const SuccessPageClient = () => {
 		if (!targetOrderId) return;
 
 		const status = serverOrder?.status || localOrder?.status;
-		const isFinal = status === "completed" || status === "error" || status === "refunded";
+		const isFinal =
+			status === "completed" || status === "error" || status === "refunded";
 		if (isFinal) return;
 
 		// Первый вызов сразу
@@ -207,11 +213,18 @@ export const SuccessPageClient = () => {
 	const isPremium =
 		!isTon &&
 		(localOrder?.order_type === "premium" ||
-			(!!serverOrder && "is_premium" in serverOrder && (serverOrder.is_premium ?? false)));
+			(!!serverOrder &&
+				"is_premium" in serverOrder &&
+				(serverOrder.is_premium ?? false)));
 
-	const infoTitle = isTon
-		? "Количество"
-		: (isPremium ? "Срок подписки Premium" : "Количество");
+	let infoTitle;
+	if (isTon) {
+		infoTitle = "Количество";
+	} else if (isPremium) {
+		infoTitle = "Срок подписки Premium";
+	} else {
+		infoTitle = "Количество";
+	}
 
 	const infoValue = (() => {
 		if (isTon) {
@@ -227,11 +240,13 @@ export const SuccessPageClient = () => {
 		}
 		const starsCount =
 			localOrder?.stars_count ??
-			(serverOrder && "stars_count" in serverOrder ? serverOrder.stars_count : 0);
+			(serverOrder && "stars_count" in serverOrder
+				? serverOrder.stars_count
+				: 0);
 		return `${starsCount ?? 0}`;
 	})();
 
-	const infoSuffix = isTon ? "TON" : (!isPremium ? "Stars" : undefined);
+	const infoSuffix = isTon ? "TON" : !isPremium ? "Stars" : undefined;
 
 	const orderIdDisplay = (() => {
 		if (serverOrder?.order_id) {
@@ -247,7 +262,11 @@ export const SuccessPageClient = () => {
 		paymentIdText = `Номер платежа: ${localOrder.payment_id}`;
 	} else if (localOrder?.payment_method) {
 		paymentIdText = `Способ оплаты: ${localOrder.payment_method.toUpperCase()}`;
-	} else if (serverOrder && "payment_method" in serverOrder && serverOrder.payment_method) {
+	} else if (
+		serverOrder &&
+		"payment_method" in serverOrder &&
+		serverOrder.payment_method
+	) {
 		paymentIdText = `Способ оплаты: ${serverOrder.payment_method.toUpperCase()}`;
 	}
 
@@ -275,14 +294,21 @@ export const SuccessPageClient = () => {
 
 	const isActive = (index: number) => index === activeIndex;
 	const isCompleted = (index: number) => index < activeIndex;
-	const isError = status === "error" || status === "refunded" || status === "cancelled";
+	const isError =
+		status === "error" || status === "refunded" || status === "cancelled";
 
 	const circleColor = (index: number) => {
-		if (isError && index === 3) return "#EF4444";
+		if (isError && index === 3) return "#9333EA";
 		if (isActive(index)) return "#9333EA";
 		if (isCompleted(index)) return "#2563EB";
 		return "#D1D5DB";
 	};
+	// const circleColor = (index: number) => {
+	// 	if (isError && index === 3) return "#EF4444";
+	// 	if (isActive(index)) return "#9333EA";
+	// 	if (isCompleted(index)) return "#2563EB";
+	// 	return "#D1D5DB";
+	// };
 
 	const textColor = (index: number) =>
 		isActive(index) || isCompleted(index) ? "#374151" : "#9CA3AF";
@@ -325,7 +351,7 @@ export const SuccessPageClient = () => {
 	})();
 
 	const avatarSrc = localOrder?.recipient_avatar_url || undefined;
-const [avatarError, setAvatarError] = useState(false);
+	const [avatarError, setAvatarError] = useState(false);
 
 	// Если нет данных вообще — показываем заглушку
 	// if (!localOrder && !serverOrder) {
@@ -346,26 +372,28 @@ const [avatarError, setAvatarError] = useState(false);
 	// }
 
 	return (
-		<div className="container !gap-5 py-4 sm:py-0">
-			<div className="mx-auto w-full max-w-[720px]">
-				<div className="rounded-2xl bg-white px-5 py-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] sm:px-[40px] sm:py-[27px]">
-					<div className="flex flex-col gap-1">
-						<h1 className="font-mts-extended text-xl font-[500] text-[#111827] sm:text-[20px] tracking-[-0.02em]">
+		<div className="container">
+			<div className="mx-auto h-full w-full max-w-[720px]">
+				<div className="mt-[18px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0_12px_40px_rgba(15,23,42,0.08)] md:px-[40px] md:py-[30px] lg:mt-0">
+					<div className="flex flex-col gap-[8px]">
+						<h1 className="font-mts-extended text-[20px]/[22.8px] font-[600] tracking-[-0.02em] text-black md:text-[20px]">
 							{orderIdDisplay}
 						</h1>
 						{paymentIdText && (
-							<p className="font-mts-text text-xs font-[500] text-[#9CA3AF] sm:text-sm">
+							<p className="font-mts-text text-[14px] font-[500] text-[#9CA3AF]">
 								{paymentIdText}
 							</p>
 						)}
 					</div>
 
-					<div className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2">
+					<div className="mt-[24px] grid grid-cols-1 gap-[16px] md:grid-cols-2 lg:mt-[33px]">
 						<div className="flex flex-col gap-2">
-							<p className="font-mts-text text-sm font-[500] text-[#111827]">Получатель</p>
-							<div className="rounded-2xl bg-[#F5F6F7] pl-[16px] py-[6px] box-border">
-								<div className="flex items-center gap-3">
-									<div className="relative z-0 h-10 w-10">
+							<p className="font-mts-wide text-[14px] font-[600] text-black">
+								Получатель
+							</p>
+							<div className="box-border flex h-[55px] items-center rounded-[12px] bg-[#EAEEF0] px-[16px] py-[7.5px]">
+								<div className="flex w-full items-center justify-start gap-[15px]">
+									<div className="relative z-0 h-[40px] w-[40px]">
 										<div
 											className="absolute -z-10 h-full w-full rounded-full blur-sm"
 											style={{
@@ -373,28 +401,28 @@ const [avatarError, setAvatarError] = useState(false);
 													"linear-gradient(90deg, #2563EB 0%, #9333EA 100%)",
 											}}
 										/>
-										<div className="h-10 w-10 overflow-hidden rounded-full bg-[#E5E7EB]">
-    {avatarSrc && !avatarError ? (
-        <img
-            src={avatarSrc}
-            alt={recipientLabel}
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full object-cover"
-            onError={() => setAvatarError(true)}
-        />
-    ) : (
-        <img
-            src="/assets/images/user.png"
-            alt={recipientLabel}
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full object-cover"
-        />
-    )}
-</div>
+										<div className="h-[40px] w-[40px] overflow-hidden rounded-full bg-[#E5E7EB]">
+											{avatarSrc && !avatarError ? (
+												<Image
+													src={avatarSrc}
+													alt={recipientLabel}
+													width={40}
+													height={40}
+													className="rounded-full object-cover"
+													onError={() => setAvatarError(true)}
+												/>
+											) : (
+												<Image
+													src="/assets/images/user.png"
+													alt={recipientLabel}
+													width={40}
+													height={40}
+													className="h-10 w-10 rounded-full object-cover"
+												/>
+											)}
+										</div>
 									</div>
-									<span className="font-mts-extended text-base font-medium leading-[23px] text-[#111827]">
+									<span className="font-mts-extended block flex-1 truncate text-[16px]/[22.75px] font-semibold text-black">
 										{recipientLabel}
 									</span>
 								</div>
@@ -402,14 +430,16 @@ const [avatarError, setAvatarError] = useState(false);
 						</div>
 
 						<div className="flex flex-col gap-2">
-							<p className="font-mts-text text-sm font-[500] text-[#111827]">{infoTitle}</p>
-							<div className="rounded-2xl bg-[#F5F6F7] px-5 py-4">
-								<div className="flex items-center justify-between">
-									<span className="font-mts-wide text-base font-medium text-[#1D2123]">
+							<p className="font-mts-wide text-[14px] font-[600] text-black">
+								{infoTitle}
+							</p>
+							<div className="flex h-[55px] items-center rounded-[12px] bg-[#EAEEF0] px-[16px] py-[7.5px]">
+								<div className="flex w-full items-center justify-between">
+									<span className="font-mts-extended text-[16px]/[22.75px] font-semibold text-black">
 										{infoValue}
 									</span>
 									{infoSuffix && (
-										<span className="font-mts-wide text-base font-bold text-[#95A0A7]">
+										<span className="font-mts-wide text-[16px]/[22.75px] font-bold text-[#95A0A7]">
 											{infoSuffix}
 										</span>
 									)}
@@ -418,10 +448,19 @@ const [avatarError, setAvatarError] = useState(false);
 						</div>
 					</div>
 
-					<div className="mt-[31px]">
+					<div className="mt-[24px] lg:mt-[33px]">
 						<div className="relative">
-							<div className="absolute left-5 right-5 top-4 h-[8px] rounded-full bg-[#EAEEF0]" />
+							<div className="absolute left-5 right-5 top-[16px] h-[8px] rounded-full bg-[#EAEEF0]" />
 							<div
+								className="absolute left-5 top-4 h-[8px] rounded-full"
+								style={{
+									width: activeLinePercent,
+									background: isError
+										? "linear-gradient(90deg, #2563EB 48.59%, #9333EA 100%)"
+										: "linear-gradient(90deg, #2563EB 48.59%, #2563EB 100%)",
+								}}
+							/>
+							{/* <div
 								className="absolute left-5 top-4 h-[8px] rounded-full"
 								style={{
 									width: activeLinePercent,
@@ -429,17 +468,25 @@ const [avatarError, setAvatarError] = useState(false);
 										? "linear-gradient(90deg, #2563EB 48.59%, #EF4444 100%)"
 										: "linear-gradient(90deg, #2563EB 48.59%, #9333EA 100%)",
 								}}
-							/>
+							/> */}
 							<div className="relative flex items-center justify-between">
 								{/* Шаг 0: Оплата */}
 								<div className="flex flex-col items-center gap-2">
 									<div
-										className="flex h-10 w-10 items-center justify-center rounded-full text-white"
+										className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-white"
 										style={{ backgroundColor: circleColor(0) }}
 									>
-										<Image src="/assets/icons/payment/cardpay.svg" alt="Оплата" width={20} height={20} />
+										<Image
+											src="/assets/icons/payment/cardpay.svg"
+											alt="Оплата"
+											width={20}
+											height={20}
+										/>
 									</div>
-									<span className="font-mts-text text-sm font-medium" style={{ color: textColor(0) }}>
+									<span
+										className="font-mts-wide text-[14px] font-semibold"
+										style={{ color: textColor(0) }}
+									>
 										Оплата
 									</span>
 								</div>
@@ -447,16 +494,24 @@ const [avatarError, setAvatarError] = useState(false);
 								{/* Шаг 1: Обработка */}
 								<div className="flex flex-col items-center gap-2">
 									<div
-										className="flex h-10 w-10 items-center justify-center rounded-full text-white"
+										className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-white"
 										style={{ backgroundColor: circleColor(1) }}
 									>
 										{showLoader && isActive(1) ? (
 											<div className="h-4 w-4 animate-spin rounded-full border-2 border-transparent border-t-white" />
 										) : (
-											<Image src="/assets/icons/payment/gears.svg" alt="Обработка" width={20} height={20} />
+											<Image
+												src="/assets/icons/payment/gears.svg"
+												alt="Обработка"
+												width={20}
+												height={20}
+											/>
 										)}
 									</div>
-									<span className="font-mts-text text-sm font-medium" style={{ color: textColor(1) }}>
+									<span
+										className="font-mts-wide text-[14px] font-semibold"
+										style={{ color: textColor(1) }}
+									>
 										Обработка
 									</span>
 								</div>
@@ -464,16 +519,24 @@ const [avatarError, setAvatarError] = useState(false);
 								{/* Шаг 2: Доставка */}
 								<div className="flex flex-col items-center gap-2">
 									<div
-										className="flex h-10 w-10 items-center justify-center rounded-full text-white"
+										className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-white"
 										style={{ backgroundColor: circleColor(2) }}
 									>
 										{showLoader && isActive(2) ? (
 											<div className="h-4 w-4 animate-spin rounded-full border-2 border-transparent border-t-white" />
 										) : (
-											<Image src="/assets/icons/payment/star.svg" alt="Доставка" width={20} height={20} />
+											<Image
+												src="/assets/icons/payment/star.svg"
+												alt="Доставка"
+												width={20}
+												height={20}
+											/>
 										)}
 									</div>
-									<span className="font-mts-text text-sm font-medium" style={{ color: textColor(2) }}>
+									<span
+										className="font-mts-wide text-[14px] font-semibold"
+										style={{ color: textColor(2) }}
+									>
 										Доставка
 									</span>
 								</div>
@@ -481,16 +544,29 @@ const [avatarError, setAvatarError] = useState(false);
 								{/* Шаг 3: Результат */}
 								<div className="flex flex-col items-center gap-2">
 									<div
-										className="flex h-10 w-10 items-center justify-center rounded-full text-white"
+										className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-white"
 										style={{ backgroundColor: circleColor(3) }}
 									>
 										{isError ? (
-											<Image src="/assets/icons/payment/failed.svg" alt="Ошибка" width={20} height={20} />
+											<Image
+												src="/assets/icons/payment/failed.svg"
+												alt="Ошибка"
+												width={20}
+												height={20}
+											/>
 										) : (
-											<Image src="/assets/icons/payment/success.svg" alt="Успех" width={20} height={20} />
+											<Image
+												src="/assets/icons/payment/success.svg"
+												alt="Успех"
+												width={20}
+												height={20}
+											/>
 										)}
 									</div>
-									<span className="font-mts-text text-sm font-medium" style={{ color: textColor(3) }}>
+									<span
+										className="font-mts-wide text-[14px] font-semibold"
+										style={{ color: textColor(3) }}
+									>
 										{(() => {
 											if (isError) return "Ошибка";
 											if (status === "completed") return "Успех!";
@@ -502,11 +578,11 @@ const [avatarError, setAvatarError] = useState(false);
 						</div>
 					</div>
 
-					<div className="mt-8 text-center">
-						<p className="font-mts-text text-base text-[#95A0A7]">
+					<div className="mt-[24px] text-center lg:mt-[33px]">
+						<p className="font-mts-text text-[16px]/[22.75px] text-[#95A0A7]">
 							{statusText}
 						</p>
-						<p className="font-mts-text text-base text-[#95A0A7]">
+						<p className="font-mts-text text-[16px]/[22.75px] text-[#95A0A7]">
 							{isError ? (
 								"Пожалуйста, обратитесь в Техническую поддержку."
 							) : (
@@ -516,7 +592,7 @@ const [avatarError, setAvatarError] = useState(false);
 										href="https://t.me/TGStarsSupport"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-[#0098EA] hover:text-[#0077B8] transition-colors"
+										className="border-b border-[#2563EB] text-[#2563EB] transition-colors hover:border-transparent hover:text-[#0077B8]"
 									>
 										Техническую поддержку
 									</a>
@@ -526,12 +602,12 @@ const [avatarError, setAvatarError] = useState(false);
 						</p>
 					</div>
 
-					<div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+					<div className="mt-[24px] flex flex-col items-center gap-[12px] md:flex-row md:justify-between lg:mt-[33px]">
 						<a
 							href="https://t.me/TGStars_Reviews"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="group relative flex w-full items-center justify-center gap-[6px] overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-6 py-2.5 font-mts-text text-base font-medium text-white shadow-[0_10px_30px_rgba(45,107,255,0.25)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 sm:w-full"
+							className="font-mts-text group relative flex w-full items-center justify-center gap-[6px] overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-6 py-[10.5px] text-[16px]/[22.8px] text-white shadow-[0_10px_30px_rgba(45,107,255,0.25)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 md:w-full"
 						>
 							<span className="relative z-10 flex items-center gap-[6px]">
 								Оставить отзыв{" "}
@@ -542,7 +618,7 @@ const [avatarError, setAvatarError] = useState(false);
 							href="https://t.me/TGStarsPage"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="flex w-full font-mts-text items-center justify-center rounded-full border border-[#E5E7EB] bg-white px-6 py-2.5 text-base font-medium text-[#9CA3AF] transition hover:bg-[#F9FAFB] sm:w-full flex gap-[6px] align-center"
+							className="font-mts-text align-center flex w-full items-center justify-center gap-[6px] rounded-full border border-[#E5E7EB] bg-white px-6 py-[10.5px] text-[16px]/[22.8px] text-[#9CA3AF] transition hover:bg-[#F9FAFB] md:w-full"
 						>
 							Наш Канал/Чат <TgIcon />
 						</a>
