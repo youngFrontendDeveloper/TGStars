@@ -246,7 +246,7 @@ export const SuccessPageClient = () => {
 		return `${starsCount ?? 0}`;
 	})();
 
-	const infoSuffix = isTon ? "TON" : !isPremium ? "Stars" : undefined;
+	const infoSuffix = isTon ? "TON" : (!isPremium ? "Stars" : undefined);
 
 	const orderIdDisplay = (() => {
 		if (serverOrder?.order_id) {
