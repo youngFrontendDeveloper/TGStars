@@ -207,7 +207,7 @@ export const Payment = ({
 						Получатель
 					</p>
 					<div className="flex items-center gap-4 rounded-xl bg-[#F2F4F5] px-4 py-2">
-						<div className="relative z-0 h-10 w-10 rounded-full">
+						<div className="relative z-0 h-[40px] w-[40px] min-w-[40px] rounded-full">
 							<div
 								className="absolute -z-10 h-full w-full rounded-full blur-sm"
 								style={{
@@ -221,7 +221,7 @@ export const Payment = ({
 									alt="username"
 									width={40}
 									height={40}
-									className="h-10 w-10 rounded-full object-cover"
+									className="h-[40px] w-[40px] rounded-full object-cover"
 									onError={(e) => {
 										(e.currentTarget as HTMLImageElement).style.display =
 											"none";
@@ -297,7 +297,7 @@ export const Payment = ({
 				</Button>
 			</div>
 
-			<p className="font-mts-text text-center text-[12px]/[22.8px] text-[#95A0A7] md:text-[16px]/[22.8px]">
+			<p className="font-mts-text text-center text-[14px]/[22.8px] text-[#95A0A7] md:text-[16px]/[22.8px]">
 				{section === "ton" ? (
 					<>
 						Для покупки TON необходимо{" "}

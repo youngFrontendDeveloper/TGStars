@@ -62,7 +62,7 @@ export const PremiumSelect = ({
 			<button
 				type="button"
 				onClick={toggleDropdown}
-				className={`flex w-full items-center justify-between rounded-xl border-none bg-[#F2F4F5] px-4 py-3 outline-none transition-all sm:hover:w-[620px] ${isOpen && "sm:w-[620px]"}`}
+				className={`flex w-full items-center justify-between rounded-xl border-none bg-[#F2F4F5] px-4 py-3 outline-none transition-all md:hover:w-[620px] ${isOpen && "md:w-[620px]"}`}
 				style={{
 					transition: "0.4s",
 					boxShadow: isOpen
@@ -101,7 +101,7 @@ export const PremiumSelect = ({
 			{isOpen && (
 				<div
 					ref={contentRef}
-					className="absolute top-[65px] z-[100] mt-2 w-full rounded-xl bg-white py-2 shadow-lg sm:w-[620px]"
+					className="absolute top-[65px] z-[100] mt-2 w-full rounded-xl bg-white py-2 shadow-lg md:w-[620px]"
 				>
 					<div className="w-full">
 						{data.map((item) => {
