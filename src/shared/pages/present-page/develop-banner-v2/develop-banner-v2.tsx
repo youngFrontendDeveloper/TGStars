@@ -6,7 +6,7 @@ export const DevelopBannerV2 = () => {
 			<h1 className="font-mts-extended text-[20px] font-[500] leading-[22px]">
 				Раздел в разработке
 			</h1>
-			<p className="font-mts-text text-base/[22px] font-medium text-[#95A0A7]">
+			<p className="font-mts-text text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 				А пока можете подписаться на наш{" "}
 				<Link
 					href="https://t.me/tgstarspage"

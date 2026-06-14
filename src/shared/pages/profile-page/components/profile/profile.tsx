@@ -212,7 +212,7 @@ export const Profile = () => {
 								</button>
 
 								{copySuccess && (
-									<div className="absolute -top-8 right-4 translate-x-1/2 rounded bg-gray-800 px-2 py-1 text-xs text-white">
+									<div className="absolute -top-8 right-4 translate-x-1/2 rounded bg-gray-800 px-2 py-1 text-[12px] text-white">
 										{copySuccess}
 									</div>
 								)}
@@ -239,10 +239,10 @@ export const Profile = () => {
 										key={toast.id}
 										className="flex w-[300px] flex-col gap-3 rounded-2xl border border-[#F2F4F4] bg-white p-4"
 									>
-										<Toast.Title className="font-mts-text text-lg/[100%] font-medium">
+										<Toast.Title className="font-mts-text text-[18px]/[100%] font-medium">
 											{toast.title}
 										</Toast.Title>
-										<Toast.Description className="font-mts-text text-sm/[16px] font-normal text-[#95A0A7] sm:text-base/[22px]">
+										<Toast.Description className="font-mts-text text-[14px]/[16px] font-normal text-[#95A0A7] sm:text-[16px]/[22.8px]">
 											{toast.description}
 										</Toast.Description>
 									</Toast.Root>

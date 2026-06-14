@@ -46,7 +46,9 @@ export const Payment = ({
 	handleClose,
 }: PaymentProps) => {
 	const [payment, setPayment] = useState<PaymentType>("sbp");
-	const [user, setUser] = useState<{ avatar_url?: string; name?: string } | undefined>(undefined);
+	const [user, setUser] = useState<
+		{ avatar_url?: string; name?: string } | undefined
+	>(undefined);
 	const [isLoading, setIsLoading] = useState(false);
 	const [authError, setAuthError] = useState(false);
 
@@ -127,7 +129,10 @@ export const Payment = ({
 							order_id: data?.order_id,
 							status: "created" as const,
 						};
-						globalThis.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+						globalThis.localStorage.setItem(
+							STORAGE_KEY,
+							JSON.stringify(payload),
+						);
 					} catch {
 						// noop
 					}
@@ -166,7 +171,10 @@ export const Payment = ({
 					payment_id: data?.payment_id || data?.paymentId || data?.payment,
 					status: "processing" as const,
 				};
-				globalThis.localStorage.setItem("tg_success_order", JSON.stringify(payload));
+				globalThis.localStorage.setItem(
+					"tg_success_order",
+					JSON.stringify(payload),
+				);
 			} catch {
 				// noop
 			}
@@ -195,7 +203,7 @@ export const Payment = ({
 
 			<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
 				<div className="flex flex-col gap-2">
-					<p className="font-mts-text text-sm/[100%] font-medium text-black">
+					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 						Получатель
 					</p>
 					<div className="flex items-center gap-4 rounded-xl bg-[#F2F4F5] px-4 py-2">
@@ -208,43 +216,44 @@ export const Payment = ({
 								}}
 							/>
 							{user?.avatar_url ? (
-    <img
-        src={user.avatar_url}
-        alt="username"
-        width={40}
-        height={40}
-        className="h-10 w-10 rounded-full object-cover"
-        onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = "none";
-        }}
-    />
-) : (
-    <Image
-        src={defaultUser}
-        alt="default avatar"
-        width={40}
-        height={40}
-        className="rounded-full"
-    />
-)}
+								<img
+									src={user.avatar_url}
+									alt="username"
+									width={40}
+									height={40}
+									className="h-10 w-10 rounded-full object-cover"
+									onError={(e) => {
+										(e.currentTarget as HTMLImageElement).style.display =
+											"none";
+									}}
+								/>
+							) : (
+								<Image
+									src={defaultUser}
+									alt="default avatar"
+									width={40}
+									height={40}
+									className="rounded-full"
+								/>
+							)}
 						</div>
-						<p className="font-mts-wide bg-transparent py-1.5 text-base/[22px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
+						<p className="font-mts-wide bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{user?.name || "Загрузка..."}
 						</p>
 					</div>
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<p className="font-mts-text text-sm/[100%] font-medium text-black">
+					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 						Количество
 					</p>
 					<div className="relative flex items-center gap-1 rounded-xl bg-[#F2F4F5] px-4 py-2.5 transition-colors">
-						<p className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-base/[22px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
+						<p className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{section === "stars" && selectedAmount?.value}
 							{section === "premium" && selectedAmount?.value + " месяцев"}
 							{section === "ton" && selectedAmount?.value}
 						</p>
-						<p className="font-mts-wide text-base/[22px] font-bold text-[#95A0A7]">
+						<p className="font-mts-wide text-[16px]/[22.8px] font-bold text-[#95A0A7]">
 							{section === "stars" && "Stars"}
 							{section === "ton" && "TON"}
 						</p>
@@ -256,20 +265,23 @@ export const Payment = ({
 
 			<div className="flex flex-col gap-4">
 				<div className="flex w-full items-center justify-between rounded-xl border-2 border-[#F6F6F6] px-6 py-2.5">
-					<p className="font-mts-text text-base/[22px] font-medium text-black">
+					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
 						Итого:
 					</p>
-					<p className="font-mts-text text-base/[22px] font-medium text-black">
+					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
 						{calculateTotal()} ₽
 					</p>
 				</div>
 
 				{authError && (
 					<div className="flex items-start gap-3 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3">
-						<span className="mt-0.5 text-lg leading-none">🔐</span>
-						<p className="font-mts-text text-sm/[20px] text-orange-700">
+						<span className="mt-0.5 text-[18px] leading-none">🔐</span>
+						<p className="font-mts-text text-[14px]/[20.75px] text-orange-700">
 							Для покупки TON необходимо{" "}
-							<Link href="/auth" className="font-semibold underline underline-offset-2">
+							<Link
+								href="/auth"
+								className="font-semibold underline underline-offset-2"
+							>
 								авторизоваться
 							</Link>
 						</p>
@@ -277,7 +289,7 @@ export const Payment = ({
 				)}
 
 				<Button
-					className="w-full justify-center px-6 sm:w-max"
+					className="w-full justify-center px-6 md:w-max"
 					disabled={!payment || isLoading}
 					onClick={handlePayment}
 				>
@@ -285,23 +297,33 @@ export const Payment = ({
 				</Button>
 			</div>
 
-			<p className="font-mts-text text-center text-xs/[22px] text-[#95A0A7] sm:text-base/[22px]">
+			<p className="font-mts-text text-center text-[12px]/[22.8px] text-[#95A0A7] md:text-[16px]/[22.8px]">
 				{section === "ton" ? (
 					<>
 						Для покупки TON необходимо{" "}
 						<Link href={"/auth"} className="text-[#0098EA]">
 							Авторизоваться
 						</Link>
-						. Совершая покупку, вы подтверждаете, что прочли и согласны со всеми пунктами{" "}
-						<Link href={"/public-offer"} target="_blank" className="text-[#0098EA]">
+						. Совершая покупку, вы подтверждаете, что прочли и согласны со всеми
+						пунктами{" "}
+						<Link
+							href={"/public-offer"}
+							target="_blank"
+							className="text-[#0098EA]"
+						>
 							Условия сервиса
 						</Link>
 						.
 					</>
 				) : (
 					<>
-						Отключите VPN перед оплатой. Совершая покупку, вы подтверждаете, что прочли и согласны со всеми пунктами{" "}
-						<Link href={"/public-offer"} target="_blank" className="text-[#0098EA]">
+						Отключите VPN перед оплатой. Совершая покупку, вы подтверждаете, что
+						прочли и согласны со всеми пунктами{" "}
+						<Link
+							href={"/public-offer"}
+							target="_blank"
+							className="text-[#0098EA]"
+						>
 							Условия сервиса
 						</Link>
 						.

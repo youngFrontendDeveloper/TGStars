@@ -187,7 +187,7 @@ export const Stars = ({
 			{starsError && (
 				<div className="flex items-center gap-1">
 					<ErrorIcon />
-					<p className="font-mts-text text-sm/[100%] font-medium text-[#FF5863]">
+					<p className="font-mts-text text-[14px]/[100%] font-medium text-[#FF5863]">
 						{starsError}
 					</p>
 				</div>
@@ -201,7 +201,7 @@ export const Stars = ({
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className=" mb-[24px] w-[169px] px-6 sm:w-max lg:mb-[33px]"
+				className="mb-[24px] w-[169px] px-6 sm:w-max lg:mb-[33px]"
 				// className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isValid}

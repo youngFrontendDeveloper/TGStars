@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import { Button } from "@/shared/components/ui/button";
+
 import { type PremiumPrice } from "../../types/buy-form.type";
 import { UsernameInput } from "../username-input";
 import { PremiumSelect } from "./premium-select";
@@ -38,7 +40,7 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 	return (
 		<>
 			<div className="flex flex-col gap-2">
-				<p className="font-mts-text text-sm/[100%] font-medium text-black">
+				<p className="font-mts-text text-[14px]/[100%] font-medium text-black">
 					Выберите подписку
 				</p>
 				<PremiumSelect
@@ -55,15 +57,16 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="w-full justify-center mb-[24px] lg:mb-[33px] px-6 sm:w-max"
+				className="mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!premiumState || !username}
 			>
 				Купить Premium
 			</Button>
-			<p className="font-mts-text text-[14px] leading-[22.8px] text-center text-[#95A0A7] lg:text-[16px]">
+			<p className="font-mts-text text-center text-[14px] leading-[22.8px] text-[#95A0A7] lg:text-[16px]">
 				Среднее время доставки Premium составляет 1 минуту. В случае неполадок
-				со стороны Telegram возможны задержки.<br/>
+				со стороны Telegram возможны задержки.
+				<br />
 				Внимание! У получателя не должно быть активной подписки Premium.
 			</p>
 		</>

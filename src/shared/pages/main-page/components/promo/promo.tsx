@@ -34,10 +34,10 @@ export const Promo = () => {
 					/>
 				</div>
 				<div className="flex flex-col items-center gap-6 sm:items-start sm:justify-between sm:gap-0">
-					<p className="font-mts-extended text-center text-lg/[145%] text-black sm:text-left sm:text-xl/[22px]">
+					<p className="font-mts-extended text-center text-[18px]/[145%] text-black sm:text-left sm:text-[20px]/[22.8px]">
 						Покупайте Telegram Stars дешевле, чем где-либо.
 					</p>
-					<p className="font-mts-text text-center text-base/[22px] font-medium text-[#95A0A7] sm:text-left">
+					<p className="font-mts-text text-center text-[16px]/[22.8px] font-medium text-[#95A0A7] sm:text-left">
 						Лучший курс на рынке, моментальная доставка Звезд после оплаты и
 						круглосуточная работа сайта.
 					</p>
@@ -49,10 +49,10 @@ export const Promo = () => {
 						className="flex flex-col items-center gap-2 sm:items-start"
 						key={i}
 					>
-						<p className="font-mts-extended text-xl/[22px] text-black">
+						<p className="font-mts-extended text-[20px]/[22.8px] text-black">
 							{el.title}
 						</p>
-						<p className="font-mts-text text-base/[22px] font-normal text-[#95A0A7]">
+						<p className="font-mts-text text-[16px]/[22.8px] font-normal text-[#95A0A7]">
 							{el.text}
 						</p>
 					</div>

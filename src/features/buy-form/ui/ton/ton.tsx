@@ -272,7 +272,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 			</div>
 
 			<div className="flex flex-col gap-2">
-				<p className="font-mts-text text-sm/[100%] font-medium text-black">
+				<p className="font-mts-text text-[14px]/[100%] font-medium text-black">
 					Адрес кошелька TON
 				</p>
 				<div className="flex items-center gap-2 rounded-xl bg-[#EAEEF0] px-4 py-2.5">
@@ -281,7 +281,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 						placeholder="Введите адрес кошелька TON..."
 						value={walletAddress}
 						onChange={(e) => setWalletAddress(e.target.value)}
-						className="font-mts-wide w-full bg-transparent py-1.5 text-base/[22px] font-medium text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
+						className="font-mts-wide w-full bg-transparent py-1.5 text-[16px]/[22.8px] font-medium text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
 					/>
 					{hasAddress && addressValid && (
 						<ValidIcon className="h-5 w-5 shrink-0 text-[#22c55e]" />
@@ -295,7 +295,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 			{error && (
 				<div className="flex items-center gap-1">
 					<ErrorIcon />
-					<p className="font-mts-text text-sm/[100%] font-medium text-[#FF5863]">
+					<p className="font-mts-text text-[14px]/[100%] font-medium text-[#FF5863]">
 						{error}
 					</p>
 				</div>

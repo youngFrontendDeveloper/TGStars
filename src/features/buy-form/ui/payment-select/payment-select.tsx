@@ -82,14 +82,14 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 
 	return (
 		<div className="flex flex-col gap-2" ref={selectRef}>
-			<p className="font-mts-text text-sm/[100%] font-medium text-black">
+			<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 				Способ оплаты
 			</p>
 			<div className="relative flex flex-col items-center">
 				<button
 					type="button"
 					onClick={toggleDropdown}
-					className={`flex h-[65px] w-full items-center justify-between rounded-xl bg-[#F6F6F6] px-4 py-3 outline-none transition-colors ${isOpen && "sm:w-[620px]"} hover:sm:w-[620px]`}
+					className={`flex h-[65px] w-full items-center justify-between rounded-xl bg-[#F6F6F6] px-4 py-3 outline-none transition-colors ${isOpen && "md:w-[620px]"} hover:md:w-[620px]`}
 					style={{
 						transition: "0.4s",
 						boxShadow: isOpen
@@ -112,7 +112,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 					<div className="flex items-center gap-3">
 						{selectedItem && selectedItem.icon}
 						<div className="flex flex-col items-start">
-							<p className="font-mts-text text-left text-base/[20px] font-medium text-black">
+							<p className="font-mts-wide text-left text-[16px]/[22.8px] font-semibold text-black">
 								{selectedItem ? selectedItem.title : "Выберите метод оплаты"}
 							</p>
 						</div>
@@ -125,7 +125,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 				{isOpen && (
 					<div
 						ref={contentRef}
-						className="absolute top-[65px] z-50 mt-2 w-full rounded-xl bg-white py-2 shadow-lg sm:w-[620px]"
+						className="z-[100] absolute top-[65px] mt-2 w-full rounded-xl bg-white py-2 shadow-lg md:w-[620px]"
 					>
 						<div className="w-full">
 							{paymentOptions.map((item) => (
@@ -138,15 +138,15 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 									<div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3">
 										<div className="flex items-center justify-start gap-2">
 											{item.icon}
-											<p className="font-mts-text block w-max text-base/[22px] font-medium text-black sm:hidden">
+											<p className="font-mts-wide block w-max text-[16px]/[22.8px] font-semibold text-black sm:hidden">
 												{item.title}
 											</p>
 										</div>
 										<div className="flex flex-col items-start">
-											<p className="font-mts-text hidden text-base/[22px] font-medium text-black sm:block">
+											<p className="font-mts-widet hidden text-[16px]/[22.8px] font-semibold text-black sm:block">
 												{item.title}
 											</p>
-											<p className="font-mts-text text-left text-sm/[20px] font-medium text-[#95A0A7] sm:text-base/[22px]">
+											<p className="font-mts-text text-left text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 												{item.desc}
 											</p>
 										</div>

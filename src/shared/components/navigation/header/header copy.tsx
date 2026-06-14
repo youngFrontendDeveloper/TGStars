@@ -82,7 +82,7 @@ export const Header = () => {
 								<Link
 									href={el.path}
 									key={i}
-									className={`font-mts-text flex items-center gap-2 rounded-[38px] p-0.5 px-4 py-2.5 text-sm/[100%] font-medium text-[#374151] ${pathname === el.path && "bg-[#2563EB] text-white"}`}
+									className={`font-mts-text flex items-center gap-2 rounded-[38px] p-0.5 px-4 py-2.5 text-[14px]/[100%] font-medium text-[#374151] ${pathname === el.path && "bg-[#2563EB] text-white"}`}
 								>
 									<Icon className={iconClassName} />
 									{el.name}
@@ -154,7 +154,7 @@ export const Header = () => {
 										href={el.path}
 										key={i}
 										onClick={() => setMenu(false)}
-										className={`font-mts-text flex items-center gap-2 rounded-[14px] p-4 text-sm/[100%] font-medium text-[#808080] ${pathname === el.path && "bg-white text-black"}`}
+										className={`font-mts-text flex items-center gap-2 rounded-[14px] p-4 text-[14px]/[100%] font-medium text-[#808080] ${pathname === el.path && "bg-white text-black"}`}
 									>
 										<Icon className={iconClassName} />
 										{el.name}

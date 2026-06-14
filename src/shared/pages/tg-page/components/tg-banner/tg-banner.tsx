@@ -22,7 +22,7 @@ export const TgBanner = () => {
 				<p className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 					Подписывайтесь на наш Telegram
 				</p>
-				<p className="font-mts-wide mb-[20px] text-[16px]/[22px] font-semibold text-[#95A0A7] lg:mb-[43px]">
+				<p className="font-mts-wide mb-[20px] text-[16px]/[22.8px] font-semibold text-[#95A0A7] lg:mb-[43px]">
 					Там мы публикуем новости из мира Telegram, розыгрыши и анонсы
 				</p>
 				<Link

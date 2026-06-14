@@ -19,9 +19,9 @@ export const PremiumSelect = ({
 	placeholder = "Выберите нужный тариф",
 }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [selectedOption, setSelectedOption] = useState<PremiumPrice | undefined>(
-		() => data.find((item) => String(item.months) === value) || undefined,
-	);
+	const [selectedOption, setSelectedOption] = useState<
+		PremiumPrice | undefined
+	>(() => data.find((item) => String(item.months) === value) || undefined);
 	const selectRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +42,8 @@ export const PremiumSelect = ({
 	}, []);
 
 	useEffect(() => {
-		const option = data.find((item) => String(item.months) === value) || undefined;
+		const option =
+			data.find((item) => String(item.months) === value) || undefined;
 		setSelectedOption(option);
 	}, [value, data]);
 
@@ -84,10 +85,12 @@ export const PremiumSelect = ({
 				<div className="flex items-center gap-3">
 					<PremuimIcon />
 					<div className="flex flex-col items-start">
-						<p className="font-mts-text text-left text-base/[20px] font-medium text-black">
-							{selectedOption ? `${selectedOption.months} месяцев` : placeholder}
+						<p className="font-mts-wide text-left text-[16px]/[20.8px] font-semibold text-black">
+							{selectedOption
+								? `${selectedOption.months} месяцев`
+								: placeholder}
 						</p>
-						<p className="font-mts-text text-left text-base/[20px] font-medium text-[#95A0A7]">
+						<p className="font-mts-text text-left text-[16px]/[20.8px] font-medium text-[#95A0A7]">
 							Telegram Premium
 						</p>
 					</div>
@@ -98,7 +101,7 @@ export const PremiumSelect = ({
 			{isOpen && (
 				<div
 					ref={contentRef}
-					className="absolute top-[65px] z-50 mt-2 w-full rounded-xl bg-white py-2 shadow-lg sm:w-[620px]"
+					className="absolute top-[65px] z-[100] mt-2 w-full rounded-xl bg-white py-2 shadow-lg sm:w-[620px]"
 				>
 					<div className="w-full">
 						{data.map((item) => {
@@ -113,24 +116,24 @@ export const PremiumSelect = ({
 									<div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3">
 										<div className="flex items-center gap-2">
 											<PremuimIcon />
-											<p className="font-mts-text block text-base/[22px] font-medium text-black sm:hidden">
+											<p className="font-mts-text block text-[16px]/[22.8px] font-medium text-black sm:hidden">
 												{item.months} месяцев
 											</p>
 										</div>
 										<div className="flex flex-col items-start">
-											<p className="font-mts-text hidden text-base/[22px] font-medium text-black sm:block">
+											<p className="font-mts-text hidden text-[16px]/[22.8px] font-medium text-black sm:block">
 												{item.months} месяцев
 											</p>
-											<p className="font-mts-text text-sm/[20px] font-medium text-[#95A0A7] sm:text-base/[22px]">
+											<p className="font-mts-text text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
 												Telegram Premium
 											</p>
 										</div>
 									</div>
 									<div className="flex flex-col items-end gap-1 sm:gap-0">
-										<p className="font-mts-text text-base/[22px] font-medium text-[#8B5CF6]">
+										<p className="font-mts-text text-[16px]/[22.8px] font-medium text-[#8B5CF6]">
 											{Math.round(item.price)}₽
 										</p>
-										<p className="font-mts-text text-sm/[20px] font-medium text-[#95A0A7] sm:text-base/[22px]">
+										<p className="font-mts-text text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
 											{monthlyPrice}₽ в месяц
 										</p>
 									</div>

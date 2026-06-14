@@ -31,7 +31,7 @@ export const AmountInput = ({
 	additionalLabel,
 	additionalLabelLink,
 	additionalLabelIcon,
-	strikeValue
+	strikeValue,
 }: AmountInputProps) => {
 	const [internalValue, setInternalValue] = useState(value);
 	const AdditionalLabelIcon = additionalLabelIcon;
@@ -79,22 +79,22 @@ export const AmountInput = ({
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex items-start justify-between">
-			<p className="font-mts-text text-sm/[100%] font-medium text-black">
-				{label}
-			</p>
-			{additionalLabel && additionalLabelLink && (
-				<a
-					href={additionalLabelLink}
-					className="text-[#95A0A7] font-[500] font-mts-text text-sm inline-flex items-center gap-1 leading-none"
-				>
-					{additionalLabel}
-					{AdditionalLabelIcon && (
-						<span className="inline-flex h-3 w-3 items-center justify-center">
-							<AdditionalLabelIcon className="h-3 w-3 shrink-0" />
-						</span>
-					)}
-				</a>
-			)}
+				<p className="font-mts-text text-[14px]/[100%] font-medium text-black">
+					{label}
+				</p>
+				{additionalLabel && additionalLabelLink && (
+					<a
+						href={additionalLabelLink}
+						className="font-mts-text inline-flex items-center gap-1 text-[14px] font-[500] leading-none text-[#95A0A7]"
+					>
+						{additionalLabel}
+						{AdditionalLabelIcon && (
+							<span className="inline-flex h-3 w-3 items-center justify-center">
+								<AdditionalLabelIcon className="h-3 w-3 shrink-0" />
+							</span>
+						)}
+					</a>
+				)}
 			</div>
 
 			<div className="relative flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-4 py-2.5 transition-colors">
@@ -103,18 +103,18 @@ export const AmountInput = ({
 					value={internalValue}
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
-					className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-base/[22px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
+					className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
 					type="text"
 					inputMode="decimal"
 				/>
 
 				<div className="flex items-center gap-2">
 					{strikeValue && (
-						<span className="font-mts-text text-xs font-medium text-[#95A0A7] line-through whitespace-nowrap">
+						<span className="font-mts-text whitespace-nowrap text-[12px] font-medium text-[#95A0A7] line-through">
 							{strikeValue}
 						</span>
 					)}
-					<p className="font-mts-wide text-base/[22px] font-bold text-[#95A0A7]">
+					<p className="font-mts-wide text-[16px]/[22.8px] font-bold text-[#95A0A7]">
 						{displayCurrency}
 					</p>
 				</div>
@@ -127,7 +127,7 @@ export const AmountInput = ({
 							key={amount}
 							type="button"
 							onClick={() => handleQuickAmountClickLocal(amount)}
-							className="font-mts-text rounded-xl bg-[#2C6FFF1A] px-3 py-1.5 text-base/[22px] font-medium text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
+							className="font-mts-text rounded-xl bg-[#2C6FFF1A] px-3 py-1.5 text-[16px]/[22.8px] font-medium text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
 						>
 							{amount} {currency === "₽" ? "₽" : ""}
 						</button>

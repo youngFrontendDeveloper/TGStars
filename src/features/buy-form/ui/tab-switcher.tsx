@@ -184,7 +184,7 @@ const MobileTabSwitcher = ({
 // 						key={item.id}
 // 						onClick={() => onTabChange(item.id)}
 // 						className={clsx(
-// 							"font-mts-text flex items-center gap-2 rounded-[68px] p-0.5 px-[14px] py-3 text-sm/[100%] font-medium text-[#808080] transition-colors",
+// 							"font-mts-text flex items-center gap-2 rounded-[68px] p-0.5 px-[14px] py-3 text-[14px]/[100%] font-medium text-[#808080] transition-colors",
 // 							activeTab === item.id && "bg-white text-black",
 // 						)}
 // 					>
@@ -270,7 +270,7 @@ const MobileTabSwitcher = ({
 // 							<button
 // 								onClick={() => onTabChange(item.id)}
 // 								className={clsx(
-// 									"font-mts-text flex items-center justify-center gap-2 whitespace-nowrap rounded-[68px] px-4 py-[12.5px] text-sm/[100%] font-medium text-[#808080] transition-colors",
+// 									"font-mts-text flex items-center justify-center gap-2 whitespace-nowrap rounded-[68px] px-4 py-[12.5px] text-[14px]/[100%] font-medium text-[#808080] transition-colors",
 // 									activeTab === item.id && "bg-white text-black",
 // 								)}
 // 								style={{ minWidth: "fit-content" }}

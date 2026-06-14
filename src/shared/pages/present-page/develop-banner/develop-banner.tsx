@@ -15,14 +15,14 @@ export const DevelopBanner = () => {
 				className="h-auto w-full sm:h-[200px] sm:w-[241px]"
 			/>
 			<div className="flex flex-col gap-5">
-				<h1 className="font-mts-extended text-xl/[22px] font-medium text-black">
+				<h1 className="font-mts-extended text-[20px]/[22.8px] font-medium text-black">
 					Раздел в разработке
-				</h1>			
-				<p className="font-mts-text text-base/[22px] font-medium text-[#95A0A7]">
+				</h1>
+				<p className="font-mts-text text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 					Извините за строительный шум — утка уже всё чинит. Скоро здесь будет
 					что‑то классное.
 				</p>
-				<p className="font-mts-text text-base/[22px] font-medium text-[#95A0A7]">
+				<p className="font-mts-text text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 					А пока можете подписаться на наш{" "}
 					<Link
 						href="https://t.me/tgstarspage"

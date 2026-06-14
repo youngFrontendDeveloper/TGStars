@@ -246,7 +246,7 @@ export const SuccessPageClient = () => {
 		return `${starsCount ?? 0}`;
 	})();
 
-	const infoSuffix = isTon ? "TON" : (!isPremium ? "Stars" : undefined);
+	const infoSuffix = isTon ? "TON" : !isPremium ? "Stars" : undefined;
 
 	const orderIdDisplay = (() => {
 		if (serverOrder?.order_id) {
@@ -361,7 +361,7 @@ export const SuccessPageClient = () => {
 	// 				<div className="rounded-2xl bg-white px-5 py-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] sm:px-[40px] sm:py-[27px]">
 	// 					<div className="flex flex-col items-center gap-4 py-8">
 	// 						<div className="h-8 w-8 animate-spin rounded-full border-2 border-transparent border-t-[#2563EB]" />
-	// 						<p className="font-mts-text text-base text-[#95A0A7]">
+	// 						<p className="font-mts-text text-[16px] text-[#95A0A7]">
 	// 							Загрузка информации о заказе...
 	// 						</p>
 	// 					</div>

@@ -73,7 +73,7 @@ export const History = () => {
 			</h2>
 			<div className="w-full rounded-2xl bg-white px-4 py-6 sm:p-0">
 				{orders?.length === 0 ? (
-					<p className="font-mts-text flex flex-col text-sm/[22px] font-normal text-[#95A0A7] sm:p-4 sm:text-base/[22px]">
+					<p className="font-mts-text flex flex-col text-[14px]/[22.8px] font-normal text-[#95A0A7] sm:p-4 sm:text-[16px]/[22.8px]">
 						Тут пока ничего нет
 					</p>
 				) : (
@@ -89,7 +89,7 @@ export const History = () => {
 									<div className="flex flex-col gap-6">
 										<div className="flex flex-col items-start gap-2">
 											<p className="table-text py-0">#{el.id}</p>
-											<p className="table-header py-0 text-sm/[22px]">
+											<p className="table-header py-0 text-[14px]/[22.8px]">
 												{formatDateOnly(el.created_at)}
 											</p>
 										</div>
@@ -99,13 +99,13 @@ export const History = () => {
 													? `${el.premium_months} month Telegram Premium`
 													: `${el.stars_count} Telegram Stars`}
 											</p>
-											<p className="table-header py-0 text-sm/[22px]">
+											<p className="table-header py-0 text-[14px]/[22.8px]">
 												{el.recipient_username}
 											</p>
 										</div>
 									</div>
 									<p
-										className={`font-mts-text whitespace-nowrap rounded-full ${getStatusInfo(el.status).color} px-5 py-1 text-xs/[22px] text-black`}
+										className={`font-mts-text whitespace-nowrap rounded-full ${getStatusInfo(el.status).color} px-5 py-1 text-[12px]/[22.8px] text-black`}
 									>
 										{getStatusInfo(el.status).text}
 									</p>
@@ -138,7 +138,7 @@ export const History = () => {
 									<div
 										className={`flex items-center justify-center self-stretch ${getStatusInfo(el.status).color} text-black`}
 									>
-										<span className="font-mts-text inline-block whitespace-nowrap text-xs/[22px] md:text-[16px]">
+										<span className="font-mts-text inline-block whitespace-nowrap text-[12px]/[22.8px] md:text-[16px]">
 											{getStatusInfo(el.status).text}
 										</span>
 									</div>
