@@ -85,8 +85,12 @@ export const AuthForm = () => {
 			<Image
 				src="/assets/icons/logo.svg"
 				alt="Логотип TGStars"
-				width={217}
-				height={40}
+				// width={217}			
+				// height={40}
+				width={0}
+				height={0}
+				sizes="100vw"
+				style={{ width: '163px', height: 'auto' }}
 			/>
 			<Button
 				onClick={handleAuth}

@@ -54,9 +54,13 @@ export const Header = () => {
 					<Image
 						src="/assets/icons/logo.svg"
 						alt="Логотип TGStars"
-						width={185}
-						height={30}
+						// width={185}						
+						// height={30}
 						priority
+						width={0}
+						height={0}
+						sizes="100vw"
+						style={{ width: '163px', height: 'auto' }}
 					/>
 				</Link>
 				<div className="hidden flex-1 justify-center lg:flex">

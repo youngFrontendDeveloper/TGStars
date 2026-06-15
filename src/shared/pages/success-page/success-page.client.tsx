@@ -406,8 +406,10 @@ export const SuccessPageClient = () => {
 												<Image
 													src={avatarSrc}
 													alt={recipientLabel}
-													width={40}
-													height={40}
+													// width={40}
+													// height={40}
+													fill
+													sizes="40px"
 													className="rounded-full object-cover"
 													onError={() => setAvatarError(true)}
 												/>
@@ -415,9 +417,11 @@ export const SuccessPageClient = () => {
 												<Image
 													src="/assets/images/user.png"
 													alt={recipientLabel}
-													width={40}
-													height={40}
-													className="h-10 w-10 rounded-full object-cover"
+													// width={40}
+													// height={40}
+													fill
+													sizes="40px"
+													className="rounded-full object-cover"
 												/>
 											)}
 										</div>

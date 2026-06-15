@@ -7,10 +7,8 @@ import { getMenuItems } from "../../../constants/menu-items";
 
 const getIconClassName = (isActive: boolean, index: number): string => {
 	if (isActive && index === 0) {
-		console.log("isActive && index === 0");
 		return "text-[#FFCF09]";
 	} else if (isActive && index !== 0) {
-		console.log("isActive && index !== 0");
 		return "text-white";
 	} else if (!isActive && index === 0) {
 		return "group-hover:text-[#FFCF09]";

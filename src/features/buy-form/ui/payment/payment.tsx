@@ -196,17 +196,17 @@ export const Payment = ({
 	};
 
 	return (
-		<div className="flex flex-col gap-6 sm:gap-8">
+		<div className="flex flex-col gap-[24] md:gap-[33px]">
 			<button onClick={handleClose} className="cursor-pointer">
 				<Back />
 			</button>
 
-			<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+			<div className="grid w-full grid-cols-1 gap-[16px] md:grid-cols-2">
 				<div className="flex flex-col gap-2">
 					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 						Получатель
 					</p>
-					<div className="flex items-center gap-4 rounded-xl bg-[#F2F4F5] px-4 py-2">
+					<div className="flex items-center gap-[15px] rounded-xl bg-[#EAEEF0] px-[16px] py-[7.5px]">
 						<div className="relative z-0 h-[40px] w-[40px] min-w-[40px] rounded-full">
 							<div
 								className="absolute -z-10 h-full w-full rounded-full blur-sm"
@@ -216,12 +216,14 @@ export const Payment = ({
 								}}
 							/>
 							{user?.avatar_url ? (
-								<img
+								<Image
 									src={user.avatar_url}
 									alt="username"
-									width={40}
-									height={40}
-									className="h-[40px] w-[40px] rounded-full object-cover"
+									fill
+									sizes="40px"
+									// width={40}
+									// height={40}
+									className="rounded-full object-cover"
 									onError={(e) => {
 										(e.currentTarget as HTMLImageElement).style.display =
 											"none";
@@ -231,8 +233,10 @@ export const Payment = ({
 								<Image
 									src={defaultUser}
 									alt="default avatar"
-									width={40}
-									height={40}
+									fill
+									sizes="40px"
+									// width={40}
+									// height={40}
 									className="rounded-full"
 								/>
 							)}
@@ -247,7 +251,7 @@ export const Payment = ({
 					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 						Количество
 					</p>
-					<div className="relative flex items-center gap-1 rounded-xl bg-[#F2F4F5] px-4 py-2.5 transition-colors">
+					<div className="relative flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-[16px] py-[10px] transition-colors">
 						<p className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{section === "stars" && selectedAmount?.value}
 							{section === "premium" && selectedAmount?.value + " месяцев"}
@@ -263,13 +267,13 @@ export const Payment = ({
 
 			<PaymentSelect payment={payment} setPayment={setPayment} />
 
-			<div className="flex flex-col gap-4">
+			<div className="flex flex-col gap-[24px]">
 				<div className="flex w-full items-center justify-between rounded-xl border-2 border-[#F6F6F6] px-6 py-2.5">
 					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
 						Итого:
 					</p>
 					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
-						{calculateTotal()} ₽
+						{calculateTotal()} Руб.
 					</p>
 				</div>
 

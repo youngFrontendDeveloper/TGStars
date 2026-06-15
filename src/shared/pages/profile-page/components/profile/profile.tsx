@@ -153,18 +153,22 @@ export const Profile = () => {
 								<Image
 									src={resolvedAvatar}
 									alt={user?.first_name || ""}
-									width={78}
-									height={78}
-									className="h-full w-full rounded-full object-cover"
+									// width={78}
+									// height={78}
+									fill
+									sizes="78px"
+									className="rounded-full object-cover"
 									onError={() => setAvatarError(true)}
 								/>
 							) : (
 								<Image
 									src={defaultUser.src}
 									alt={user?.first_name || ""}
-									width={78}
-									height={78}
-									className="h-full w-full rounded-full object-cover"
+									// width={78}
+									// height={78}
+									fill
+									sizes="78px"
+									className="rounded-full object-cover"
 								/>
 							)}
 						</div>

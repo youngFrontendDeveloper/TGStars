@@ -81,7 +81,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 	};
 
 	return (
-		<div className="flex flex-col gap-2" ref={selectRef}>
+		<div className="flex flex-col gap-[8px]" ref={selectRef}>
 			<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
 				Способ оплаты
 			</p>
@@ -89,7 +89,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 				<button
 					type="button"
 					onClick={toggleDropdown}
-					className={`flex h-[65px] w-full items-center justify-between rounded-xl bg-[#F6F6F6] px-4 py-3 outline-none transition-colors ${isOpen && "md:w-[620px]"} hover:md:w-[620px]`}
+					className={`flex h-[65px] w-full items-center justify-between rounded-xl bg-[#EAEEF0] px-4 py-3 outline-none transition-colors ${isOpen && "md:w-[620px]"} hover:md:w-[620px]`}
 					style={{
 						transition: "0.4s",
 						boxShadow: isOpen

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="ru">
+		<html lang="ru" data-scroll-behavior="smooth">
 			<body className="flex min-h-screen w-full flex-col bg-[#E1E8F0]">
 				<a href="#main-content" className="skip-link">
 					Пропустить навигацию
