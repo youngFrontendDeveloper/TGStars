@@ -18,5 +18,7 @@
 		"^(?!.*[.]s?css$)[./].*$",
 		"",
 		".s?css$"
-	]
+	],
+	"bracketSpacing": true,
+	"arrowParens": "always"
 }

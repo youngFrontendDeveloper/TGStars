@@ -246,7 +246,14 @@ export const SuccessPageClient = () => {
 		return `${starsCount ?? 0}`;
 	})();
 
-	const infoSuffix = isTon ? "TON" : !isPremium ? "Stars" : undefined;
+	let infoSuffix;
+	if (isTon) {
+		infoSuffix = "TON";
+	} else if (!isPremium) {
+		infoSuffix = "Stars";
+	} else {
+		infoSuffix = undefined;
+	}
 
 	const orderIdDisplay = (() => {
 		if (serverOrder?.order_id) {
