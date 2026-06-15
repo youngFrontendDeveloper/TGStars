@@ -24,7 +24,7 @@ export function CustomAccordion({
 }: AccordionProps) {
 	return (
 		<section className="relative -top-[5px] flex flex-col gap-5">
-			<h2 className="font-mts-wide flex items-center gap-[6px] text-[16px]/[22.8px] font-semibold text-black">
+			<h2 className="font-montserrat flex items-center gap-[6px] text-[16px]/[22.8px] font-semibold text-black">
 				<Question />
 				Часто задаваемые вопросы
 			</h2>
@@ -39,7 +39,7 @@ export function CustomAccordion({
 						value={item.id}
 					>
 						<Accordion.ItemTrigger className="group flex w-full items-center justify-between py-[20px] text-left text-gray-900 transition-colors">
-							<span className="font-mts-text text-[16px]/[22.8px] font-medium text-black">
+							<span className="font-montserrat text-[16px]/[22.8px] font-medium text-black">
 								{item.title}
 							</span>
 							<Accordion.ItemIndicator>
@@ -47,7 +47,7 @@ export function CustomAccordion({
 							</Accordion.ItemIndicator>
 						</Accordion.ItemTrigger>
 						<Accordion.ItemContent className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden">
-							<div className="font-mts-text max-w-[628px] pb-2 text-[14px]/[22.8px] font-normal text-black">
+							<div className="font-inter max-w-[628px] pb-2 text-[14px]/[22.8px] font-normal text-black">
 								{item.content}
 							</div>
 						</Accordion.ItemContent>

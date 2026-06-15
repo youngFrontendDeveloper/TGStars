@@ -19,10 +19,10 @@ export const TgBanner = () => {
 				className="flex h-auto w-full max-w-[350px] justify-center rounded-[32px] lg:h-[200px] lg:w-[200px] lg:min-w-[200px]"
 			/>
 			<div className="flex flex-col">
-				<p className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
+				<p className="font-montserrat mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 					Подписывайтесь на наш Telegram
 				</p>
-				<p className="font-mts-wide mb-[20px] text-[16px]/[22.8px] font-semibold text-[#95A0A7] lg:mb-[43px]">
+				<p className="font-montserrat mb-[20px] text-[16px]/[22.8px] font-semibold text-[#95A0A7] lg:mb-[43px]">
 					Там мы публикуем новости из мира Telegram, розыгрыши и анонсы
 				</p>
 				<Link

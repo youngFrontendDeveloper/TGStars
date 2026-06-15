@@ -246,7 +246,7 @@ export const SuccessPageClient = () => {
 		return `${starsCount ?? 0}`;
 	})();
 
-	const infoSuffix = isTon ? "TON" : (!isPremium ? "Stars" : undefined);
+	const infoSuffix = isTon ? "TON" : !isPremium ? "Stars" : undefined;
 
 	const orderIdDisplay = (() => {
 		if (serverOrder?.order_id) {
@@ -361,7 +361,7 @@ export const SuccessPageClient = () => {
 	// 				<div className="rounded-2xl bg-white px-5 py-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] sm:px-[40px] sm:py-[27px]">
 	// 					<div className="flex flex-col items-center gap-4 py-8">
 	// 						<div className="h-8 w-8 animate-spin rounded-full border-2 border-transparent border-t-[#2563EB]" />
-	// 						<p className="font-mts-text text-[16px] text-[#95A0A7]">
+	// 						<p className="font-montserrat text-[16px] text-[#95A0A7]">
 	// 							Загрузка информации о заказе...
 	// 						</p>
 	// 					</div>
@@ -376,11 +376,11 @@ export const SuccessPageClient = () => {
 			<div className="mx-auto h-full w-full max-w-[720px]">
 				<div className="mt-[18px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0_12px_40px_rgba(15,23,42,0.08)] md:px-[40px] md:py-[30px] lg:mt-0">
 					<div className="flex flex-col gap-[8px]">
-						<h1 className="font-mts-extended text-[20px]/[22.8px] font-[600] tracking-[-0.02em] text-black md:text-[20px]">
+						<h1 className="font-montserrat text-[20px]/[22.8px] font-[600] tracking-[-0.02em] text-black md:text-[20px]">
 							{orderIdDisplay}
 						</h1>
 						{paymentIdText && (
-							<p className="font-mts-text text-[14px] font-[500] text-[#9CA3AF]">
+							<p className="font-montserrat text-[14px] font-medium text-[#9CA3AF]">
 								{paymentIdText}
 							</p>
 						)}
@@ -388,7 +388,7 @@ export const SuccessPageClient = () => {
 
 					<div className="mt-[24px] grid grid-cols-1 gap-[16px] md:grid-cols-2 lg:mt-[33px]">
 						<div className="flex flex-col gap-2">
-							<p className="font-mts-wide text-[14px] font-[600] text-black">
+							<p className="font-montserrat text-[14px] font-[600] text-black">
 								Получатель
 							</p>
 							<div className="box-border flex h-[55px] items-center rounded-[12px] bg-[#EAEEF0] px-[16px] py-[7.5px]">
@@ -426,7 +426,7 @@ export const SuccessPageClient = () => {
 											)}
 										</div>
 									</div>
-									<span className="font-mts-extended block flex-1 truncate text-[16px]/[22.75px] font-semibold text-black">
+									<span className="font-montserrat block flex-1 truncate text-[16px]/[22.75px] font-semibold text-black">
 										{recipientLabel}
 									</span>
 								</div>
@@ -434,16 +434,16 @@ export const SuccessPageClient = () => {
 						</div>
 
 						<div className="flex flex-col gap-2">
-							<p className="font-mts-wide text-[14px] font-[600] text-black">
+							<p className="font-montserrat text-[14px] font-[600] text-black">
 								{infoTitle}
 							</p>
 							<div className="flex h-[55px] items-center rounded-[12px] bg-[#EAEEF0] px-[16px] py-[7.5px]">
 								<div className="flex w-full items-center justify-between">
-									<span className="font-mts-extended text-[16px]/[22.75px] font-semibold text-black">
+									<span className="font-montserrat text-[16px]/[22.75px] font-semibold text-black">
 										{infoValue}
 									</span>
 									{infoSuffix && (
-										<span className="font-mts-wide text-[16px]/[22.75px] font-bold text-[#95A0A7]">
+										<span className="font-montserrat text-[16px]/[22.75px] font-bold text-[#95A0A7]">
 											{infoSuffix}
 										</span>
 									)}
@@ -488,7 +488,7 @@ export const SuccessPageClient = () => {
 										/>
 									</div>
 									<span
-										className="font-mts-wide text-[14px] font-semibold"
+										className="font-montserrat text-[14px] font-semibold"
 										style={{ color: textColor(0) }}
 									>
 										Оплата
@@ -513,7 +513,7 @@ export const SuccessPageClient = () => {
 										)}
 									</div>
 									<span
-										className="font-mts-wide text-[14px] font-semibold"
+										className="font-montserrat text-[14px] font-semibold"
 										style={{ color: textColor(1) }}
 									>
 										Обработка
@@ -538,7 +538,7 @@ export const SuccessPageClient = () => {
 										)}
 									</div>
 									<span
-										className="font-mts-wide text-[14px] font-semibold"
+										className="font-montserrat text-[14px] font-semibold"
 										style={{ color: textColor(2) }}
 									>
 										Доставка
@@ -568,7 +568,7 @@ export const SuccessPageClient = () => {
 										)}
 									</div>
 									<span
-										className="font-mts-wide text-[14px] font-semibold"
+										className="font-montserrat text-[14px] font-semibold"
 										style={{ color: textColor(3) }}
 									>
 										{(() => {
@@ -583,10 +583,10 @@ export const SuccessPageClient = () => {
 					</div>
 
 					<div className="mt-[24px] text-center lg:mt-[33px]">
-						<p className="font-mts-text text-[16px]/[22.75px] text-[#95A0A7]">
+						<p className="font-inter text-[16px]/[22.75px] text-[#95A0A7]">
 							{statusText}
 						</p>
-						<p className="font-mts-text text-[16px]/[22.75px] text-[#95A0A7]">
+						<p className="font-inter text-[16px]/[22.75px] text-[#95A0A7]">
 							{isError ? (
 								"Пожалуйста, обратитесь в Техническую поддержку."
 							) : (
@@ -611,7 +611,7 @@ export const SuccessPageClient = () => {
 							href="https://t.me/TGStars_Reviews"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="font-mts-text group relative flex w-full items-center justify-center gap-[6px] overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-6 py-[10.5px] text-[16px]/[22.8px] text-white shadow-[0_10px_30px_rgba(45,107,255,0.25)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 md:w-full"
+							className="font-inter group relative flex w-full items-center justify-center gap-[6px] overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-6 py-[10.5px] text-[16px]/[22.8px] text-white shadow-[0_10px_30px_rgba(45,107,255,0.25)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 md:w-full"
 						>
 							<span className="relative z-10 flex items-center gap-[6px]">
 								Оставить отзыв{" "}
@@ -622,7 +622,7 @@ export const SuccessPageClient = () => {
 							href="https://t.me/TGStarsPage"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="font-mts-text align-center flex w-full items-center justify-center gap-[6px] rounded-full border border-[#E5E7EB] bg-white px-6 py-[10.5px] text-[16px]/[22.8px] text-[#9CA3AF] transition hover:bg-[#F9FAFB] md:w-full"
+							className="font-inter align-center flex w-full items-center justify-center gap-[6px] rounded-full border border-[#E5E7EB] bg-white px-6 py-[10.5px] text-[16px]/[22.8px] text-[#9CA3AF] transition hover:bg-[#F9FAFB] md:w-full"
 						>
 							Наш Канал/Чат <TgIcon />
 						</a>

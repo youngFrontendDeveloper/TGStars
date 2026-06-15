@@ -85,12 +85,12 @@ export const AuthForm = () => {
 			<Image
 				src="/assets/icons/logo.svg"
 				alt="Логотип TGStars"
-				// width={217}			
+				// width={217}
 				// height={40}
 				width={0}
 				height={0}
 				sizes="100vw"
-				style={{ width: '163px', height: 'auto' }}
+				style={{ width: "163px", height: "auto" }}
 			/>
 			<Button
 				onClick={handleAuth}
@@ -102,7 +102,7 @@ export const AuthForm = () => {
 					? "Проверка авторизации..."
 					: "Войти через Telegram"}
 			</Button>
-			<p className="font-mts-text text-[14px]/[22.8px] text-[#95A0A7]">
+			<p className="font-inter text-[14px]/[22.8px] text-[#95A0A7]">
 				Нажимая кнопку &quot;Войти через Telegram&quot;, вы соглашаетесь с&nbsp;
 				<Link
 					href={"/public-offer"}

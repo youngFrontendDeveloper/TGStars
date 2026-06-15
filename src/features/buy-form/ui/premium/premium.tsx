@@ -40,7 +40,7 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 	return (
 		<>
 			<div className="flex flex-col gap-2">
-				<p className="font-mts-text text-[14px]/[100%] font-medium text-black">
+				<p className="font-montserrat text-[14px]/[100%] font-medium text-black">
 					Выберите подписку
 				</p>
 				<PremiumSelect
@@ -63,7 +63,7 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 			>
 				Купить Premium
 			</Button>
-			<p className="font-mts-text text-center text-[14px] leading-[22.8px] text-[#95A0A7] lg:text-[16px]">
+			<p className="font-inter text-center text-[14px] leading-[22.8px] text-[#95A0A7] lg:text-[16px]">
 				Среднее время доставки Premium составляет 1 минуту. В случае неполадок
 				со стороны Telegram возможны задержки.
 				<br />

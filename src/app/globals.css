@@ -5,14 +5,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--font-montserrat: "Montserrat", "Arial", "Helvetica", sans-serif;
+	--font-inter: "Inter", "Arial", "Helvetica", sans-serif;
+}
+
 html {
 	scroll-behavior: smooth;
 }
 
-body{
+body {
 	overflow-y: scroll;
 }
-
 
 .button-gradient {
 	position: relative;
@@ -138,37 +142,54 @@ body{
 	min-width: 0;
 }
 
-
 .avatar-wrapper {
-  position: relative;
-  width: 40px;
-  height: 40px;
+	position: relative;
+	width: 40px;
+	height: 40px;
 }
 
 .avatar-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -6px; /* размер свечения */
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(128, 0, 255, 0.5),
-    rgba(255, 0, 128, 0.4),
-    transparent 70%
-  );
-  filter: blur(8px);
-  z-index: 0;
+	content: "";
+	position: absolute;
+	inset: -6px; /* размер свечения */
+	border-radius: 50%;
+	background: radial-gradient(
+		circle,
+		rgba(128, 0, 255, 0.5),
+		rgba(255, 0, 128, 0.4),
+		transparent 70%
+	);
+	filter: blur(8px);
+	z-index: 0;
 }
 
 .avatar {
-  position: relative;
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 1;
+	position: relative;
+	border-radius: 50%;
+	object-fit: cover;
+	z-index: 1;
 }
-
 
 .shadow-cus {
-	box-shadow: 0px 8px 10px -6px #0000000D;
+	box-shadow: 0px 8px 10px -6px #0000000d;
 }
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:10px;top:10px;z-index:9999}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+.skip-link {
+	position: absolute;
+	left: -9999px;
+}
+.skip-link:focus {
+	left: 10px;
+	top: 10px;
+	z-index: 9999;
+}

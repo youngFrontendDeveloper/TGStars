@@ -85,12 +85,12 @@ export const PremiumSelect = ({
 				<div className="flex items-center gap-3">
 					<PremuimIcon />
 					<div className="flex flex-col items-start">
-						<p className="font-mts-wide text-left text-[16px]/[20.8px] font-semibold text-black">
+						<p className="font-montserrat text-left text-[16px]/[20.8px] font-semibold text-black">
 							{selectedOption
 								? `${selectedOption.months} месяцев`
 								: placeholder}
 						</p>
-						<p className="font-mts-text text-left text-[16px]/[20.8px] font-medium text-[#95A0A7]">
+						<p className="font-montserrat text-left text-[16px]/[20.8px] font-medium text-[#95A0A7]">
 							Telegram Premium
 						</p>
 					</div>
@@ -116,24 +116,24 @@ export const PremiumSelect = ({
 									<div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3">
 										<div className="flex items-center gap-2">
 											<PremuimIcon />
-											<p className="font-mts-text block text-[16px]/[22.8px] font-medium text-black sm:hidden">
+											<p className="font-montserrat block text-[16px]/[22.8px] font-medium text-black sm:hidden">
 												{item.months} месяцев
 											</p>
 										</div>
 										<div className="flex flex-col items-start">
-											<p className="font-mts-text hidden text-[16px]/[22.8px] font-medium text-black sm:block">
+											<p className="font-montserrat hidden text-[16px]/[22.8px] font-medium text-black sm:block">
 												{item.months} месяцев
 											</p>
-											<p className="font-mts-text text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
+											<p className="font-montserrat text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
 												Telegram Premium
 											</p>
 										</div>
 									</div>
 									<div className="flex flex-col items-end gap-1 sm:gap-0">
-										<p className="font-mts-text text-[16px]/[22.8px] font-medium text-[#8B5CF6]">
+										<p className="font-montserrat text-[16px]/[22.8px] font-medium text-[#8B5CF6]">
 											{Math.round(item.price)}₽
 										</p>
-										<p className="font-mts-text text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
+										<p className="font-montserrat text-[14px]/[20.75px] font-medium text-[#95A0A7] sm:text-[16px]/[22.8px]">
 											{monthlyPrice}₽ в месяц
 										</p>
 									</div>

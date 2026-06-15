@@ -68,12 +68,12 @@ export const History = () => {
 
 	return (
 		<section className="flex flex-col">
-			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
+			<h2 className="font-montserrat mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				История заказов
 			</h2>
 			<div className="w-full rounded-2xl bg-white px-4 py-6 sm:p-0">
 				{orders?.length === 0 ? (
-					<p className="font-mts-text flex flex-col text-[14px]/[22.8px] font-normal text-[#95A0A7] sm:p-4 sm:text-[16px]/[22.8px]">
+					<p className="font-inter flex flex-col text-[14px]/[22.8px] font-normal text-[#95A0A7] sm:p-4 sm:text-[16px]/[22.8px]">
 						Тут пока ничего нет
 					</p>
 				) : (
@@ -105,7 +105,7 @@ export const History = () => {
 										</div>
 									</div>
 									<p
-										className={`font-mts-text whitespace-nowrap rounded-full ${getStatusInfo(el.status).color} px-5 py-1 text-[12px]/[22.8px] text-black`}
+										className={`font-inter whitespace-nowrap rounded-full ${getStatusInfo(el.status).color} px-5 py-1 text-[12px]/[22.8px] text-black`}
 									>
 										{getStatusInfo(el.status).text}
 									</p>
@@ -138,7 +138,7 @@ export const History = () => {
 									<div
 										className={`flex items-center justify-center self-stretch ${getStatusInfo(el.status).color} text-black`}
 									>
-										<span className="font-mts-text inline-block whitespace-nowrap text-[12px]/[22.8px] md:text-[16px]">
+										<span className="font-inter inline-block whitespace-nowrap text-[12px]/[22.8px] md:text-[16px]">
 											{getStatusInfo(el.status).text}
 										</span>
 									</div>
@@ -177,7 +177,7 @@ export const History = () => {
 												type="button"
 												onClick={() => setPage(pageNumber)}
 												aria-current={isActive ? "page" : undefined}
-												className={`font-mts-text text-[16px] font-[500] transition ${
+												className={`font-montserrat text-[16px] font-medium transition ${
 													isActive
 														? "text-[#111827]"
 														: "text-[#9CA3AF] hover:text-[#111827]"

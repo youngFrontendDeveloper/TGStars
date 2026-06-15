@@ -135,7 +135,7 @@ export const Profile = () => {
 
 	return (
 		<section className="mb-[48px] flex flex-col md:mb-[58px]">
-			<h2 className="font-mts-extended mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
+			<h2 className="font-montserrat mb-[20px] text-[20px]/[22.8px] font-semibold text-black">
 				Профиль
 			</h2>
 			<div className="mx-auto flex w-full flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:max-w-[670px] md:flex-row">
@@ -172,7 +172,7 @@ export const Profile = () => {
 								/>
 							)}
 						</div>
-						<p className="font-mts-wide text-[18px]/[100%] font-bold text-[#95A0A7]">
+						<p className="font-montserrat text-[18px]/[100%] font-bold text-[#95A0A7]">
 							{user?.first_name}
 						</p>
 					</div>
@@ -180,7 +180,7 @@ export const Profile = () => {
 						<div className="flex items-center justify-between md:order-[2]">
 							<p className="table-text">Уровень:</p>
 							<p
-								className={`font-mts-wide text-[15px] font-bold uppercase ${currentLevel.textClass}`}
+								className={`ont-montserrat-bold text-[15px] font-bold uppercase ${currentLevel.textClass}`}
 							>
 								{currentLevel.name}
 							</p>
@@ -196,7 +196,7 @@ export const Profile = () => {
 				</div>
 				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px]">
 					<div className="flex flex-col gap-[8px]">
-						<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
+						<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 							Ваша реферальная ссылка:
 						</p>
 						<div className="flex h-[45px] w-full items-center justify-between gap-[8px] rounded-[12px] bg-[#EAEEF0] px-[16px] py-[11px] lg:px-[8px]">
@@ -243,21 +243,21 @@ export const Profile = () => {
 										key={toast.id}
 										className="flex w-[300px] flex-col gap-3 rounded-2xl border border-[#F2F4F4] bg-white p-4"
 									>
-										<Toast.Title className="font-mts-text text-[18px]/[100%] font-medium">
+										<Toast.Title className="font-montserrat text-[18px]/[100%] font-medium">
 											{toast.title}
 										</Toast.Title>
-										<Toast.Description className="font-mts-text text-[14px]/[16px] font-normal text-[#95A0A7] sm:text-[16px]/[22.8px]">
+										<Toast.Description className="font-inter text-[14px]/[16px] font-normal text-[#95A0A7] sm:text-[16px]/[22.8px]">
 											{toast.description}
 										</Toast.Description>
 									</Toast.Root>
 								)}
 							</Toaster>
 						</div>
-						<p className="font-mts-text flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
+						<p className="font-inter flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
 							Приглашено друзей: {refState?.referrals_count}
 						</p>
 					</div>
-					<p className="font-mts-text flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
+					<p className="font-inter flex flex-col text-[14px]/[22.75px] font-normal text-[#95A0A7] md:text-[16px]">
 						Присоединяйтесь к нашей реферальной программе — делитесь своей
 						уникальной ссылкой с друзьями и получайте 5% от их покупок в Звездах
 						на ваш реферальный баланс!

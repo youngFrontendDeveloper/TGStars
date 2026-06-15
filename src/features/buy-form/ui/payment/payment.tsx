@@ -203,7 +203,7 @@ export const Payment = ({
 
 			<div className="grid w-full grid-cols-1 gap-[16px] md:grid-cols-2">
 				<div className="flex flex-col gap-2">
-					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
+					<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 						Получатель
 					</p>
 					<div className="flex items-center gap-[15px] rounded-xl bg-[#EAEEF0] px-[16px] py-[7.5px]">
@@ -241,23 +241,23 @@ export const Payment = ({
 								/>
 							)}
 						</div>
-						<p className="font-mts-wide bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
+						<p className="font-montserrat bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{user?.name || "Загрузка..."}
 						</p>
 					</div>
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
+					<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 						Количество
 					</p>
 					<div className="relative flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-[16px] py-[10px] transition-colors">
-						<p className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
+						<p className="font-montserrat w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{section === "stars" && selectedAmount?.value}
 							{section === "premium" && selectedAmount?.value + " месяцев"}
 							{section === "ton" && selectedAmount?.value}
 						</p>
-						<p className="font-mts-wide text-[16px]/[22.8px] font-bold text-[#95A0A7]">
+						<p className="font-montserrat text-[16px]/[22.8px] font-bold text-[#95A0A7]">
 							{section === "stars" && "Stars"}
 							{section === "ton" && "TON"}
 						</p>
@@ -269,10 +269,10 @@ export const Payment = ({
 
 			<div className="flex flex-col gap-[24px]">
 				<div className="flex w-full items-center justify-between rounded-xl border-2 border-[#F6F6F6] px-6 py-2.5">
-					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
+					<p className="font-montserrat text-[16px]/[22.8px] font-semibold text-black">
 						Итого:
 					</p>
-					<p className="font-mts-wide text-[16px]/[22.8px] font-semibold text-black">
+					<p className="font-montserrat text-[16px]/[22.8px] font-semibold text-black">
 						{calculateTotal()} Руб.
 					</p>
 				</div>
@@ -280,7 +280,7 @@ export const Payment = ({
 				{authError && (
 					<div className="flex items-start gap-3 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3">
 						<span className="mt-0.5 text-[18px] leading-none">🔐</span>
-						<p className="font-mts-text text-[14px]/[20.75px] text-orange-700">
+						<p className="font-inter text-[14px]/[20.75px] text-orange-700">
 							Для покупки TON необходимо{" "}
 							<Link
 								href="/auth"
@@ -301,7 +301,7 @@ export const Payment = ({
 				</Button>
 			</div>
 
-			<p className="font-mts-text text-center text-[14px]/[22.8px] text-[#95A0A7] md:text-[16px]/[22.8px]">
+			<p className="font-inter text-center text-[14px]/[22.8px] text-[#95A0A7] md:text-[16px]/[22.8px]">
 				{section === "ton" ? (
 					<>
 						Для покупки TON необходимо{" "}

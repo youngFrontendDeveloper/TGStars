@@ -82,7 +82,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 
 	return (
 		<div className="flex flex-col gap-[8px]" ref={selectRef}>
-			<p className="font-mts-wide text-[14px]/[100%] font-semibold text-black">
+			<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 				Способ оплаты
 			</p>
 			<div className="relative flex flex-col items-center">
@@ -112,7 +112,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 					<div className="flex items-center gap-3">
 						{selectedItem && selectedItem.icon}
 						<div className="flex flex-col items-start">
-							<p className="font-mts-wide text-left text-[16px]/[22.8px] font-semibold text-black">
+							<p className="font-montserrat text-left text-[16px]/[22.8px] font-semibold text-black">
 								{selectedItem ? selectedItem.title : "Выберите метод оплаты"}
 							</p>
 						</div>
@@ -125,7 +125,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 				{isOpen && (
 					<div
 						ref={contentRef}
-						className="z-[100] absolute top-[65px] mt-2 w-full rounded-xl bg-white py-2 shadow-lg md:w-[620px]"
+						className="absolute top-[65px] z-[100] mt-2 w-full rounded-xl bg-white py-2 shadow-lg md:w-[620px]"
 					>
 						<div className="w-full">
 							{paymentOptions.map((item) => (
@@ -138,15 +138,15 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 									<div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3">
 										<div className="flex items-center justify-start gap-2">
 											{item.icon}
-											<p className="font-mts-wide block w-max text-[16px]/[22.8px] font-semibold text-black sm:hidden">
+											<p className="font-montserrat block w-max text-[16px]/[22.8px] font-semibold text-black sm:hidden">
 												{item.title}
 											</p>
 										</div>
 										<div className="flex flex-col items-start">
-											<p className="font-mts-widet hidden text-[16px]/[22.8px] font-semibold text-black sm:block">
+											<p className="font-montserratt hidden text-[16px]/[22.8px] font-semibold text-black sm:block">
 												{item.title}
 											</p>
-											<p className="font-mts-text text-left text-[16px]/[22.8px] font-medium text-[#95A0A7]">
+											<p className="font-montserrat text-left text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 												{item.desc}
 											</p>
 										</div>

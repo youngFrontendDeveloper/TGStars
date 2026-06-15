@@ -54,13 +54,13 @@ export const Header = () => {
 					<Image
 						src="/assets/icons/logo.svg"
 						alt="Логотип TGStars"
-						// width={185}						
+						// width={185}
 						// height={30}
 						priority
 						width={0}
 						height={0}
 						sizes="100vw"
-						style={{ width: '163px', height: 'auto' }}
+						style={{ width: "163px", height: "auto" }}
 					/>
 				</Link>
 				<div className="hidden flex-1 justify-center lg:flex">
@@ -86,7 +86,7 @@ export const Header = () => {
 								<Link
 									href={el.path}
 									key={i}
-									className={`font-mts-text flex items-center gap-2 rounded-[38px] p-0.5 px-4 py-2.5 text-[14px]/[100%] font-medium text-[#374151] ${pathname === el.path && "bg-[#2563EB] text-white"}`}
+									className={`font-montserrat flex items-center gap-2 rounded-[38px] p-0.5 px-4 py-2.5 text-[14px]/[100%] font-medium text-[#374151] ${pathname === el.path && "bg-[#2563EB] text-white"}`}
 								>
 									<Icon className={iconClassName} />
 									{el.name}
@@ -102,7 +102,7 @@ export const Header = () => {
 					{user ? (
 						<Link
 							href={"/auth"}
-							className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
+							className={`font-montserrat items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
 						>
 							Выйти
 						</Link>
@@ -113,7 +113,7 @@ export const Header = () => {
 						// </Button>
 						<Link
 							href={"/auth"}
-							className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
+							className={`font-montserrat items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
 						>
 							Войти
 						</Link>
@@ -158,7 +158,7 @@ export const Header = () => {
 										href={el.path}
 										key={i}
 										onClick={() => setMenu(false)}
-										className={`font-mts-text flex items-center gap-2 rounded-[14px] p-4 text-[14px]/[100%] font-medium text-[#808080] ${pathname === el.path && "bg-white text-black"}`}
+										className={`font-montserrat flex items-center gap-2 rounded-[14px] p-4 text-[14px]/[100%] font-medium text-[#808080] ${pathname === el.path && "bg-white text-black"}`}
 									>
 										<Icon className={iconClassName} />
 										{el.name}
@@ -169,7 +169,7 @@ export const Header = () => {
 						{user ? (
 							<Link
 								href={"/auth"}
-								className={`font-mts-wide items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
+								className={`font-montserrat items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
 							>
 								Выйти
 							</Link>
@@ -180,7 +180,7 @@ export const Header = () => {
 							// </Button>
 							<Link
 								href={"/auth"}
-								className={`font-mts-wide w-fit items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
+								className={`font-montserrat w-fit items-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[18px] py-[10px] text-[16px] font-medium leading-[22.8px] text-white transition-colors duration-300 hover:bg-[#2563EB] hover:from-[#2563EB] hover:to-[#2563EB]`}
 							>
 								Войти
 							</Link>

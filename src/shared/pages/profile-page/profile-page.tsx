@@ -13,7 +13,7 @@ export const ProfilePage = definePage({
 				<div className="container">
 					<Profile />
 					<section className="mb-[48px] flex flex-col lg:mb-[58px]">
-						<h2 className="font-mts-extended hidden md:block text-[20px]/[22.8px] font-semibold text-black mb-[20px]">
+						<h2 className="font-montserrat mb-[20px] hidden text-[20px]/[22.8px] font-semibold text-black md:block">
 							Купить Звёзды
 						</h2>
 						<BuyForm />

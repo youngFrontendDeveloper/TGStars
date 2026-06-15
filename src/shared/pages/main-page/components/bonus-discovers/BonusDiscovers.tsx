@@ -114,18 +114,18 @@ export const BonusDiscovers = () => {
 		// Бонусная программа
 		<section className="relative mb-[32px] lg:mb-[50px]" id="bonus">
 			<h2 className="sr-only">Бонусная программа при покупке звезд Телеграм</h2>
-			<div className="font-mts-text mb-[20px] flex items-center gap-2 text-[14px] font-medium text-[#000000]">
+			<div className="font-montserrat mb-[20px] flex items-center gap-2 text-[14px] font-medium text-[#000000]">
 				<PresentIcon className="h-[16px] w-[16px]" />
-				<span className="font-mts-wide text-[16px] font-semibold leading-[23px]">
+				<span className="font-montserrat text-[16px] font-semibold leading-[23px]">
 					Бонусная программа
 				</span>
 			</div>
 			<div className="shadow-cus mb-[20px] box-border flex flex-col justify-between gap-5 rounded-[16px] border-[1px] border-[#FFFFFF] bg-[#F7F9FB] p-[24px] md:flex-row md:px-[15px] md:py-[25px]">
 				<div className="">
-					<p className="font-mts-wide text-center text-[16px] font-semibold leading-[24px] md:text-left">
+					<p className="font-montserrat text-center text-[16px] font-semibold leading-[24px] md:text-left">
 						Авторизуйтесь и получите скидку прямо сейчас!
 					</p>
-					<p className="font-mts-text leading-1 text-center text-[14px] font-medium text-[#95A0A7] md:text-left">
+					<p className="font-montserrat leading-1 text-center text-[14px] font-medium text-[#95A0A7] md:text-left">
 						Скидка автоматически применится к Вашим заказам.{" "}
 					</p>
 				</div>
@@ -172,16 +172,16 @@ export const BonusDiscovers = () => {
 											className="mb-[20px] h-[110px] w-[90px] self-center object-contain"
 										/>
 										<span
-											className={`font-mts-wide mb-[20px] block flex h-[35px] w-full min-w-[140px] items-center justify-center rounded-full text-center text-[16px]/[22.75px] font-bold ${discover.pillClass}`}
+											className={`ont-montserrat-bold mb-[20px] block flex h-[35px] w-full min-w-[140px] items-center justify-center rounded-full text-center text-[16px]/[22.75px] font-bold ${discover.pillClass}`}
 										>
 											{discover.name}
 										</span>
 										{/* <div className="flex items-center gap-2"> */}
-										<p className="font-mts-wide mb-[4px] text-[16px]/[22.75px] font-semibold text-[#374151]">
+										<p className="font-montserrat mb-[4px] text-[16px]/[22.75px] font-semibold text-[#374151]">
 											Скидка {discover.discoverPercent}%
 										</p>
 										{/* </div> */}
-										<p className="font-mts-text relative text-[14px]/[22.8px] text-[#95A0A7]">
+										<p className="font-inter relative text-[14px]/[22.8px] text-[#95A0A7]">
 											{discover.discoverCondition}
 										</p>
 										{/* </div> */}

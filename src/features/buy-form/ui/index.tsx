@@ -57,7 +57,7 @@ export const BuyForm = memo(() => {
 	}, []);
 
 	return (
-		<div className="relative flex w-full flex-col rounded-[16px] border-[1px] border-[#fff] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] md:gap-[37px] md:px-10 md:py-[30px]">
+		<div className="relative flex w-full flex-col rounded-[16px] border-[1px] border-[#fff] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] md:gap-[37px] md:px-[40px] md:py-[30px]">
 			{!showPayment && (
 				<>
 					<TabSwitcher

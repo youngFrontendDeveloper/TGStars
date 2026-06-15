@@ -53,10 +53,10 @@ function AuthCompleteContent() {
 	return (
 		<div className="container items-center pt-36">
 			<div className="mx-auto flex w-full flex-col items-center gap-8 rounded-2xl bg-white px-10 py-[30px] shadow-[0px_0px_11px_0px_#00000005] sm:w-[350px]">
-				<p className="font-mts-extended text-[28px]/[28px] font-bold text-[#1D2123]">
+				<p className="font-montserrat text-[28px]/[28px] font-bold text-[#1D2123]">
 					TGStars
 				</p>
-				<p className="font-mts-text text-[16px] text-[#95A0A7]">{status}</p>
+				<p className="font-inter text-[16px] text-[#95A0A7]">{status}</p>
 			</div>
 		</div>
 	);
@@ -68,12 +68,10 @@ export default function AuthCompletePage() {
 			fallback={
 				<div className="container items-center pt-36">
 					<div className="mx-auto flex w-full flex-col items-center gap-8 rounded-2xl bg-white px-10 py-[30px] shadow-[0px_0px_11px_0px_#00000005] sm:w-[350px]">
-						<p className="font-mts-extended text-[28px]/[28px] font-bold text-[#1D2123]">
+						<p className="font-montserrat text-[28px]/[28px] font-bold text-[#1D2123]">
 							TGStars
 						</p>
-						<p className="font-mts-text text-[16px] text-[#95A0A7]">
-							Загрузка...
-						</p>
+						<p className="font-inter text-[16px] text-[#95A0A7]">Загрузка...</p>
 					</div>
 				</div>
 			}

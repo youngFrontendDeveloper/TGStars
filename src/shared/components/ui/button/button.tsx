@@ -1,7 +1,7 @@
 import { type ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  maxWidth?: string;
+	maxWidth?: string;
 }
 
 export const Button = ({
@@ -9,11 +9,11 @@ export const Button = ({
 	className,
 	maxWidth = "auto",
 	...props
-}:ButtonProps) => {
+}: ButtonProps) => {
 	return (
 		<button
 			{...props}
-			className={`font-mts-wide w-full h-[44px] relative flex cursor-pointer items-center justify-center gap-[6px] overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-[16px] font-medium leading-[22.8px] text-white hover:bg-gradient-to-r hover:from-[#2563EB] hover:to-[#2563EB] hover:text-white ${className}`}
+			className={`font-montserrat relative flex h-[44px] w-full cursor-pointer items-center justify-center gap-[6px] overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-[16px] font-medium leading-[22.8px] text-white hover:bg-gradient-to-r hover:from-[#2563EB] hover:to-[#2563EB] hover:text-white ${className}`}
 			style={{ maxWidth, ...props.style }}
 		>
 			{children}
@@ -31,7 +31,7 @@ export const Button = ({
 // 	return (
 // 		<button
 // 			{...props}
-// 			className={`font-mts-text relative flex gap-[6px] cursor-pointer items-center overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[14px] py-[10.5px] text-[16px] font-medium leading-[22.8px] text-white before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 ${className}`}
+// 			className={`font-montserrat relative flex gap-[6px] cursor-pointer items-center overflow-hidden rounded-[859px] bg-gradient-to-r from-[#2563EB] to-[#9333EA] px-[14px] py-[10.5px] text-[16px] font-medium leading-[22.8px] text-white before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-[#2563EB] before:opacity-0 before:transition-opacity before:duration-200 hover:before:opacity-100 ${className}`}
 // 		>
 // 			 <div className="relative z-10 flex items-center gap-1.5">{children}</div>
 // 		</button>

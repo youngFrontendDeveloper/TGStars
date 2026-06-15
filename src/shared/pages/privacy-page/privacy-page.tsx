@@ -5,7 +5,7 @@ export const PrivacyPolicy = definePage({
 	render() {
 		return (
 			<section className="container !gap-5">
-				<h1 className="font-mts-extended pt-2 text-[20px]/[22.8px] font-medium text-black sm:pt-0">
+				<h1 className="font-montserrat pt-2 text-[20px]/[22.8px] font-medium text-black sm:pt-0">
 					Политика конфиденциальности
 				</h1>
 				<div className="flex flex-col gap-6 rounded-2xl bg-white p-6 sm:gap-8 sm:px-10 sm:py-[30px]">

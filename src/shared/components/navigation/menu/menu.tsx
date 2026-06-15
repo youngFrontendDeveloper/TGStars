@@ -51,7 +51,7 @@ export const Menu = ({ className, setIsMenuOpen }: MenuProps) => {
 									className={`h-fill w-fill text-[inherit] transition-colors duration-300`}
 								/>
 							</span>
-							<span className="font-mts-wide font-semibold text-[inherit] transition-colors duration-300 group-hover:text-white">
+							<span className="font-montserrat font-semibold text-[inherit] transition-colors duration-300 group-hover:text-white">
 								{item.name}
 							</span>
 						</Link>

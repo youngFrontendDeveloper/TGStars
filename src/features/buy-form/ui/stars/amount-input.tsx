@@ -79,13 +79,13 @@ export const AmountInput = ({
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex items-start justify-between">
-				<p className="font-mts-text text-[14px]/[100%] font-medium text-black">
+				<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 					{label}
 				</p>
 				{additionalLabel && additionalLabelLink && (
 					<a
 						href={additionalLabelLink}
-						className="font-mts-text inline-flex items-center gap-1 text-[14px] font-[500] leading-none text-[#95A0A7]"
+						className="font-inter inline-flex items-center gap-1 text-[14px] font-medium leading-none text-[#95A0A7]"
 					>
 						{additionalLabel}
 						{AdditionalLabelIcon && (
@@ -103,18 +103,18 @@ export const AmountInput = ({
 					value={internalValue}
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
-					className="font-mts-wide w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
+					className="font-montserrat w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
 					type="text"
 					inputMode="decimal"
 				/>
 
 				<div className="flex items-center gap-2">
 					{strikeValue && (
-						<span className="font-mts-text whitespace-nowrap text-[12px] font-medium text-[#95A0A7] line-through">
+						<span className="font-inter whitespace-nowrap text-[12px] font-medium text-[#95A0A7] line-through">
 							{strikeValue}
 						</span>
 					)}
-					<p className="font-mts-wide text-[16px]/[22.8px] font-bold text-[#95A0A7]">
+					<p className="font-montserrat text-[16px]/[22.8px] font-bold text-[#95A0A7]">
 						{displayCurrency}
 					</p>
 				</div>
@@ -127,7 +127,7 @@ export const AmountInput = ({
 							key={amount}
 							type="button"
 							onClick={() => handleQuickAmountClickLocal(amount)}
-							className="font-mts-text rounded-xl bg-[#2C6FFF1A] px-3 py-1.5 text-[16px]/[22.8px] font-medium text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
+							className="font-montserrat rounded-xl bg-[#2C6FFF1A] px-[12px] py-[6px] text-[16px]/[22.8px] font-semibold text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
 						>
 							{amount} {currency === "₽" ? "₽" : ""}
 						</button>

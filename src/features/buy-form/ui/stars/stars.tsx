@@ -187,7 +187,7 @@ export const Stars = ({
 			{starsError && (
 				<div className="flex items-center gap-1">
 					<ErrorIcon />
-					<p className="font-mts-text text-[14px]/[100%] font-medium text-[#FF5863]">
+					<p className="font-montserrat text-[14px]/[100%] font-medium text-[#FF5863]">
 						{starsError}
 					</p>
 				</div>
@@ -201,14 +201,13 @@ export const Stars = ({
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="mb-[24px] w-full md:w-[169px] px-6 lg:mb-[33px]"
-				// className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
+				className="mb-[25px] w-full px-[24px] md:w-fit lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isValid}
 			>
 				Купить Звёзды
 			</Button>
-			<p className="font-mts-text relative text-center text-[14px] leading-[22.8px] -tracking-[.2px] text-[#95A0A7] lg:text-[16px]">
+			<p className="font-inter relative text-center text-[14px] leading-[22.8px] -tracking-[.2px] text-[#95A0A7] lg:text-[16px]">
 				Среднее время зачисления Звёзд составляет 1 минуту. В случае неполадок
 				со стороны Telegram возможны задержки в зачислении.
 			</p>

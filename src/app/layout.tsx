@@ -4,9 +4,12 @@ import { type PropsWithChildren } from "react";
 
 import { Footer } from "@/shared/components/navigation/footer";
 import { Header } from "@/shared/components/navigation/header";
+import { DOMAINS } from "@/shared/constants/domains";
 import { AuthProvider } from "@/shared/layouts/auth-provider/auth-provider";
 
 import "./globals.css";
+
+import { inter, montserrat } from "./fonts";
 
 export const metadata: Metadata = {
 	icons: {
@@ -29,7 +32,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="ru" data-scroll-behavior="smooth">
+		<html
+			lang="ru"
+			data-scroll-behavior="smooth"
+			className={`${montserrat.variable} ${inter.variable}`}
+		>
+			<head>
+				<link rel="preconnect" href={DOMAINS.MAIN} crossOrigin="anonymous" />
+				<link rel="preconnect" href={DOMAINS.METRIKA} crossOrigin="anonymous" />
+			</head>
+
 			<body className="flex min-h-screen w-full flex-col bg-[#E1E8F0]">
 				<a href="#main-content" className="skip-link">
 					Пропустить навигацию

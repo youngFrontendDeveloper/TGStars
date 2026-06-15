@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
 	font-family: "Montserrat";
 	src:
 		url("/fonts/Montserrat-Bold.woff") format("woff"),
@@ -36,7 +36,7 @@
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
-}
+} */
 
 /* @font-face {
 	font-family: "MTSWide";
@@ -98,6 +98,19 @@
 	font-style: normal;
 } */
 
+/* Классы для разных начертаний */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+
+
+/* ****************** */
+/* 
 .font-mts-wide {
 	font-family: "Montserrat", sans-serif;
 }
@@ -108,10 +121,10 @@
 
 .font-mts-extended {
 	font-family: "Montserrat", sans-serif;
-}
+} */
 
 .docs-header {
-	font-family: "Montserrat", sans-serif;
+	font-family: var(--font-montserrat);
 	font-size: 16px;
 	line-height: 22px;
 	color: #000;
@@ -119,7 +132,7 @@
 }
 
 .docs-text {
-	font-family: "Inter", sans-serif;
+	font-family: var(--font-inter);
 	color: #95a0a7;
 	font-size: 14px;
 	line-height: 22.8px;
@@ -127,7 +140,7 @@
 }
 
 .table-header {
-	font-family: "Montserrat", sans-serif;
+	font-family: var(--font-montserrat);
 	color: #95a0a7;
 	font-weight: 500;
 	text-align: center;
@@ -137,7 +150,7 @@
 }
 
 .table-text {
-	font-family: "Inter", sans-serif;
+	font-family: var(--font-inter);
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 400;
