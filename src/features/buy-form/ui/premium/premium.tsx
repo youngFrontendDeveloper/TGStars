@@ -57,7 +57,7 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
+				className="mb-[24px] w-full justify-center px-6 md:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!premiumState || !username}
 			>

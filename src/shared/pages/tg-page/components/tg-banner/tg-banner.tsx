@@ -30,7 +30,7 @@ export const TgBanner = () => {
 					target="_blank"
 					className="mt-auto"
 				>
-					<Button maxWidth="358px" className="mx-auto">
+					<Button className="mx-auto max-w-full lg:max-w-[358px]">
 						<TgIcon className="white-icon" />
 						Подписаться
 					</Button>

@@ -201,7 +201,7 @@ export const Stars = ({
 				setValid={setIsValidUsername}
 			/>
 			<Button
-				className="mb-[24px] w-[169px] px-6 sm:w-max lg:mb-[33px]"
+				className="mb-[24px] w-full md:w-[169px] px-6 lg:mb-[33px]"
 				// className="relative -top-[1px] mb-[24px] w-full justify-center px-6 sm:w-max lg:mb-[33px]"
 				onClick={handleSubmit}
 				disabled={!isValid}
