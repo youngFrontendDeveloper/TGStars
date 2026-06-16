@@ -1,10 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
 import stickerData from "@/public/sticker.json";
 
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+const LottiePlayer = dynamic(
+	() =>
+		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
+	{ ssr: false },
+);
 
 export const Promo = () => {
 	const items = [
@@ -26,10 +31,15 @@ export const Promo = () => {
 		<section className="flex w-full flex-col gap-6 rounded-2xl bg-white p-6 shadow-[0px_0px_11px_0px_#00000005] sm:gap-8 sm:px-10 sm:py-[30px]">
 			<div className="flex w-full flex-col gap-6 sm:flex-row sm:gap-8">
 				<div className="flex w-full justify-center sm:w-[150px] sm:flex-shrink-0">
-					<Lottie
+					{/* <Lottie
 						animationData={stickerData}
 						loop={true}
 						autoplay={true}
+						className="h-auto max-w-full"
+					/> */}
+
+					<LottiePlayer
+						animationData={stickerData}
 						className="h-auto max-w-full"
 					/>
 				</div>

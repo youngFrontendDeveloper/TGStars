@@ -1,4 +1,4 @@
-/* Reset and base styles  */
+/* Reset and base styles 
 * {
 	padding: 0px;
 	margin: 0px;
@@ -13,7 +13,7 @@
 
 /* Links */
 
-a,
+/* a,
 a:link,
 a:visited {
 	text-decoration: none;
@@ -21,11 +21,11 @@ a:visited {
 
 a:hover {
 	text-decoration: none;
-}
+} */
 
 /* Common */
 
-aside,
+/* aside,
 nav,
 footer,
 header,
@@ -104,4 +104,4 @@ legend {
 
 input[type="file"] {
 	max-width: 100%;
-}
+} */ 

@@ -1,14 +1,11 @@
-@import url("../shared/styles/reset.css");
-@import url("../shared/styles/fonts.css");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
 	--font-montserrat: "Montserrat", "Arial", "Helvetica", sans-serif;
 	--font-inter: "Inter", "Arial", "Helvetica", sans-serif;
-}
+} */
 
 html {
 	scroll-behavior: smooth;
@@ -16,6 +13,153 @@ html {
 
 body {
 	overflow-y: scroll;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+img {
+	vertical-align: top;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+	font-style: normal;
+}
+
+input,
+textarea,
+button,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button,
+input[type="submit"] {
+	display: inline-block;
+	box-shadow: none;
+	background-color: transparent;
+	background: none;
+	cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+	outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+input[type="file"] {
+	max-width: 100%;
+}
+
+/* Классы для разных начертаний */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.docs-header {
+	font-family: var(--font-montserrat);
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+	font-weight: 500;
+}
+
+.docs-text {
+	font-family: var(--font-inter);
+	color: #95a0a7;
+	font-size: 14px;
+	line-height: 22.8px;
+	font-weight: 400;
+}
+
+.table-header {
+	font-family: var(--font-montserrat);
+	color: #95a0a7;
+	font-weight: 500;
+	text-align: center;
+	font-size: 16px;
+	line-height: 22px;
+	padding: 14px 0;
+}
+
+.table-text {
+	font-family: var(--font-inter);
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	text-align: center;
+	color: #000000;
 }
 
 .button-gradient {
@@ -39,9 +183,7 @@ body {
 	position: absolute;
 	inset: 0;
 	border-radius: inherit;
-
 	background: linear-gradient(89.76deg, #4095d2 0%, #aa39d2 82.69%);
-
 	opacity: 0;
 	transition: opacity 0.4s ease;
 	z-index: -1;
@@ -75,8 +217,7 @@ body {
 }
 
 .inactive-icon path {
-	fill: #808080;
-	/* fill: #374151; */
+	fill: #808080;	
 }
 
 .active-icon-gold path {
@@ -106,15 +247,13 @@ body {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	/* gap: 50px; */
 	max-width: 670px;
 	width: 100%;
 }
 
 @media (max-width: 800px) {
 	.container {
-		padding: 0 16px;
-		/* gap: 32px; */
+		padding: 0 16px;	
 	}
 }
 

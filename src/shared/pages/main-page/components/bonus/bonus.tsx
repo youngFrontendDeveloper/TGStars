@@ -1,6 +1,6 @@
 "use client";
 
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
@@ -8,7 +8,11 @@ import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
 // import Image from "next/image";
 import bonusAnimation from "@/public/assets/tg/bonus.json";
 
-// import bonusGif from "@/public/assets/gifs/bonus.gif";
+const LottiePlayer = dynamic(
+	() =>
+		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
+	{ ssr: false },
+);
 
 export const Bonus = () => {
 	const { isAuthenticated } = useUser();
@@ -36,19 +40,16 @@ export const Bonus = () => {
 				</Link>
 			</div>
 			<div className="">
-				<Lottie
+				{/* <Lottie
 					animationData={bonusAnimation}
 					loop
 					autoplay
 					className="h-[280px] w-[280px] md:h-[200px] md:w-[200px]"
+				/> */}
+				<LottiePlayer
+					animationData={bonusAnimation}
+					className="h-[280px] w-[280px] md:h-[200px] md:w-[200px]"
 				/>
-				{/* <Image
-          src={bonusGif}
-          alt="Бонус"
-          width={280}
-          height={280}
-          className="h-[280px] w-[280px] object-contain rounded-[25px] md:h-[200px] md:w-[200px] rounded-[32px]"
-        /> */}
 			</div>
 		</section>
 	);

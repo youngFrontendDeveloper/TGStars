@@ -98,7 +98,7 @@
 	font-style: normal;
 } */
 
-/* Классы для разных начертаний */
+/* Классы для разных начертаний
 .font-montserrat {
   font-family: var(--font-montserrat);
 }
@@ -106,22 +106,6 @@
 .font-inter {
   font-family: var(--font-inter);
 }
-
-
-
-/* ****************** */
-/* 
-.font-mts-wide {
-	font-family: "Montserrat", sans-serif;
-}
-
-.font-mts-text {
-	font-family: "Inter", sans-serif;
-}
-
-.font-mts-extended {
-	font-family: "Montserrat", sans-serif;
-} */
 
 .docs-header {
 	font-family: var(--font-montserrat);
@@ -156,4 +140,4 @@
 	font-weight: 400;
 	text-align: center;
 	color: #000000;
-}
+} */

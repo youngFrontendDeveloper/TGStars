@@ -7,9 +7,9 @@ import { Header } from "@/shared/components/navigation/header";
 import { DOMAINS } from "@/shared/constants/domains";
 import { AuthProvider } from "@/shared/layouts/auth-provider/auth-provider";
 
-import "./globals.css";
-
 import { inter, montserrat } from "./fonts";
+
+import "@/shared/styles/globals.css";
 
 export const metadata: Metadata = {
 	icons: {
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html
 			lang="ru"
-			data-scroll-behavior="smooth"
+			// data-scroll-behavior="smooth"
 			className={`${montserrat.variable} ${inter.variable}`}
 		>
 			<head>
@@ -54,8 +54,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 					<Footer />
 				</AuthProvider>
 
-				<Script id="yandex-metrika" strategy="lazyOnload">
-					{/* <Script id="yandex-metrika" strategy="afterInteractive"> */}
+				<Script id="yandex-metrika" strategy="lazyOnload">					
 					{`
 						(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 						m[i].l=1*new Date();
