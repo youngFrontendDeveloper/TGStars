@@ -1,96 +1,38 @@
 import localFont from "next/font/local";
 
 export const montserrat = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Montserrat-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Montserrat-Bold.woff',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Montserrat-SemiBold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Montserrat-SemiBold.woff',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Montserrat-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Montserrat-Medium.woff',
-      weight: '500',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-montserrat',
-  display: 'swap',
-  fallback: ['Arial', 'Helvetica', 'sans-serif'],
+	src: [
+		{
+			path: "../../public/fonts/Montserrat-Bold.woff2",
+			weight: "700",
+			style: "normal",
+		},
+		{
+			path: "../../public/fonts/Montserrat-SemiBold.woff2",
+			weight: "600",
+			style: "normal",
+		},
+		{
+			path: "../../public/fonts/Montserrat-Medium.woff2",
+			weight: "500",
+			style: "normal",
+		}
+	],
+	variable: "--font-montserrat",
+	display: "swap",
+	fallback: ["Arial", "Helvetica", "sans-serif"],
 });
-
-// Montserrat SemiBold
-// export const montserratSemiBold = localFont({
-//   src: [
-//     {
-//       path: '../../public/fonts/Montserrat-SemiBold.woff2',
-//       weight: '600',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/Montserrat-SemiBold.woff',
-//       weight: '600',
-//       style: 'normal',
-//     },
-//   ],
-//   variable: '--font-montserrat-semibold',
-//   display: 'swap',
-//   fallback: ['Arial', 'Helvetica', 'sans-serif'],
-// });
-
-// Montserrat Medium
-// export const montserratMedium = localFont({
-//   src: [
-//     {
-//       path: '../../public/fonts/Montserrat-Medium.woff2',
-//       weight: '500',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/Montserrat-Medium.woff',
-//       weight: '500',
-//       style: 'normal',
-//     },
-//   ],
-//   variable: '--font-montserrat-medium',
-//   display: 'swap',
-//   fallback: ['Arial', 'Helvetica', 'sans-serif'],
-// });
 
 // Inter Regular
 export const inter = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Inter-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Inter-Regular.woff',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-inter',
-  display: 'swap',
-  fallback: ['Arial', 'Helvetica', 'sans-serif'],
+	src: [
+		{
+			path: "../../public/fonts/Inter-Regular.woff2",
+			weight: "400",
+			style: "normal",
+		},
+	],
+	variable: "--font-inter",
+	display: "swap",
+	fallback: ["Arial", "Helvetica", "sans-serif"],
 });

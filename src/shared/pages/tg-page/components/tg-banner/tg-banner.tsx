@@ -1,19 +1,36 @@
 "use client";
 
-// import Lottie from "lottie-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/shared/components/ui/button";
 
 import TgIcon from "@/public/assets/icons/tg.svg";
+import blurImage from "@/public/assets/images/subscribe.png";
 import subscribeAnimation from "@/public/assets/tg/subscribe.json";
 
 const LottiePlayer = dynamic(
 	() =>
 		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
-	{ ssr: false },
+	{
+		ssr: false,
+		loading: () => (
+			<Image
+				src={blurImage.src}
+				alt="Стикер Telegram"
+				width={280}
+				height={280}
+			/>
+		),
+	},
 );
+
+// const LottiePlayer = dynamic(
+// 	() =>
+// 		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
+// 	{ ssr: false },
+// );
 
 export const TgBanner = () => {
 	return (

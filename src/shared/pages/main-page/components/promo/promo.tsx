@@ -1,14 +1,18 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import stickerData from "@/public/sticker.json";
+import Image from "next/image";
 
-// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import blurImage from "@/public/assets/images/promo-image.png";
+import stickerData from "@/public/sticker.json";
 
 const LottiePlayer = dynamic(
 	() =>
 		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
-	{ ssr: false },
+	{
+		ssr: false,
+		loading: () => <Image src={blurImage.src} alt="Стикер Telegram" fill />,
+	},
 );
 
 export const Promo = () => {

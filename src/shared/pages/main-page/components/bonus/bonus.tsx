@@ -1,18 +1,35 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 
 import { useUser } from "@/shared/layouts/auth-provider/auth-provider";
 
-// import Image from "next/image";
+import blurImage from "@/public/assets/images/bonus.png";
 import bonusAnimation from "@/public/assets/tg/bonus.json";
 
 const LottiePlayer = dynamic(
 	() =>
 		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
-	{ ssr: false },
+	{
+		ssr: false,
+		loading: () => (
+			<Image
+				src={blurImage.src}
+				alt="Стикер Telegram"
+				width={280}
+				height={280}
+			/>
+		),
+	},
 );
+
+// const LottiePlayer = dynamic(
+// 	() =>
+// 		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
+// 	{ ssr: false },
+// );
 
 export const Bonus = () => {
 	const { isAuthenticated } = useUser();
@@ -40,12 +57,14 @@ export const Bonus = () => {
 				</Link>
 			</div>
 			<div className="">
+				{/* old */}
 				{/* <Lottie
 					animationData={bonusAnimation}
 					loop
 					autoplay
 					className="h-[280px] w-[280px] md:h-[200px] md:w-[200px]"
 				/> */}
+				{/* works */}
 				<LottiePlayer
 					animationData={bonusAnimation}
 					className="h-[280px] w-[280px] md:h-[200px] md:w-[200px]"

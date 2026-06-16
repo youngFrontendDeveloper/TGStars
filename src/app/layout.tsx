@@ -4,7 +4,6 @@ import { type PropsWithChildren } from "react";
 
 import { Footer } from "@/shared/components/navigation/footer";
 import { Header } from "@/shared/components/navigation/header";
-import { DOMAINS } from "@/shared/constants/domains";
 import { AuthProvider } from "@/shared/layouts/auth-provider/auth-provider";
 
 import { inter, montserrat } from "./fonts";
@@ -37,10 +36,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
 			// data-scroll-behavior="smooth"
 			className={`${montserrat.variable} ${inter.variable}`}
 		>
-			<head>
+			{/* <head>
 				<link rel="preconnect" href={DOMAINS.MAIN} crossOrigin="anonymous" />
 				<link rel="preconnect" href={DOMAINS.METRIKA} crossOrigin="anonymous" />
-			</head>
+			</head> */}
 
 			<body className="flex min-h-screen w-full flex-col bg-[#E1E8F0]">
 				<a href="#main-content" className="skip-link">
@@ -54,7 +53,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 					<Footer />
 				</AuthProvider>
 
-				<Script id="yandex-metrika" strategy="lazyOnload">					
+				<Script id="yandex-metrika" strategy="lazyOnload">
 					{`
 						(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 						m[i].l=1*new Date();
