@@ -74,7 +74,7 @@ export const BonusDiscovers = () => {
 			discoverPercent: 4,
 			discoverCondition: "Для перехода нужно потратить от 12000₽",
 			pillClass: "bg-[#7FDCFF1A] text-[#7FDCFF]",
-			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
+			borderClass: 'border-t-0 border-l border-r border-b-0 md:border-t md:border-l md:border-r-0 md:border-b',
 			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl[0px] rounded-br[0px] md:rounded-tl-[16px] md:rounded-tr-[0px] md:rounded-bl-[16px] md:rounded-br[0px]"
 		},
 		{
@@ -83,7 +83,7 @@ export const BonusDiscovers = () => {
 			discoverPercent: 5,
 			discoverCondition: "Для перехода нужно потратить от 35000₽",
 			pillClass: "bg-[#E274FF1A] text-[#E274FF]",
-			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
+			borderClass: 'border-t-0 border-l border-r border-b-0 md:border-t md:border-l-0 md:border-r-0 md:border-b',
 			radiusClass:"rounded-tl-0 rounded-tr-0 rounded-bl-0 rounded-br-0 md:rounded-tl-0 md:rounded-tr-0 md:rounded-bl-[0px] md:rounded-br-[0px]"
 		},
 		{
@@ -92,8 +92,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 6,
 			discoverCondition: "Для перехода нужно потратить от 90000₽",
 			pillClass: "bg-[#FF5C3B1A] text-[#FF5C3B]",
-			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
-			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[0px] rounded-br-[0px] md:rounded-tl-[0px] md:rounded-tr-[16px] md:rounded-bl-[0px] md:rounded-br-[16px]"
+			borderClass: 'border-t-0 border-l border-r border-b md:border-t md:border-l-0 md:border-r md:border-b',
+			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[16px] rounded-br-[16px] md:rounded-tl-[0px] md:rounded-tr-[16px] md:rounded-bl-[0px] md:rounded-br-[16px]"
 		},
 	];
 
@@ -186,7 +186,7 @@ export const BonusDiscovers = () => {
 											className="mb-[20px] h-[110px] w-[90px] self-center object-contain"
 										/>
 										<span
-											className={`ont-montserrat-bold mb-[20px] block flex h-[35px] w-full min-w-[140px] items-center justify-center rounded-full text-center text-[16px]/[22.75px] font-bold ${discover.pillClass}`}
+											className={`font-montserrat-bold mb-[20px] block flex h-[35px] w-full min-w-[140px] items-center justify-center rounded-full text-center text-[16px]/[22.75px] font-bold ${discover.pillClass}`}
 										>
 											{discover.name}
 										</span>

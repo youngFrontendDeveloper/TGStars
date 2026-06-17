@@ -180,7 +180,7 @@ export const Profile = () => {
 						<div className="flex items-center justify-between md:order-[2]">
 							<p className="table-text">Уровень:</p>
 							<p
-								className={`ont-montserrat-bold text-[15px] font-bold uppercase ${currentLevel.textClass}`}
+								className={`font-montserrat-bold text-[15px] font-bold uppercase ${currentLevel.textClass}`}
 							>
 								{currentLevel.name}
 							</p>
