@@ -77,7 +77,7 @@ export const AmountInput = ({
 	const displayCurrency = currency === "₽" ? "Руб" : currency;
 
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-[8px]">
 			<div className="flex items-start justify-between">
 				<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 					{label}
@@ -97,13 +97,13 @@ export const AmountInput = ({
 				)}
 			</div>
 
-			<div className="relative flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-4 py-2.5 transition-colors">
+			<div className="relative flex items-center gap-1 rounded-[12px] bg-[#EAEEF0] px-[16px] py-[10px] transition-colors">
 				<input
 					placeholder={placeholder}
 					value={internalValue}
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
-					className="font-montserrat w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
+					className="font-montserrat w-[calc(100%-35px)] bg-transparent py-[6px] text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]"
 					type="text"
 					inputMode="decimal"
 				/>
@@ -121,13 +121,13 @@ export const AmountInput = ({
 			</div>
 
 			{!children && quickAmounts.length > 0 && (
-				<div className="flex flex-wrap gap-2">
+				<div className="flex flex-wrap gap-[8px]">
 					{quickAmounts.map((amount) => (
 						<button
 							key={amount}
 							type="button"
 							onClick={() => handleQuickAmountClickLocal(amount)}
-							className="font-montserrat rounded-xl bg-[#2C6FFF1A] px-[12px] py-[6px] text-[16px]/[22.8px] font-semibold text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
+							className="font-montserrat h-[39px] w-[86px] md:w-fit rounded-[12px] bg-[#2C6FFF1A] px-[12px] py-[6px] text-[16px]/[22.8px] font-semibold text-[#6F2CFF] transition-colors hover:bg-[#6F2CFF33]"
 						>
 							{amount} {currency === "₽" ? "₽" : ""}
 						</button>

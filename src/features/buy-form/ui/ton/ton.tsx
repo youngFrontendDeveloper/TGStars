@@ -243,7 +243,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 
 	return (
 		<>
-			<div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-4">
+			<div className="mb-[16px] grid w-full grid-cols-1 gap-[16px] md:mb-[33px] md:grid-cols-2 md:gap-[16px]">
 				<AmountInput
 					label="Вы заплатите"
 					placeholder="1000"
@@ -271,11 +271,11 @@ export const Ton = ({ onBuyClick }: Props) => {
 				/>
 			</div>
 
-			<div className="flex flex-col gap-2">
+			<div className="mb-[24px] flex flex-col gap-2 md:mb-[33px]">
 				<p className="font-montserrat text-[14px]/[100%] font-medium text-black">
 					Адрес кошелька TON
 				</p>
-				<div className="flex items-center gap-2 rounded-xl bg-[#EAEEF0] px-4 py-2.5">
+				<div className="flex items-center gap-2 rounded-[12px] bg-[#EAEEF0] px-4 py-2.5">
 					<TonIcon className="h-5 w-5 shrink-0 text-[#95A0A7]" />
 					<input
 						placeholder="Введите адрес кошелька TON..."

@@ -89,7 +89,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 				<button
 					type="button"
 					onClick={toggleDropdown}
-					className={`flex h-[65px] w-full items-center justify-between rounded-xl bg-[#EAEEF0] px-4 py-3 outline-none transition-colors ${isOpen && "md:w-[620px]"} hover:md:w-[620px]`}
+					className={`flex h-[65px] w-full items-center justify-between rounded-[12px] bg-[#EAEEF0] px-4 py-3 outline-none transition-colors ${isOpen && "md:w-[620px]"} hover:md:w-[620px]`}
 					style={{
 						transition: "0.4s",
 						boxShadow: isOpen
@@ -125,7 +125,7 @@ export const PaymentSelect = ({ payment, setPayment }: Props) => {
 				{isOpen && (
 					<div
 						ref={contentRef}
-						className="absolute top-[65px] z-[100] mt-2 w-full rounded-xl bg-white py-2 shadow-lg md:w-[620px]"
+						className="absolute top-[65px] z-[100] mt-2 w-full rounded-[12px] bg-white py-2 shadow-lg md:w-[620px]"
 					>
 						<div className="w-full">
 							{paymentOptions.map((item) => (

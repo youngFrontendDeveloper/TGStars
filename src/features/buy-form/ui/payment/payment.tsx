@@ -206,7 +206,7 @@ export const Payment = ({
 					<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 						Получатель
 					</p>
-					<div className="flex items-center gap-[15px] rounded-xl bg-[#EAEEF0] px-[16px] py-[7.5px]">
+					<div className="flex items-center gap-[15px] rounded-[12px] bg-[#EAEEF0] px-[16px] py-[7.5px]">
 						<div className="relative z-0 h-[40px] w-[40px] min-w-[40px] rounded-full">
 							<div
 								className="absolute -z-10 h-full w-full rounded-full blur-sm"
@@ -251,7 +251,7 @@ export const Payment = ({
 					<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 						Количество
 					</p>
-					<div className="relative flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-[16px] py-[10px] transition-colors">
+					<div className="relative flex items-center gap-1 rounded-[12px] bg-[#EAEEF0] px-[16px] py-[10px] transition-colors">
 						<p className="font-montserrat w-[calc(100%-35px)] bg-transparent py-1.5 text-[16px]/[22.8px] font-bold text-[#1D2123] outline-none placeholder:text-[#95A0A7]">
 							{section === "stars" && selectedAmount?.value}
 							{section === "premium" && selectedAmount?.value + " месяцев"}
@@ -268,7 +268,7 @@ export const Payment = ({
 			<PaymentSelect payment={payment} setPayment={setPayment} />
 
 			<div className="flex flex-col gap-[24px]">
-				<div className="flex w-full items-center justify-between rounded-xl border-2 border-[#F6F6F6] px-6 py-2.5">
+				<div className="flex w-full items-center justify-between rounded-[12px] border-2 border-[#F6F6F6] px-[24px] py-[10.5px]">
 					<p className="font-montserrat text-[16px]/[22.8px] font-semibold text-black">
 						Итого:
 					</p>
@@ -278,7 +278,7 @@ export const Payment = ({
 				</div>
 
 				{authError && (
-					<div className="flex items-start gap-3 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3">
+					<div className="flex items-start gap-3 rounded-[12px] border border-orange-200 bg-orange-50 px-4 py-3">
 						<span className="mt-0.5 text-[18px] leading-none">🔐</span>
 						<p className="font-inter text-[14px]/[20.75px] text-orange-700">
 							Для покупки TON необходимо{" "}

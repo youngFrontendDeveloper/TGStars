@@ -22,6 +22,8 @@ type Discover = {
 	discoverCondition: string;
 	pillClass: string;
 	badge?: string;
+	borderClass: string;
+	radiusClass: string
 };
 
 const getRowClassName = (rowIndex: number) => {
@@ -45,6 +47,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 1,
 			discoverCondition: "Получите сразу после авторизации",
 			pillClass: "bg-[#A8B4D41A] text-[#A8B4D4]",
+			borderClass: 'border-t border-l border-r border-b-0 md:border-t md:border-l md:border-r-0 md:border-b',
+			radiusClass:"rounded-tl-[16px] rounded-tr-[16px] rounded-bl[0px] rounded-br[0px] md:rounded-tl-[16px] md:rounded-tr-[0px] md:rounded-bl-[16px] md:rounded-br[0px]"
 		},
 		{
 			name: "Emerald",
@@ -52,6 +56,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 2,
 			discoverCondition: "Для перехода нужно потратить от 2000₽",
 			pillClass: "bg-[#2DDFCA1A] text-[#2DDFCA]",
+			borderClass: 'border-t-0 border-l border-r border-b-0 md:border-t md:border-l-0 md:border-r-0 md:border-b',
+			radiusClass:"rounded-tl-0 rounded-tr-0 rounded-bl-0 rounded-br-0 md:rounded-tl-0 md:rounded-tr-0 md:rounded-bl-[0px] md:rounded-br-[0px]"
 		},
 		{
 			name: "Gold",
@@ -59,6 +65,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 3,
 			discoverCondition: "Для перехода нужно потратить от 5000₽",
 			pillClass: "bg-[#FEDB511A] text-[#FEDB51]",
+			borderClass: 'border-t-0 border-l border-r border-b-0 md:border-t md:border-l-0 md:border-r md:border-b',
+			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[0px] rounded-br-[0px] md:rounded-tl-[0px] md:rounded-tr-[16px] md:rounded-bl-[0px] md:rounded-br-[16px]"
 		},
 		{
 			name: "Diamond",
@@ -66,6 +74,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 4,
 			discoverCondition: "Для перехода нужно потратить от 12000₽",
 			pillClass: "bg-[#7FDCFF1A] text-[#7FDCFF]",
+			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
+			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl[0px] rounded-br[0px] md:rounded-tl-[16px] md:rounded-tr-[0px] md:rounded-bl-[16px] md:rounded-br[0px]"
 		},
 		{
 			name: "Amethyst",
@@ -73,6 +83,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 5,
 			discoverCondition: "Для перехода нужно потратить от 35000₽",
 			pillClass: "bg-[#E274FF1A] text-[#E274FF]",
+			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
+			radiusClass:"rounded-tl-0 rounded-tr-0 rounded-bl-0 rounded-br-0 md:rounded-tl-0 md:rounded-tr-0 md:rounded-bl-[0px] md:rounded-br-[0px]"
 		},
 		{
 			name: "Legend",
@@ -80,6 +92,8 @@ export const BonusDiscovers = () => {
 			discoverPercent: 6,
 			discoverCondition: "Для перехода нужно потратить от 90000₽",
 			pillClass: "bg-[#FF5C3B1A] text-[#FF5C3B]",
+			borderClass: 'border-t border-l border-r border-b md:border-t md:border-l md:border-r md:border-b',
+			radiusClass:"rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[0px] rounded-br-[0px] md:rounded-tl-[0px] md:rounded-tr-[16px] md:rounded-bl-[0px] md:rounded-br-[16px]"
 		},
 	];
 
@@ -139,29 +153,29 @@ export const BonusDiscovers = () => {
 				{rows.map((row, rowIndex) => (
 					<div
 						key={`row-${rowIndex}`}
-						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] bg-transparent shadow-none md:shadow-[0px_12px_24px_-16px_#0000003D] ${getRowClassName(
+						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] bg-transparent ${getRowClassName(
 							rowIndex,
 						)}`}
 					>
 						<div className="grid grid-cols-1 gap-[2px] md:grid-cols-3 md:gap-x-[2px]">
 							{row.map((discover, index) => {
-								const isLastItem = index === row.length - 1;
-								const isLastCol = (index + 1) % 3 === 0;
-								const borderClassName = [
-									"border-[#E6ECF2]",
-									!isLastItem ? "border-b" : "",
-									!isLastCol
-										? "md:border-r md:border-r-[2px]"
-										: "md:border-r-0",
-									"md:border-b-0",
-								]
-									.filter(Boolean)
-									.join(" ");
+								// const isLastItem = index === row.length - 1;
+								// const isLastCol = (index + 1) % 3 === 0;
+								// const borderClassName = [
+								// 	"border-[#FFFFFF]",
+								// 	!isLastItem ? "border-b" : "",
+								// 	!isLastCol
+								// 		? "md:border-r md:border-r-[2px]"
+								// 		: "md:border-r-0",
+								// 	"md:border-b-0",
+								// ]
+								// 	.filter(Boolean)
+								// 	.join(" ");
 
 								return (
 									<div
 										key={discover.name}
-										className={`flex flex-col bg-white p-[24px] lg:px-[15px] lg:py-[25px] ${borderClassName}`}
+										className={`shadow-cus flex flex-col bg-[#F7F9FB] p-[24px] lg:px-[15px] lg:py-[25px] ${discover.borderClass} ${discover.radiusClass}`}
 									>
 										{/* <div className="flex flex-col px-[15px] py-[25px]"> */}
 										<Image

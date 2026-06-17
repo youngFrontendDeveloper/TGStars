@@ -97,7 +97,7 @@ const MobileTabSwitcher = ({
 	}, [emblaApi, activeTab, items]);
 
 	return (
-		<div className="relative mx-auto mb-[24px] h-[48px] w-full max-w-[278px] md:hidden">
+		<div className="relative mx-auto mb-[24px] h-[48px] w-full md:hidden">
 			<div
 				className="overflow-hidden rounded-[68px] bg-[#EAEEF0] p-[4px]"
 				ref={emblaRef}
@@ -111,7 +111,7 @@ const MobileTabSwitcher = ({
 							<button
 								onClick={() => onTabChange(item.id)}
 								className={clsx(
-									"font-montserrat flex items-center justify-center gap-[8px] whitespace-nowrap rounded-[68px] px-[14px] py-[10px] text-[14px]/[100%] font-semibold text-[#808080] transition-colors",
+									"font-montserrat flex h-[40px] items-center justify-center gap-[8px] whitespace-nowrap rounded-[68px] px-[14px] py-[10px] text-[14px]/[100%] font-semibold text-[#808080] transition-colors",
 									activeTab === item.id && "bg-white text-black",
 								)}
 								style={{ minWidth: "fit-content" }}

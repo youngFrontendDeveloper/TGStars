@@ -34,7 +34,7 @@ const LottiePlayer = dynamic(
 
 export const TgBanner = () => {
 	return (
-		<section className="mb-[48px] flex w-full flex-col items-center gap-[24px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] lg:mb-[70px] lg:flex-row lg:gap-[33px] lg:px-[40px] lg:py-[30px]">
+		<section className="mb-[48px] flex w-full flex-col items-center gap-[24px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] lg:mb-[70px] lg:flex-row lg:gap-[33px] lg:px-[40px] lg:py-[30px] border-[1px] border-[#FFFFFF]">
 			<h2 className="sr-only">Баннер подписки на канал TGStars в Телеграм</h2>
 			<LottiePlayer
 				animationData={subscribeAnimation}

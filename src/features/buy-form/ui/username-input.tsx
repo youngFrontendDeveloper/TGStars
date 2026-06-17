@@ -67,7 +67,7 @@ export const UsernameInput = ({
 	}, [value, setError, setValid]);
 
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="mb-[16px] flex flex-col gap-[8px] md:mb-[33px]">
 			<div className="flex w-full items-center justify-between">
 				<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 					Имя пользователя
@@ -82,7 +82,7 @@ export const UsernameInput = ({
 					</button>
 				)}
 			</div>
-			<div className="flex items-center gap-1 rounded-xl bg-[#EAEEF0] px-4 py-2.5">
+			<div className="flex items-center gap-1 rounded-[12px] bg-[#EAEEF0] px-[16px] py-[10px]">
 				<p className="font-montserrat text-[16px]/[22.8px] font-medium text-[#95A0A7]">
 					@
 				</p>

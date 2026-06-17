@@ -17,13 +17,27 @@ import { type SectionType } from "./types";
 export const BuyForm = memo(() => {
 	const [section, setSection] = useState<SectionType>("stars");
 	const [username, setUsername] = useState("");
-	// const [isMobile, setIsMobile] = useState(true);
 	const [walletAddress, setWalletAddress] = useState("");
 	const [showPayment, setShowPayment] = useState(false);
 	const [selectedAmount, setSelectedAmount] = useState<
 		{ amount: number; value: number } | undefined
 	>(undefined);
 	const isMobile = useIsMobile();
+
+	// тестовые данные
+	// const [data] = useState({
+	// 	discount_percent: 10,
+	// 	star_rate: 1,
+	// 	premium_prices: [],
+	// 	star_prices: [
+	// 		{
+	// 			stars: 100,
+	// 			base_price: 100,
+	// 			discounted_price: 90,
+	// 			discount_percent: 10,
+	// 		},
+	// 	],
+	// });
 
 	const [data, setData] = useState<BuyFormData>({
 		discount_percent: 0,
@@ -57,7 +71,7 @@ export const BuyForm = memo(() => {
 	}, []);
 
 	return (
-		<div className="relative flex w-full flex-col rounded-[16px] border-[1px] border-[#fff] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] md:gap-[37px] md:px-[40px] md:py-[30px]">
+		<div className="relative flex w-full flex-col rounded-[16px] border-[1px] border-[#fff] bg-[#F7F9FB] p-[24px] shadow-[0px_0px_11px_0px_#00000005] md:px-[40px] md:py-[30px]">
 			{!showPayment && (
 				<>
 					<TabSwitcher

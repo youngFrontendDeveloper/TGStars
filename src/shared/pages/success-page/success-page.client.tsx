@@ -381,7 +381,7 @@ export const SuccessPageClient = () => {
 	return (
 		<div className="container">
 			<div className="mx-auto h-full w-full max-w-[720px]">
-				<div className="mt-[18px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0_12px_40px_rgba(15,23,42,0.08)] md:px-[40px] md:py-[30px] lg:mt-0">
+				<div className="mt-[18px] rounded-[16px] bg-[#F7F9FB] p-[24px] shadow-[0_12px_40px_rgba(15,23,42,0.08)] md:px-[40px] md:py-[30px] lg:mt-0 border-[1px] border-[#FFFFFF]">
 					<div className="flex flex-col gap-[8px]">
 						<h1 className="font-montserrat text-[20px]/[22.8px] font-[600] tracking-[-0.02em] text-black md:text-[20px]">
 							{orderIdDisplay}

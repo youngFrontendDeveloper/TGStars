@@ -139,7 +139,7 @@ export const Profile = () => {
 				Профиль
 			</h2>
 			<div className="mx-auto flex w-full flex-col gap-[2px] overflow-hidden rounded-[16px] bg-[#E1E8F0] shadow-[0px_0px_11px_0px_#00000005] md:max-w-[670px] md:flex-row">
-				<div className="width-full flex flex-col items-center justify-between gap-[17px] border-b border-[#F2F4F4] bg-[#F7F9FB] p-[24px] sm:border-r md:w-[200px] md:px-[15px] md:py-[25px] lg:gap-[24px]">
+				<div className="width-full flex flex-col items-center justify-between gap-[17px] rounded-tl-[16px] rounded-tr-[16px] md:rounded-bl-[16px] md:rounded-tl-[16px] md:rounded-tr-[0] border-[1px] border-[#FFFFFF] bg-[#F7F9FB] p-[24px] md:w-[200px] md:px-[15px] md:py-[25px] lg:gap-[24px]">
 					<div className="flex flex-col items-center gap-[15px]">
 						<div className="relative z-0 h-[78px] w-[78px] rounded-full">
 							<div
@@ -194,7 +194,7 @@ export const Profile = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px]">
+				<div className="flex flex-1 flex-col gap-[17px] bg-[#F7F9FB] p-[24px] rounded-bl-[16px] rounded-br-[16px] md:rounded-bl-[16px] md:rounded-tr-[16px] md:rounded-bl-[0] border-[1px] border-[#FFFFFF]">
 					<div className="flex flex-col gap-[8px]">
 						<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 							Ваша реферальная ссылка:
@@ -231,10 +231,7 @@ export const Profile = () => {
 									{refState?.referral_balance || 0} <TgStar />
 								</p>
 							</div>
-							<Button
-								maxWidth={isMobile ? "100%" : "97px"}
-								onClick={handleWithdraw}
-							>
+							<Button className="w-full md:w-[97px]" onClick={handleWithdraw}>
 								Вывести
 							</Button>
 							<Toaster toaster={toaster.current}>

@@ -32,8 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html
-			lang="ru"
-			// data-scroll-behavior="smooth"
+			lang="ru"		
 			className={`${montserrat.variable} ${inter.variable}`}
 		>
 			{/* <head>

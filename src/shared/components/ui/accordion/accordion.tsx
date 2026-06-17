@@ -23,13 +23,13 @@ export function CustomAccordion({
 	collapsible = true,
 }: AccordionProps) {
 	return (
-		<section className="relative -top-[5px] flex flex-col gap-5">
+		<section className="relative -top-[5px] flex flex-col gap-5 ">
 			<h2 className="font-montserrat flex items-center gap-[6px] text-[16px]/[22.8px] font-semibold text-black">
 				<Question />
 				Часто задаваемые вопросы
 			</h2>
 			<Accordion.Root
-				className={clsx("flex w-full flex-col gap-0.5 rounded-2xl", className)}
+				className={clsx("flex w-full flex-col gap-0.5 rounded-2xl shadow-[0_0_11px_0_rgba(0,0,0,0.02)]", className)}
 				collapsible={collapsible}
 			>
 				{items.map((item, i) => (
