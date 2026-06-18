@@ -8,7 +8,9 @@ import stickerData from "@/public/sticker.json";
 
 const LottiePlayer = dynamic(
 	() =>
-		import("@/shared/components/ui/lottie-player").then((m) => m.LottiePlayer),
+		import("@/shared/components/ui/lottie-player/lottie-player").then(
+			(m) => m.LottiePlayer,
+		),
 	{
 		ssr: false,
 		loading: () => <Image src={blurImage.src} alt="Стикер Telegram" fill />,

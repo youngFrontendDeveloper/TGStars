@@ -19,7 +19,7 @@ export const Footer = () => {
 			}}
 		> */}
 			<div
-				className="mx-auto flex h-[231px] w-full max-w-[1920px] flex-col items-center justify-center gap-[24px] lg:grid lg:h-[46px] lg:gap-0 lg:px-[50px] lg:py-0"
+				className="mx-auto flex h-[231px] w-full max-w-[1920px] flex-col items-center mt-[48px] lg:mt-0 lg:justify-center gap-[24px] lg:grid lg:h-[46px] lg:gap-0 lg:px-[50px] lg:py-0"
 				style={{
 					gridTemplateColumns: "1fr 690px 1fr",
 				}}

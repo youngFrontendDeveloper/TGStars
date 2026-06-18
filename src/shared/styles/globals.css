@@ -252,7 +252,7 @@ input[type="file"] {
 	padding: 0 16px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
 	.container {
 		padding: 0;
 	}
