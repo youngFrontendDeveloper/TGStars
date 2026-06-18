@@ -153,11 +153,11 @@ export const BonusDiscovers = () => {
 				{rows.map((row, rowIndex) => (
 					<div
 						key={`row-${rowIndex}`}
-						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] bg-transparent ${getRowClassName(
+						className={`overflow-hidden rounded-[16px] bg-[#F7F9FC] bg-transparent shadow-cus ${getRowClassName(
 							rowIndex,
 						)}`}
 					>
-						<div className="grid grid-cols-1 gap-[2px] md:grid-cols-3 md:gap-x-[2px]">
+						<div className="grid grid-cols-1 gap-[2px] md:grid-cols-3 md:gap-x-[2px] ">
 							{row.map((discover, index) => {
 								// const isLastItem = index === row.length - 1;
 								// const isLastCol = (index + 1) % 3 === 0;

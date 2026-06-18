@@ -81,16 +81,14 @@ export const AuthForm = () => {
 		}
 	};
 	return (
-		<div className="lg:p-x-[40px] flex w-full flex-col items-center gap-[24px] rounded-[16px] bg-white p-[24px] shadow-[0px_0px_11px_0px_#00000005] sm:w-[350px] lg:gap-[33px] lg:py-[30px]">
+		<div className="flex w-full max-w-[350px] flex-col items-center gap-[24px] rounded-[16px] bg-[#f7F9FB] border-[1px] border-[#FFFFFF] p-[24px]  shadow-cus lg:w-[350px] lg:gap-[33px] lg:px-[40px] lg:py-[30px]">
 			<Image
 				src="/assets/icons/logo.svg"
 				alt="Логотип TGStars"
-				// width={217}
-				// height={40}
 				width={0}
 				height={0}
 				sizes="100vw"
-				style={{ width: "163px", height: "auto" }}
+				style={{ width: "217px", height: "auto" }}
 			/>
 			<Button
 				onClick={handleAuth}

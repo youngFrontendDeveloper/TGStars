@@ -51,7 +51,7 @@ export const Bonus = () => {
 				</div>
 				<Link
 					href={profileHref}
-					className="font-montserrat mt-[33px] box-border inline-block w-full rounded-full border border-2 border-[#EAEEF0] px-[25px] py-[10px] text-center font-medium text-white md:w-fit"
+					className="font-montserrat mt-[33px] box-border inline-block w-full rounded-full border border-2 border-[#EAEEF0] px-[25px] py-[10px] text-center text-[16px]/[22.8px] font-medium text-white md:w-fit"
 				>
 					Присоединиться
 				</Link>
