@@ -39,8 +39,8 @@ export const Premium = ({ data, setUsername, username, onBuyClick }: Props) => {
 
 	return (
 		<>
-			<div className="flex flex-col gap-2">
-				<p className="font-montserrat text-[14px]/[100%] font-medium text-black">
+			<div className="mb-[16px] flex flex-col gap-[8px] md:mb-[33px]">
+				<p className="font-montserrat text-[14px]/[100%] font-semibold text-black">
 					Выберите подписку
 				</p>
 				<PremiumSelect

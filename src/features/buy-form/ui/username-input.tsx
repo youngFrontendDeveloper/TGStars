@@ -90,7 +90,7 @@ export const UsernameInput = ({
 					placeholder="Введите имя пользователя..."
 					value={value}
 					onChange={(e) => onChange(e.target.value)}
-					className="font-montserrat w-full bg-transparent py-1.5 text-[16px]/[22.8px] font-medium text-[#1D2123] outline-none"
+					className="font-inter w-full bg-transparent py-[6px] text-[16px]/[22.8px] font-medium text-[#1D2123] outline-none"
 				/>
 				{validationState === "valid" && (
 					<ValidIcon className="h-4 w-4 shrink-0 text-[#22c55e]" />

@@ -19,7 +19,7 @@ export const TabSwitcher = ({
 }: TabSwitcherProps) => {
 	return (
 		<>
-			<div className="mx-auto mb-[24px] hidden h-full w-fit rounded-[68px] bg-[#EAEEF0] p-[4px] md:flex">
+			<div className="mx-auto mb-[24px] hidden h-full w-fit rounded-[68px] bg-[#EAEEF0] p-[4px] md:mb-[37px] md:flex">
 				{items.map((item) => (
 					<button
 						key={item.id}

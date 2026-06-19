@@ -62,7 +62,7 @@ export const PremiumSelect = ({
 			<button
 				type="button"
 				onClick={toggleDropdown}
-				className={`flex w-full items-center justify-between rounded-[12px] border-none bg-[#F2F4F5] px-4 py-3 outline-none transition-all md:hover:w-[620px] ${isOpen && "md:w-[620px]"}`}
+				className={`md:[16px] flex w-full items-center justify-between rounded-[12px] border-none bg-[#F2F4F5] px-[16px] outline-none transition-all py-[12px] md:hover:w-[620px] ${isOpen && "md:w-[620px]"}`}
 				style={{
 					transition: "0.4s",
 					boxShadow: isOpen
@@ -82,15 +82,15 @@ export const PremiumSelect = ({
 					}
 				}}
 			>
-				<div className="flex items-center gap-3">
-					<PremuimIcon />
+				<div className="flex items-center gap-[12px]">
+					<PremuimIcon className="h-auto w-[22px] md:w-[27px]" />
 					<div className="flex flex-col items-start">
 						<p className="font-montserrat text-left text-[16px]/[20.8px] font-semibold text-black">
 							{selectedOption
 								? `${selectedOption.months} месяцев`
 								: placeholder}
 						</p>
-						<p className="font-montserrat text-left text-[16px]/[20.8px] font-medium text-[#95A0A7]">
+						<p className="font-montserrat text-left text-[14px]/[20.8px] font-medium text-[#95A0A7]">
 							Telegram Premium
 						</p>
 					</div>

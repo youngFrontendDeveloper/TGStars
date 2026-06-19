@@ -293,7 +293,7 @@ export const Ton = ({ onBuyClick }: Props) => {
 			</div>
 
 			{error && (
-				<div className="flex items-center gap-1">
+				<div className="mb-[16px] flex items-center gap-1">
 					<ErrorIcon />
 					<p className="font-montserrat text-[14px]/[100%] font-medium text-[#FF5863]">
 						{error}
